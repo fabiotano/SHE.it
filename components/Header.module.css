@@ -1,7 +1,61 @@
-.notification {
-    height: 32px;
-    width: 100%;
-    background-color: red;
+.notificationBar ul {
+  height: 32px;
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.7rem;
+}
+
+.notificationBar ul li {
+  margin: 0.4rem; /* Agrega espacio entre los elementos */
+}
+
+.CentralBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 105px;
+  margin: 0.4rem;
+}
+
+.CentralBar img {
+  height: 5.5rem;
+}
+
+.CentralBar .rightSide {
+  display: flex;
+}
+
+.bottonBar {
+  display: flex;
+  font-size: 13px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.searchBar {
+  text-align: left;
+  background: white;
+  border: solid 0.1px grey;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem;
+}
+
+.productDropdown {
+  text-align: center;
+  background: white;
+  border: solid 0.1px grey;
+  width: 100%;
+  padding: 0.4rem;
+}
+
+@media (min-width: 667px) {
+  .banner {
     display: flex;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
 }

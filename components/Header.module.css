@@ -1,10 +1,14 @@
 .notificationBar ul {
   height: 32px;
   width: 100%;
-  background-color: whitesmoke;
   display: flex;
   justify-content: flex-end;
   font-size: 0.7rem;
+}
+
+.icon {
+ height: 1.1rem; 
+ margin-left: 0.4rem;
 }
 
 .notificationBar ul li {
@@ -29,26 +33,26 @@
 
 .bottonBar {
   display: flex;
-  font-size: 13px;
+  font-size: 0.85rem;
+  border: solid 0.1px grey;
+  border-width: 0.1px 0;
   justify-content: space-around;
   align-items: center;
 }
 
 .searchBar {
-  text-align: left;
-  background: white;
-  border: solid 0.1px grey;
-  width: 100%;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   padding: 0.4rem;
+  border-right: solid 0.1px grey;
 }
 
 .productDropdown {
-  text-align: center;
-  background: white;
-  border: solid 0.1px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 0.4rem;
 }

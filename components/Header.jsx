@@ -16,7 +16,7 @@ function Header() {
         <ul>
           <li>Ayuda y Contacto</li>
           <li>
-            {/* <FontAwesomeIcon icon={faPhone} /> */}
+            <FontAwesomeIcon icon={faPhone} className={styles.icon} />
           </li>
           <li>329.4131.136</li>
         </ul>
@@ -25,25 +25,25 @@ function Header() {
       <nav>
         <div className={styles.CentralBar}>
           <div className={styles.menuIcon}>
-            {/* <FontAwesomeIcon icon={faBars} /> */}
+            <FontAwesomeIcon icon={faBars} />
           </div>
           <img src="/logo.jpg" alt="LogoSHE" />
           <div className={styles.rightSide}>
             <div>
-              {/* <FontAwesomeIcon icon={faUserCircle} />{" "} */}
+              <FontAwesomeIcon icon={faUserCircle} className={styles.icon} />{" "}
             </div>
             <div>
-              {/* <FontAwesomeIcon icon={faCartShopping} /> */}
+              <FontAwesomeIcon icon={faCartShopping} className={styles.icon} />
             </div>
           </div>
         </div>
 
         <div className={styles.bottonBar}>
           <div className={styles.searchBar}>
-            {/* CERCARE <FontAwesomeIcon icon={faMagnifyingGlass} /> */}
+            CERCARE <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.icon} />
           </div>
           <div className={styles.productDropdown}>
-            {/* PRODOTTI <FontAwesomeIcon icon={faChevronDown} /> */}
+            PRODOTTI <FontAwesomeIcon icon={faChevronDown} className={styles.icon} />
           </div>
         </div>
       </nav>

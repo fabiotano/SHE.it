@@ -25,25 +25,26 @@ function Header() {
       <nav>
         <div className={styles.CentralBar}>
           <div className={styles.menuIcon}>
-            <FontAwesomeIcon icon={faBars} />
+            <FontAwesomeIcon icon={faBars} className={styles.icon}/>
           </div>
           <img src="/logo.jpg" alt="LogoSHE" />
           <div className={styles.rightSide}>
             <div>
-              <FontAwesomeIcon icon={faUserCircle} className={styles.icon} />{" "}
+              {/* <FontAwesomeIcon icon={faUserCircle} className={styles.icon} />{" "} */}
             </div>
             <div>
-              <FontAwesomeIcon icon={faCartShopping} className={styles.icon} />
+              {/* <FontAwesomeIcon icon={faCartShopping} className={styles.icon} /> */}
             </div>
           </div>
         </div>
 
         <div className={styles.bottonBar}>
+          
           <div className={styles.searchBar}>
-            CERCARE <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.icon} />
+            PRODOTTI <FontAwesomeIcon icon={faChevronDown} className={styles.icon} />
           </div>
           <div className={styles.productDropdown}>
-            PRODOTTI <FontAwesomeIcon icon={faChevronDown} className={styles.icon} />
+            CARRITO <FontAwesomeIcon icon={faCartShopping} className={styles.icon} />
           </div>
         </div>
       </nav>

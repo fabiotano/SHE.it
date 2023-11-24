@@ -29,6 +29,7 @@
 
 .CentralBar .rightSide {
   display: flex;
+  align-items: center;
 }
 
 .bottonBar {

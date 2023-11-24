@@ -1,6 +1,6 @@
 import React from "react";
-import Carrousel from './Carrousel';
-import Brand from './Brand';
+import Carrousel from "./Carrousel";
+import Brand from "./Brand";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
@@ -72,30 +72,31 @@ function Page() {
     <div>
       <Carrousel />
       <div className="background-color: #fafaf7 max-w-[1200px] mx-auto">
-        <section className="bg-grey-500 p-5">
-          <h2 className="text-center text-base text-rgb-700f1c">
-            NUESTROS MARCAS
+        <section className="bg-grey-500 pt-5">
+          <h2 className="text-center text-base mb-2 text-rgb-700f1c bg-gray-100">
+            MARCHE EXCLUSIVE
           </h2>
           {/* <Brand/> */}
         </section>
 
-        <section className="#fafaf7 py-2">
-          <h2 className="text-center text-base m-2 text-rgb-700f1c">
-            PRODUCTOS DESTACADOS
+        <section className="bg-grey-500 pt-5">
+          <h2 className="text-center text-base mb-2 text-rgb-700f1c bg-gray-100">
+            PRODOTTI PIU VENDUTI
           </h2>
           <ul className="flex flex-wrap justify-around items-center">
             {productos.map((producto) => (
               <li
                 key={producto.id}
-                className="w-2/5 md:w-1/3 lg:w-1/4 xl:w-1/5 m-2 text-center bg-white"
+                className="w-2/5 md:w-1/3 lg:w-1/4 xl:w-1/5 m-2 text-center border-gray-300 bg-gray-300 "
               >
                 <article className="flex flex-col items-center">
-                  <div className="relative">
+                  <div className="relative rounded-md">
                     <img
+                      className=""
                       src="/product1-home.jpg"
                       alt={`Producto: ${producto.nombre}`}
                     />
-                    <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-red-600">
+                    <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-orange-500 rounded-sm">
                       <Link href={""} className="font-bold mb-4">
                         <FontAwesomeIcon
                           icon={faCartShopping}
@@ -104,20 +105,22 @@ function Page() {
                       </Link>
                     </button>
                   </div>
-                  <p>{producto.nombre}</p>
-                  <p>{producto.precio}</p>
+                  <p className="text-sm text-gray-800">{producto.nombre}</p>
+                  <p className="text-xs text-gray-700">{producto.precio}</p>
                 </article>
               </li>
             ))}
           </ul>
         </section>
 
-        <section className="bg-grey-500 p-5">
-          <h2 className="text-center text-base text-rgb-700f1c">
-            CATEGORIAS
+        <section className="bg-grey-500 pt-5">
+          <h2 className="text-center text-base text-rgb-700f1c bg-gray-100">
+            CATEGORIE
           </h2>
+          <div className="div">
+            <img src="./categoria-foto1.jpeg"></img>
+          </div>
         </section>
-
       </div>
     </div>
   );

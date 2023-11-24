@@ -7,7 +7,7 @@ function Footer() {
     return (
         <footer className="border">
             <div className="max-width">
-                <div className="md:flex-row  sm:flex-col sm:flex bg-red-500 sm:py-4">
+                <div className="md:flex-row  sm:flex-col sm:flex bg-[#5f9b96] sm:py-4">
                     <div className="text-gray-50 flex align-top px-4 pt-4">
                         <Image
                             className="align-top"

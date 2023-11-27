@@ -4,11 +4,11 @@ import { Carousel } from '@material-tailwind/react';
 export default function Carrousel() {
   return (
     <Carousel
-      className="h-92"
+      className="max-w-[1200px] h-80 mx-auto"
       autoplay={true}
       autoplayDelay={3000}
       loop={true}
-      transition={{ duration: 2 }}
+      transition={{ duration: 3 }}
     >
       <img
         src="carrousel/product1-home.jpeg"

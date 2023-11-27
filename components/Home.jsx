@@ -73,21 +73,25 @@ function Page() {
       <Carrousel />
       <div className="background-color: #fafaf7 max-w-[1200px] mx-auto">
         <section className="bg-grey-500 pt-5">
-          <h2 className="text-center text-base mb-2 text-rgb-700f1c bg-gray-100">
-            MARCHE EXCLUSIVE
+          <h2 className="text-center text-base mb-2 text-rgb-700f1c h-8 flex items-center justify-center bg-gray-100 sm:text-lg sm:h-10 lg:text-2xl lg:h-14">
+            MARCHE ESCLUSIVE
           </h2>
-          {/* <Brand/> */}
+          <div className="bg-white shadow-lg text-base rounded-full border-0.5 border-gray-800 justify-center w-2/3 my-5 mx-auto flex items-center">
+            <p className="text-base sm:text-md lg:text-lg h-8">
+              CAROUSEL MARCHE
+            </p>
+          </div>
         </section>
 
         <section className="bg-grey-500 pt-5">
-          <h2 className="text-center text-base mb-2 text-rgb-700f1c bg-gray-100">
+          <h2 className="text-center text-base mb-2 text-rgb-700f1c h-8 flex items-center justify-center bg-gray-100 sm:text-lg sm:h-10 lg:text-2xl lg:h-12">
             PRODOTTI PIU VENDUTI
           </h2>
           <ul className="flex flex-wrap justify-around items-center">
             {productos.map((producto) => (
               <li
                 key={producto.id}
-                className="w-2/5 md:w-1/3 lg:w-1/4 xl:w-1/5 m-2 text-center border-gray-300 bg-gray-300 "
+                className="w-64 h-auto m-3 text-center border-gray-300 bg-gray-300 "
               >
                 <article className="flex flex-col items-center">
                   <div className="relative rounded-md">
@@ -114,11 +118,45 @@ function Page() {
         </section>
 
         <section className="bg-grey-500 pt-5">
-          <h2 className="text-center text-base text-rgb-700f1c bg-gray-100">
-            CATEGORIE
-          </h2>
-          <div className="div">
-            <img src="./categoria-foto1.jpeg"></img>
+          <div className="relative">
+            <img
+              className="relative w-full"
+              src="./categoria-foto1.jpeg"
+              alt="Descripción de la imagen"
+            />
+            <div className="absolute bg-white bg-opacity-60 inset-y-0 w-2/5 p-3 m-4 sm:p-6 sm:m-7 lg:p-10 lg:m-11 rounded-md items-center text-left flex flex-col justify-between h-4/5">
+              <span className="text-xs sm:text-base lg:text-2xl">
+                I nostri shampoo a organici all'aloe vera organici all'aloe vera
+                I nostri shampoo a organici all'aloe vera organici all'aloe vera
+                I nostri shampoo a organici
+              </span>
+              <a
+                href="/ruta-del-catalogo"
+                className="text-sm sm:text-lg lg:text-2xl underline text-blue-500"
+              >
+                Vai al catalogo...
+              </a>
+            </div>
+          </div>
+          <div className="relative">
+            <img
+              className="relative w-full"
+              src="./categoria-foto2.jpeg"
+              alt="Descripción de la imagen"
+            />
+            <div className="absolute bg-white bg-opacity-70 inset-y-0 w-2/5 p-3 m-4 sm:p-6 sm:m-7 lg:p-10 lg:m-11 rounded-md items-center text-left flex flex-col justify-between h-4/5">
+              <span className="text-xs sm:text-base lg:text-2xl">
+                I nostri shampoo a organici all'aloe vera organici all'aloe vera
+                I nostri shampoo a organici all'aloe vera organici all'aloe vera
+                I nostri shampoo a organici
+              </span>
+              <a
+                href="/ruta-del-catalogo"
+                className="text-sm sm:text-lg lg:text-2xl underline text-blue-500"
+              >
+                Vai al catalogo...
+              </a>
+            </div>
           </div>
         </section>
       </div>

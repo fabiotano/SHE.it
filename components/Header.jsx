@@ -57,15 +57,15 @@ function Header() {
                   icon={faCartShopping}
                   className="ml-1 h-5 sm:h-6"
                 />
-                <div className="absolute -top-2/3 -right-2 flex items-center rounded-full w-4 h-4 bg-[#5f9b96] text-white justify-center text-xs sm:text-base lg:text-lg">
+                <div className="absolute -top-2/3 -right-2 flex rounded-full w-4 h-4 bg-[#5f9b96] text-white text-xs sm:text-base lg:text-lg">
                   0
                 </div>
               </div>
             </div>
           </div>
 
-          <ul className="flex items-center text-sm border border-gray-300 sm:h-9">
-            <li className="sm:hidden flex items-center text-xs justify-between w-3/5 p-2 pl-4 border-r border-gray-300 sm:text-lg lg:text-xl">
+          <ul className="flex items-center text-sm border border-gray-300 ">
+            <li className="sm:hidden flex items-center text-xs justify-between w-3/5 p-2 pl-3 border-r border-gray-300 sm:text-lg lg:text-xl">
               RICERCA
               <FontAwesomeIcon
                     icon={faMagnifyingGlass}
@@ -73,21 +73,21 @@ function Header() {
               />
             </li>
 
-            <li className=" text-center p-2 w-auto sm:text-lg lg:text-lg">
+            <li className=" text-left pl-3 w-1/6 sm:flex sm:text-lg lg:text-lg">
               PRODOTTI
             </li>
 
-            <li className="hidden sm:flex items-center text-xs justify-center w-1/6 p-2 sm:text-lg lg:text-">
+            <li className="hidden sm:flex w-1/6 pl-2 sm:text-lg lg:text-">
               COSMETICI
             </li>
-            <li className="hidden sm:flex items-center text-xs justify-center w-1/6 p-2 sm:text-lg lg:text-">
+            <li className="hidden sm:flex w-1/6 pl-2 sm:text-lg lg:text-">
               BALSAMI
             </li>
-            <li className="hidden sm:flex items-center text-xs justify-center w-1/6 p-2 sm:text-lg lg:text-">
+            <li className="hidden sm:flex w-1/6 pl-2 sm:text-lg lg:text-">
               CREME
             </li>
 
-            <li className="hidden sm:flex items-center text-xs justify-center p-2 w-1/6 sm:text-lg lg:text-">
+            <li className="hidden sm:flex pl-2 w-1/6 sm:text-lg lg:text-">
               ABOUT US
 
             </li>

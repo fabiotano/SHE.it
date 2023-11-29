@@ -69,7 +69,7 @@ function Page() {
   ];
 
   return (
-    <div>
+    <div className="border-l border-r border-gray-300">
       <Carrousel />
       <div className="background-color: #fafaf7 max-w-[1200px] mx-auto">
         <section className="bg-grey-500 pt-5">

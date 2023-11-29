@@ -36,7 +36,7 @@ function Header() {
             />
 
             <div className="flex items-center space-x-2">
-              <div className="hidden sm:flex w-64 border border-gray-300 ">
+              <div className="hidden sm:flex w-72 max-w-[260px] border border-gray-300">
                 <div className="flex items-center text-xs justify-between pl-2 p-1 sm:text-md lg:text-xl w-full border-r border-gray-300 sm:visible">
                   RICERCA
                   <FontAwesomeIcon
@@ -64,51 +64,28 @@ function Header() {
             </div>
           </div>
 
-          <ul className="flex justify-between items-center text-sm border-t border border-gray-300 sm:h-10 lg:h-12">
+          <ul className="flex items-center text-sm border-t border border-gray-300 sm:h-10 lg:h-12">
             <li className="sm:hidden flex items-center text-xs justify-between w-3/5 pl-4 p-2 border-r border-gray-300 sm:text-lg lg:text-xl">
               RICERCA
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                className="h-4 sm:h-5 lg:h-6 ml-1"
-              />
             </li>
 
             <li className="flex items-center text-xs justify-center p-2 w-auto sm:text-lg lg:text-xl">
               PRODOTTI
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="h-4 ml-2 sm:h-5 lg:h-6"
-              />
             </li>
 
             <li className="hidden sm:flex items-center text-xs justify-center w-auto p-2 sm:text-lg lg:text-xl">
               TEST
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="h-4 ml-2 sm:h-5 lg:h-6"
-              />
             </li>
             <li className="hidden sm:flex items-center text-xs justify-center w-auto p-2 sm:text-lg lg:text-xl">
               TEST
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="h-4 ml-2 sm:h-5 lg:h-6"
-              />
             </li>
             <li className="hidden sm:flex items-center text-xs justify-center w-auto p-2 sm:text-lg lg:text-xl">
               TEST
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="h-4 ml-2 sm:h-5 lg:h-6"
-              />
             </li>
 
             <li className="hidden sm:flex items-center text-xs justify-center p-2 w-auto sm:text-lg lg:text-xl">
               ABOUT US
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="h-4 ml-2 sm:h-5 lg:h-6"
-              />
+
             </li>
           </ul>
         </nav>

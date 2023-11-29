@@ -12,8 +12,8 @@ function Header() {
   return (
     <header>
       <div className="container max-w-[1200px] mx-auto">
-        <div className="flex justify-end items-center h-8 text-xs bg-gray-100">
-          <ul className="flex items-center space-x-2">
+        <div className="flex justify-end items-center h-7 text-xs bg-gray-100">
+          <ul className="flex items-center space-x-2 p-2">
             <li>Aiuto e Contatto</li>
             <li>
               <FontAwesomeIcon icon={faPhone} className="h-3 ml-1" />
@@ -37,7 +37,7 @@ function Header() {
 
             <div className="flex items-center space-x-2">
               <div className="hidden sm:flex w-72 max-w-[260px] border border-gray-300">
-                <div className="flex items-center text-xs justify-between pl-2 p-1 sm:text-md lg:text-xl w-full border-r border-gray-300 sm:visible">
+                <div className="flex items-center text-xs justify-between pl-2 p-1 sm:text-md lg:text-md w-full border-r border-gray-300 sm:visible">
                   RICERCA
                   <FontAwesomeIcon
                     icon={faMagnifyingGlass}
@@ -64,26 +64,30 @@ function Header() {
             </div>
           </div>
 
-          <ul className="flex items-center text-sm border-t border border-gray-300 sm:h-10">
-            <li className="sm:hidden flex items-center text-xs justify-between w-3/5 pl-4 p-2 border-r border-gray-300 sm:text-lg lg:text-xl">
+          <ul className="flex items-center text-sm border border-gray-300 sm:h-9">
+            <li className="sm:hidden flex items-center text-xs justify-between w-3/5 p-2 pl-4 border-r border-gray-300 sm:text-lg lg:text-xl">
               RICERCA
+              <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    className="h-4"
+              />
             </li>
 
-            <li className="flex items-center text-xs justify-center p-2 w-auto sm:text-lg lg:text-xl">
+            <li className=" text-center p-2 w-auto sm:text-lg lg:text-lg">
               PRODOTTI
             </li>
 
-            <li className="hidden sm:flex items-center text-xs justify-center w-auto p-2 sm:text-lg lg:text-xl">
-              TEST
+            <li className="hidden sm:flex items-center text-xs justify-center w-1/6 p-2 sm:text-lg lg:text-">
+              COSMETICI
             </li>
-            <li className="hidden sm:flex items-center text-xs justify-center w-auto p-2 sm:text-lg lg:text-xl">
-              TEST
+            <li className="hidden sm:flex items-center text-xs justify-center w-1/6 p-2 sm:text-lg lg:text-">
+              BALSAMI
             </li>
-            <li className="hidden sm:flex items-center text-xs justify-center w-auto p-2 sm:text-lg lg:text-xl">
-              TEST
+            <li className="hidden sm:flex items-center text-xs justify-center w-1/6 p-2 sm:text-lg lg:text-">
+              CREME
             </li>
 
-            <li className="hidden sm:flex items-center text-xs justify-center p-2 w-auto sm:text-lg lg:text-xl">
+            <li className="hidden sm:flex items-center text-xs justify-center p-2 w-1/6 sm:text-lg lg:text-">
               ABOUT US
 
             </li>

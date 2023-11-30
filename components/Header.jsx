@@ -10,7 +10,7 @@ import {
 
 export default function Header2() {
     return (
-        <header className="max-w-[1200px]">
+        <header className="max-w-[1200px] m-auto">
             <div className="flex justify-end items-center h-7 text-xs bg-gray-100">
                 <ul className="flex items-center space-x-2 p-2">
                     <li>Aiuto e Contatto</li>

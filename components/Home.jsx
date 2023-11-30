@@ -117,22 +117,21 @@ function Page() {
           </ul>
         </section>
 
-        <section className="bg-grey-500 pt-5">
+        <section className="bg-grey-500 pt-5 sm:columns-2 sm:pb-5">
           <div className="relative">
             <img
               className="relative w-full"
               src="./categoria-foto1.jpeg"
               alt="Descripción de la imagen"
             />
-            <div className="absolute bg-white bg-opacity-60 inset-y-0 w-2/5 p-3 m-4 sm:p-6 sm:m-7 lg:p-10 lg:m-11 rounded-md items-center text-left flex flex-col justify-between h-4/5">
-              <span className="text-xs sm:text-base lg:text-2xl">
-                I nostri shampoo a organici all'aloe vera organici all'aloe vera
+            <div className="absolute bg-white bg-opacity-60 inset-y-0 w-3/4 p-3 m-4 sm:p-6 sm:m-7 lg:p-10 lg:m-11 rounded-md items-center text-left flex flex-col justify-between h-4/5">
+              <span className="">
                 I nostri shampoo a organici all'aloe vera organici all'aloe vera
                 I nostri shampoo a organici
               </span>
               <a
                 href="/ruta-del-catalogo"
-                className="text-sm sm:text-lg lg:text-2xl underline text-blue-500"
+                className=" underline text-blue-500"
               >
                 Vai al catalogo...
               </a>
@@ -144,15 +143,14 @@ function Page() {
               src="./categoria-foto2.jpeg"
               alt="Descripción de la imagen"
             />
-            <div className="absolute bg-white bg-opacity-70 inset-y-0 w-2/5 p-3 m-4 sm:p-6 sm:m-7 lg:p-10 lg:m-11 rounded-md items-center text-left flex flex-col justify-between h-4/5">
-              <span className="text-xs sm:text-base lg:text-2xl">
-                I nostri shampoo a organici all'aloe vera organici all'aloe vera
+            <div className="absolute bg-white bg-opacity-70 inset-y-0 w-3/4 p-3 m-4 sm:p-6 sm:m-7 lg:p-10 lg:m-11 rounded-md items-center text-left flex flex-col justify-between h-4/5">
+              <span className="">
                 I nostri shampoo a organici all'aloe vera organici all'aloe vera
                 I nostri shampoo a organici
               </span>
               <a
                 href="/ruta-del-catalogo"
-                className="text-sm sm:text-lg lg:text-2xl underline text-blue-500"
+                className="underline text-blue-500"
               >
                 Vai al catalogo...
               </a>

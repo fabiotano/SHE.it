@@ -5,7 +5,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
-                <Header />
+                <Header/>
                 {children}
                 <footer>este es el footer</footer>
             </body>

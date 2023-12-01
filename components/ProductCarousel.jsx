@@ -120,7 +120,7 @@ export default function ProductCarousel() {
       >
         {products.map((product, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-[280px] h-[300px] my-5 bg-white border rounded-md m-auto">
+            <div className="relative w-[210px] h-[300px] my-5 bg-white border rounded-md m-auto">
               {product.newFlag && (
                 <div className="absolute top-1/2 bg-red-400 -translate-x-1/4 w-14 h-7 text-white text-xs font-bold flex justify-center items-center z-50">
                   Nuevo!

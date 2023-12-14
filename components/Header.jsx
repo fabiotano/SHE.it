@@ -10,6 +10,7 @@ import {
     faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Header2() {
 
@@ -106,29 +107,29 @@ export default function Header2() {
           </div>
         </header>
         {showMenu && (
-          <div className="p-6 left-0 w-full h-screen bg-red-900 opacity-95 z-20 items-center">
+          <div className="p-6 left-0 w-full h-screen bg-red-500 opacity-95 z-20 items-center">
             <ul className="gap-5 flex flex-col justify-center">
             <li className="mt-4 pb-5 border-white text-center">
-              <a href="#" onClick={clickMenuHandler} className="text-white hover:underline"><FontAwesomeIcon className="h-7" icon={faCircleXmark} /></a>
+              <div onClick={clickMenuHandler} className="text-white hover:underline"><FontAwesomeIcon className="h-7" icon={faCircleXmark} /></div>
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <a href="#" className="text-white hover:underline">PRODOTTI</a>
+              <Link href="/products" className="text-white hover:underline">PRODOTTI</Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <a href="#" className="text-white hover:underline">COSMETICI</a>
+              <Link href="#" className="text-white hover:underline">COSMETICI</Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <a href="#" className="text-white hover:underline">BALSAMI</a>
+              <Link href="#" className="text-white hover:underline">BALSAMI</Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <a href="#" className="text-white hover:underline">CREME</a>
+              <Link href="#" className="text-white hover:underline">CREME</Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <a href="#" className="text-white hover:underline">ABOUT US</a>
+              <Link href="#" className="text-white hover:underline">ABOUT US</Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
             </ul>

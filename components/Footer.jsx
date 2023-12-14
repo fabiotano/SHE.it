@@ -59,7 +59,7 @@ function Footer() {
             </div>
             <div className="flex p-6 max-width px-8 container ">
                 <div className="flex flex-col">
-                    <Image src={'/logo.jpeg'} height={50} width={200} />
+                    <Image src={'/logo.jpg'} height={50} width={200} />
                     <p className="text-gray-500 text-sm w-64 mt-2">
                         Parque Empresarial "Los LLanos" C/ Castilla y León
                         Parcela 232 (41909) Salteras

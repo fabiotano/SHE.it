@@ -25,6 +25,10 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
+      fontSize: {
+        '2xs': '.625rem',
+      },
+    },
+    plugins: [],
   },
-  plugins: [],
-}};
+};

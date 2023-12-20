@@ -40,11 +40,13 @@ export default function Header2() {
               </div>
               {/* Logo */}
               <div className="flex flex-auto justify-center sm:justify-start ">
+              <Link href="/">
                 <img
                   src="/logo.jpg"
                   alt="LogoSHE"
                   className="h-14 lg:-ml-2  sm:h-19 lg:h-21 sm:order-first"
                 />
+              </Link>
               </div>
               {/* Barra de búsqueda */}
               <div className="hidden sm:flex flex-auto items-center">
@@ -61,10 +63,12 @@ export default function Header2() {
               {/* Iconos de usuario y carrito */}
               <div className="w-24 flex-initial flex items-center justify-evenly">
                 <div>
+                <Link href="/login">
                   <FontAwesomeIcon
                     icon={faUserCircle}
                     className="text-gray-700 h-6"
                   />
+                </Link>
                 </div>
                 <div className="flex relative">
                   <div className="absolute  -top-2 -right-1 flex justify-center items-center rounded-full w-4 h-4 bg-red-500 text-white text-xs">
@@ -113,23 +117,23 @@ export default function Header2() {
               <div onClick={clickMenuHandler} className="text-white hover:underline"><FontAwesomeIcon className="h-7" icon={faCircleXmark} /></div>
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <Link href="/products" className="text-white hover:underline">PRODOTTI</Link>
+              <Link href="/products" onClick={clickMenuHandler} className="text-white hover:underline">PRODOTTI</Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <Link href="#" className="text-white hover:underline">COSMETICI</Link>
+              <Link href="products" onClick={clickMenuHandler} className="text-white hover:underline">COSMETICI</Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <Link href="#" className="text-white hover:underline">BALSAMI</Link>
+              <Link href="products" onClick={clickMenuHandler} className="text-white hover:underline">BALSAMI</Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <Link href="#" className="text-white hover:underline">CREME</Link>
+              <Link href="products"onClick={clickMenuHandler}  className="text-white hover:underline">CREME</Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <Link href="#" className="text-white hover:underline">ABOUT US</Link>
+              <Link href="products" onClick={clickMenuHandler} className="text-white hover:underline">ABOUT US</Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
             </ul>

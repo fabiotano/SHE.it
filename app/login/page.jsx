@@ -7,6 +7,16 @@ import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
+  const [form, setForm] = useState({ email: '', password: '' });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -15,13 +25,12 @@ export default function Login() {
     <div className="container">
       <div className="text-2xs py-2 pl-3">
         <p>
-          <Link href={"/"}>Home</Link> /{" "}
+          <Link href={'/'}>Home</Link> /{' '}
           <span className="text-gray-300">Accedi</span>
         </p>
       </div>
       <section className="my-6">
         <form className="w-3/4 m-auto max-w-[600px]">
-
           <div className="pt-6 pb-4 md:pt-9 md:pb-7 md:flex">
             <label
               id="email"
@@ -32,8 +41,10 @@ export default function Login() {
             <input
               name="email"
               className="bg-gray-100 border border-gray-200 w-full h-10 rounded-sm p-2 text-xs md:text-sm outline-none"
-              type="text"
+              type="email"
               placeholder="Inserisci la tua email"
+              onChange={handleChange}
+              value={form.email}
             />
           </div>
 
@@ -48,8 +59,10 @@ export default function Login() {
               <input
                 name="password"
                 className="bg-gray-100 border border-gray-200 w-full h-10 rounded-sm p-2 text-xs md:text-sm outline-none"
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 placeholder="Inserisci la tua password"
+                onChange={handleChange}
+                value={form.password}
               />
               <FontAwesomeIcon
                 className="absolute right-4 top-3 h-3 cursor-pointer"
@@ -69,7 +82,8 @@ export default function Login() {
 
           <div className="py-5 md:py-8 md:w-[444px] ml-auto">
             <button
-              type="button"
+              type="submit"
+              onClick={handleSubmit}
               className="bg-black text-white w-full h-11 rounded-sm text-xs md:text-sm hover:bg-blue-500"
             >
               Accedi

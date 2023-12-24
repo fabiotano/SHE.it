@@ -1,5 +1,6 @@
 import Filter from '@/components/Filter';
 import ProductCard from '@/components/ProductCard';
+import { eugenpermaProducts } from '@/eugenpermaProduct';
 
 import Link from 'next/link';
 import { products, sortOptions } from '@/constants.js';
@@ -42,7 +43,7 @@ function Products() {
           </div>
           {/* Products */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-4 py-4">
-            {products.map((product, index) => (
+            {eugenpermaProducts.map((product, index) => (
               <ProductCard key={index} product={product} />
             ))}
           </div>

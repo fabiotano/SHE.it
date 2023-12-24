@@ -8,7 +8,13 @@ const geoUrl =
 
 export default function MapChart() {
   // Estado para almacenar la región que se está haciendo hover
-  const [hoveredRegion, setHoveredRegion] = useState(null);
+  const [selectedRegion, setSelectedRegion] = useState(null);
+
+  const selectRegion = (geo) => {
+    const regName = geo.properties.reg_name;
+    setSelectedRegion(regName);
+    console.log(`Has seleccionado la región ${selectedRegion}`);
+  };
 
   return (
     <div className={styles.mapContainer}>
@@ -19,6 +25,7 @@ export default function MapChart() {
               <Geography
                 key={geo.rsmKey}
                 geography={geo}
+                onClick={() => selectRegion(geo)}
                 style={{
                   default: {
                     fill: "#808080",
@@ -41,5 +48,3 @@ export default function MapChart() {
     </div>
   );
 }
-
-

@@ -12,7 +12,7 @@ import {
 const initialProducts = [
   {
     id: 1,
-    title: "Product 1",
+    title: "Shampoo Coco y Frambuesa",
     desc: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
     image: "/products/image-1.jpg",
     newFlag: true,
@@ -24,7 +24,7 @@ const initialProducts = [
   },
   {
     id: 2,
-    title: "Product 2",
+    title: "Air Conditioner Coco y Frambuesa",
     desc: "Brief description",
     image: "/products/image-2.jpg",
     newFlag: false,
@@ -36,7 +36,7 @@ const initialProducts = [
   },
   {
     id: 3,
-    title: "Product 3",
+    title: "Balsamo Limon y Lima",
     desc: "Brief description",
     image: "/products/image-3.jpg",
     newFlag: false,
@@ -60,8 +60,8 @@ const Cart = () => {
 
   const [productQuantity, setProductQuantity] = useState([
     { productId: 1, quantity: 1 },
-    { productId: 2, quantity: 2 },
-    { productId: 3, quantity: 5 },
+    { productId: 2, quantity: 1 },
+    { productId: 3, quantity: 1 },
   ]);
 
   const increaseQuantity = (id) => {
@@ -86,6 +86,9 @@ const Cart = () => {
       });
     });
   };
+
+
+  const [totalProduct, setTotalProduct] = useState(0)
 
   return (
     <div className="container">
@@ -128,7 +131,7 @@ const Cart = () => {
                       value={
                         productQuantity.find(
                           (productItem) => productItem.productId === product.id
-                        )?.quantity || 0
+                        )?.quantity || 1
                       }
                       readOnly
                     />
@@ -142,7 +145,12 @@ const Cart = () => {
                     />
                   </form>
                   <p className="font-semibold text-center text-md">
-                    {product.price}
+                    {product.price *
+                      (
+                        productQuantity.find(
+                          (productItem) => productItem.productId === product.id
+                        )?.quantity || product.price
+                      ).toFixed(2)}
                   </p>
                   <div className="text-center">
                     <FontAwesomeIcon
@@ -155,7 +163,7 @@ const Cart = () => {
             </li>
           ))}
 
-          <button className="hover:bg-gray-200 mx-8 border border border-gray-400 text-sm px-5 py-2 mt-3 mb-5">
+          <button className="hover:bg-gray-200 mx-8 border border border-gray-400 text-sm px-5 py-2 mt-6 mb-5">
             {" "}
             <FontAwesomeIcon
               icon={faPersonRunning}
@@ -167,27 +175,33 @@ const Cart = () => {
         </ul>
         <div className="mx-12 my-8 flex-auto h-fit border border-gray-600 md:mr-5">
           <ul className="px-3 text-left mt-2">
-            <li className="my-1">
-              <p className="text-black inline-block text-xs">3 Artículos</p>
-              <p className="text-black inline-block float-right text-xs">100</p>
-            </li>
-            <li className="my-1">
-              <p className="text-black inline-block text-xs">3 Artículos</p>
-              <p className="text-black inline-block float-right text-xs">100</p>
-            </li>
-            <li className="my-1">
-              <p className="text-black inline-block text-xs">3 Artículos</p>
-              <p className="text-black inline-block float-right text-xs">100</p>
-            </li>
-            <li className="my-1">
-              <p className="text-black inline-block text-xs">3 Artículos</p>
-              <p className="text-black inline-block float-right text-xs">100</p>
-            </li>
+            {products.map((product) => (
+              <li key={product.id} className="my-1">
+                <p className="text-black inline-block text-xs">
+                <strong> 
+                  {
+                    productQuantity.find(
+                      (productItem) => productItem.productId === product.id
+                    )?.quantity
+                  }
+                  </strong> {product.title}
+                </p>
+                <p className="text-black inline-block float-right text-xs">
+                  {product.price *
+                    (
+                      productQuantity.find(
+                        (productItem) => productItem.productId === product.id
+                      )?.quantity || product.price
+                    ).toFixed(2)}
+                </p>
+              </li>
+            ))}
           </ul>
+
           <div className="px-3 py-2 border-t">
             <p className="text-black font-semibold inline-block ">TOTAL</p>
             <p className="text-black inline-block font-semibold float-right text-sm">
-              100
+              {totalProduct}
             </p>
           </div>
         </div>

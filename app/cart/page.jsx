@@ -82,7 +82,7 @@ const Cart = () => {
           if (product.quantity > 1)
             return { ...product, quantity: product.quantity - 1 };
         }
-        return { ...product, quantity: 1 };
+        return product;
       });
     });
   };

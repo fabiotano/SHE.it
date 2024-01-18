@@ -7,36 +7,67 @@ const geoUrl =
   "https://raw.githubusercontent.com/openpolis/geojson-italy/master/geojson/limits_IT_regions.geojson";
 
 export default function MapChart() {
-  // Estado para almacenar la región que se está haciendo hover
   const [selectedRegion, setSelectedRegion] = useState(null);
+  const [isClicked, setIsClicked] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const selectRegion = (geo) => {
+  const showRegion = (geo) => {
+    setIsHovered(true);
     const regName = geo.properties.reg_name;
     setSelectedRegion(regName);
   };
 
+  const regionClicked = () => {
+    setIsClicked(true);
+    setIsHovered(false);
+  };
+
+  const regionReset = () => {
+    setIsClicked(false);
+    setIsHovered(false);
+    setSelectedRegion(null);
+  };
+
   useEffect(() => {
-    // Esta función se ejecutará cada vez que selectedRegion cambie // PEDIR EXPLCACON LEO
+    // Esta función se ejecutará cada vez que selectedRegion cambie
     console.log(`Has seleccionado la región ${selectedRegion}`);
   }, [selectedRegion]);
 
   return (
-    <div className={styles.mapContainer}>
-      <ComposableMap>
+    <div className="relative">
+      <h1 className="text-md md:text-xl text-center mt-6">
+        {isClicked ? (
+          <span style={{ color: 'red' }}>HAI SELEZIONATO {selectedRegion}</span>
+        ) : (
+          isHovered ? selectedRegion : "Indique la región de donde pides"
+        )}
+      </h1>
+      <ComposableMap
+        projection="geoAzimuthalEqualArea"
+        projectionConfig={{
+          rotate: [-11.0, -53, 0],
+          center: [0, -18.5],
+          scale: 1300,
+        }}
+      >
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map((geo) => (
               <Geography
                 key={geo.rsmKey}
                 geography={geo}
-                onClick={() => selectRegion(geo)}
+                onMouseEnter={() => showRegion(geo)}
+                onMouseLeave={regionReset}
+                onClick={regionClicked}
                 style={{
                   default: {
-                    fill: "#808080",
+                    fill: "#C0C0C0",
+                    stroke: "#404040",
+                    strokeWidth: 0.1,
                     outline: "none",
                   },
                   hover: {
-                    fill: "blue",
+                    fill: "#404040",
                     outline: "none",
                   },
                   pressed: {

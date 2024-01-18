@@ -59,13 +59,12 @@ function Footer() {
             </div>
             <div className="flex p-6 max-width px-8 container ">
                 <div className="flex flex-col">
-                    <Image src={'/logo.jpg'} height={50} width={200} />
+                    <Image src={'/logo.jpg'} height={70} width={100} />
                     <p className="text-gray-500 text-sm w-64 mt-2">
-                        Parque Empresarial "Los LLanos" C/ Castilla y León
-                        Parcela 232 (41909) Salteras
+                        Skin Hair Expo SRL
                     </p>
                     <p className="text-gray-500 text-sm mt-2">
-                        T. 955 708 855 (Sede Central)
+                       Tortoreto 64018 (TE) 
                     </p>
                 </div>
                 <div className="flex flex-col xs:hidden ps-4">
@@ -77,9 +76,6 @@ function Footer() {
                     </Link>
                     <Link href={''} className="text-gray-500 text-sm pb-1">
                         Estetica
-                    </Link>
-                    <Link href={''} className="text-gray-500 text-sm pb-1">
-                        Barberia
                     </Link>
                     <Link href={''} className="text-gray-500 text-sm pb-1">
                         Marcas

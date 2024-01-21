@@ -9,7 +9,7 @@ import {
   faFilterCircleXmark,
 } from '@fortawesome/free-solid-svg-icons';
 
-function Filter() {
+function ProductFilter() {
   const [showFilter, setShowFilter] = useState(false);
 
   const showFilterHandler = () => {
@@ -68,4 +68,4 @@ function Filter() {
   );
 }
 
-export default Filter;
+export default ProductFilter;

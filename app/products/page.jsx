@@ -43,7 +43,7 @@ function Products() {
           </div>
           {/* Products */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-4 py-4">
-            {eugenpermaProducts.map((product, index) => (
+            {products.map((product, index) => (
               <ProductCard key={index} product={product} />
             ))}
           </div>

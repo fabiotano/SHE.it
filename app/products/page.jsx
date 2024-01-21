@@ -1,4 +1,4 @@
-import Filter from '@/components/Filter';
+import ProductFilter from '@/components/ProductFilter';
 import ProductCard from '@/components/ProductCard';
 import { eugenpermaProducts } from '@/eugenpermaProduct';
 
@@ -15,7 +15,7 @@ function Products() {
         </p>
       </div>
       <div className="sm:flex">
-        <Filter />
+        <ProductFilter />
         <section className="mt-6 flex-grow">
           <div>
             <h2 className="text-5xl font-bold text-center">Peluquería</h2>

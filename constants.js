@@ -194,10 +194,6 @@ export const filters = [
 
 export const sortOptions = [
   {
-    title: 'Más vendidos',
-    value: 'mostSold',
-  },
-  {
     title: 'Menor precio',
     value: 'lowToHigh',
   },

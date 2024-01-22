@@ -1,4 +1,5 @@
 import ProductFilter from '@/components/ProductFilter';
+import ProductSort from '@/components/ProductSort';
 import ProductCard from '@/components/ProductCard';
 import { eugenpermaProducts } from '@/eugenpermaProduct';
 
@@ -12,6 +13,20 @@ function Products({ searchParams }) {
 
   const startIndex = (page - 1) * perPage;
   const endIndex = startIndex + perPage;
+
+  if (searchParams.sort) {
+    products.sort((a, b) => {
+      if (searchParams.sort === 'lowToHigh') {
+        return a.price - b.price;
+      } else if (searchParams.sort === 'highToLow') {
+        return b.price - a.price;
+      } else if (searchParams.sort === 'aToZ') {
+        return a.title.localeCompare(b.title);
+      } else if (searchParams.sort === 'zToA') {
+        return b.title.localeCompare(a.title);
+      }
+    });
+  }
 
   const productsPaginated = products.slice(startIndex, endIndex);
 
@@ -42,13 +57,7 @@ function Products({ searchParams }) {
           {/* Sort Results */}
           <div className="flex justify-center sm:justify-end my-6">
             <p className="text-sm py-3 hidden sm:block">Ordenar por:</p>
-            <select className="border-b border-gray-400  px-2 text-sm mx-10 py-3 outline-none w-full sm:w-auto">
-              {sortOptions.map((option, index) => (
-                <option key={index} value={option.value}>
-                  {option.title}
-                </option>
-              ))}
-            </select>
+            <ProductSort />
           </div>
           {/* Products */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-4 py-4">

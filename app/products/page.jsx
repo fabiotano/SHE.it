@@ -4,8 +4,17 @@ import { eugenpermaProducts } from '@/eugenpermaProduct';
 
 import Link from 'next/link';
 import { products, sortOptions } from '@/constants.js';
+import PaginationControl from '@/components/PaginationControl';
 
-function Products() {
+function Products({ searchParams }) {
+  const page = parseInt(searchParams.page) || 1;
+  const perPage = parseInt(searchParams.perPage) || 5;
+
+  const startIndex = (page - 1) * perPage;
+  const endIndex = startIndex + perPage;
+
+  const productsPaginated = products.slice(startIndex, endIndex);
+
   return (
     <div className="container">
       <div className="text-2xs py-2 pl-3">
@@ -43,10 +52,16 @@ function Products() {
           </div>
           {/* Products */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-4 py-4">
-            {products.map((product, index) => (
+            {productsPaginated.map((product, index) => (
               <ProductCard key={index} product={product} />
             ))}
           </div>
+          <PaginationControl
+            hasNextPage={endIndex < products.length}
+            hasPreviousPage={startIndex > 0}
+            hasPagination={products.length > perPage}
+            pageQuantity={Math.ceil(products.length / perPage)}
+          />
         </section>
       </div>
     </div>

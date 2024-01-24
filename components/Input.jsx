@@ -32,6 +32,8 @@ const Input = ({ onCheckboxChange }) => {
     onCheckboxChange(checkboxValues);
   }, [checkboxValues, onCheckboxChange]);
 
+  // console.log(checkboxValues);
+
   return (
     <div>
       {filters.map((filter, index) => (

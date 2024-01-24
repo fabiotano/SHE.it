@@ -29,7 +29,7 @@ function ProductCard(props) {
       <h3 className="text-center font-semibold text-md mt-3">
         {product.title}
       </h3>
-      <h6 className="text-center text-xs text-gray-400">{product.desc}</h6>
+      <h6 className="text-center text-xs text-gray-400">{product.Marca}</h6>
       <h4 className="text-center font-bold mt-3">
         &euro;
         {` ${Math.floor(product.price)}`}

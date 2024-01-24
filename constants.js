@@ -7,6 +7,8 @@ export const products = [
     price: 979.14,
     discount: 5,
     favorite: true,
+    Categoria: 'Shampoo',
+    Marcas: 'SHE',
   },
   {
     title: 'Product 2',

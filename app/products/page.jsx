@@ -4,17 +4,44 @@ import Filter from "@/components/Filter";
 import ProductCard from "@/components/ProductCard";
 
 import Link from "next/link";
-import { products as allProducts, sortOptions } from "@/constants.js";
+// import { products as allProducts, sortOptions } from "@/constants.js";
 
 function Products() {
 
+  const allProducts = [
+    {
+      title: 'Product 1',
+      desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      image: '/products/image-1.jpg',
+      newFlag: true,
+      price: 979.14,
+      discount: 5,
+      favorite: true,
+      Categoria: 'Shampoo',
+      Marca: 'SHE',
+    },{
+      title: 'Product ',
+      desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      image: '/products/image-1.jpg',
+      newFlag: true,
+      price: 979.14,
+      discount: 5,
+      favorite: true,
+      Categoria: 'Shampoo',
+      Marca: 'SHE',
+    }
+  ]
+
   const [products, setProducts] = useState(allProducts);
+  const [filters, setFilters] = useState(allProducts);
+
 
   const handleApplyFilters = (appliedFilters) => {
-    console.log("Filters aplicados en Products:", appliedFilters);
-    // Puedes realizar acciones adicionales con los filtros aplicados aquí
+    setFilters(appliedFilters);
   };
 
+  console.log(products);
+  console.log(filters);
 
   return (
     <div className="container">
@@ -43,7 +70,7 @@ function Products() {
 
         <section className="flex-grow">
           {/* Sort Results */}
-          <div className="flex justify-center sm:justify-end">
+          {/* <div className="flex justify-center sm:justify-end">
             <p className="text-sm py-3 hidden sm:block">Ordenar por:</p>
             <select className="border-b border-gray-400  px-2 text-sm mx-10 py-3 outline-none w-full sm:w-auto">
               {sortOptions.map((option, index) => (
@@ -52,7 +79,7 @@ function Products() {
                 </option>
               ))}
             </select>
-          </div>
+          </div> */}
           {/* Products */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-4 py-4">
             {products.map((product, index) => (

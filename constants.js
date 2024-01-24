@@ -76,23 +76,20 @@ export const products = [
 export const filters = [
   {
     title: 'Marcas',
-    options: ['Marca 1', 'Marca 2', 'Marca 3', 'Marca 4', 'Marca 5', 'Marca 6'],
+    options: ['SHE', 'Eugenperma', 'Chenice'],
+  },
+  {
+    title: 'Price',
+    options: ['$0 - $50', '$50 - $100', '$100 - $200'],
   },
   {
     title: 'Categoria',
     options: [
-      'Categoria 1',
-      'Categoria 2',
-      'Categoria 3',
-      'Categoria 4',
-      'Categoria 5',
-      'Categoria 6',
+      'Shampoo',
+      'Tinta',
+      'Balsamo',
     ],
-  },
-  {
-    title: 'Disponibilidad',
-    options: ['Disponible', 'No disponible'],
-  },
+  }
 ];
 
 export const sortOptions = [

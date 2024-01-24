@@ -1,20 +1,31 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { filters } from '@/constants.js';
+import { useState, useEffect } from "react";
+import Input from "@/components/Input";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFilter,
   faFilterCircleXmark,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
-function Filter() {
+function Filter({ onApplyFilters }) {
+
   const [showFilter, setShowFilter] = useState(false);
+  const [checkboxValues, setCheckboxValues] = useState({});
 
   const showFilterHandler = () => {
     setShowFilter(!showFilter);
   };
+
+  const handleCheckboxChange = (updatedCheckboxValues) => {
+    setCheckboxValues(updatedCheckboxValues);
+  };
+
+  const applyFilters = () => {
+    onApplyFilters(checkboxValues); 
+  };
+
   return (
     <section>
       <div
@@ -29,7 +40,7 @@ function Filter() {
       </div>
       <div
         className={`${
-          showFilter ? 'block' : 'hidden'
+          showFilter ? "block" : "hidden"
         } sm:block sm:w-[200px] border border-gray-400 rounded-md text-sm mx-4 mt-4 flex flex-col `}
       >
         <div className="flex justify-between items-center px-4 py-2">
@@ -40,23 +51,12 @@ function Filter() {
             onClick={showFilterHandler}
           />
         </div>
-        {filters.map((filter, index) => (
-          <div key={index} className="px-4 py-2">
-            <h3 className="text-sm font-bold">{filter.title}</h3>
-            <ul className="text-xs pl-2 mt-1">
-              {filter.options.map((option, index) => (
-                <li key={index} className="py-1">
-                  <label htmlFor={option} className="flex  gap-2">
-                    <input type="checkbox" name={option} id={option} />
-                    <span className="text-xs">{option}</span>
-                  </label>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+
+        <Input onCheckboxChange={handleCheckboxChange} />
+
         <div className="px-4 py-4">
           <button
+            onClick={applyFilters}
             type="button"
             className="bg-blue-500 text-white py-2 w-full  sm:m-0 text-md font-semibold rounded-md align-self-center sm:box-content sm:w-full"
           >

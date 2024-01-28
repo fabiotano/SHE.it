@@ -53,8 +53,6 @@ function PaginationControl({
       newPage = paginationOption;
     }
 
-    console.log(paginationOption);
-
     setPagePagination((prevPagination) => ({
       ...prevPagination,
       page: newPage,
@@ -112,12 +110,11 @@ export default PaginationControl;
 
 function mergeSearchParams(existingParams, newParams) {
   const mergedParams = new URLSearchParams(existingParams);
-  console.log('mergedParams', mergedParams.toString());
+
   // override or add new parameters
   for (const [key, value] of newParams) {
     mergedParams.set(key, value);
   }
-  console.log('mergedParams2', mergedParams.toString());
 
   return mergedParams.toString();
 }

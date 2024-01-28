@@ -62,7 +62,6 @@ function Products({ searchParams }) {
 
   const productsPaginated = filteredProducts.slice(startIndex, endIndex);
 
-  console.log(filteredProducts.length / perPage);
 
   return (
     <div className="container">

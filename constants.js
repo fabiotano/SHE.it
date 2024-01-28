@@ -9,8 +9,9 @@ export const products = [
     discount: 5,
     favorite: true,
     brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia',''],
-    subCategory: ['']
+    category: 'Peluqueria',
+    subCategory: [''],
+    available: true,
   },
   {
     id: 2,
@@ -22,8 +23,9 @@ export const products = [
     discount: 10,
     favorite: false,
     brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    category: 'Peluqueria',
+    subCategory: [''],
+    available: true,
   },
   {
     id: 3,
@@ -35,8 +37,9 @@ export const products = [
     discount: 10,
     favorite: false,
     brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    category: 'Peluqueria',
+    subCategory: [''],
+    available: true,
   },
   {
     id: 4,
@@ -48,8 +51,9 @@ export const products = [
     discount: 10,
     favorite: true,
     brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    category: 'Estetica',
+    subCategory: [''],
+    available: true,
   },
   {
     id: 5,
@@ -61,8 +65,9 @@ export const products = [
     discount: 5,
     favorite: true,
     brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    category: 'Barberia',
+    subCategory: [''],
+    available: false,
   },
   {
     id: 6,
@@ -74,8 +79,9 @@ export const products = [
     discount: 5,
     favorite: true,
     brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    category: 'Barberia',
+    subCategory: [''],
+    available: false,
   },
   {
     id: 7,
@@ -87,8 +93,9 @@ export const products = [
     discount: 5,
     favorite: false,
     brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    category: 'Barberia',
+    subCategory: [''],
+    available: false,
   },
   {
     id: 8,
@@ -99,9 +106,10 @@ export const products = [
     price: 385.75,
     discount: 5,
     favorite: true,
-    brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    brand: 'Marca 4',
+    category: 'Estetica',
+    subCategory: [''],
+    available: true,
   },
   {
     id: 9,
@@ -112,9 +120,10 @@ export const products = [
     price: 385.75,
     discount: 5,
     favorite: true,
-    brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    brand: 'Marca 3',
+    category: 'Estetica',
+    subCategory: [''],
+    available: true,
   },
   {
     id: 10,
@@ -125,9 +134,10 @@ export const products = [
     price: 385.75,
     discount: 5,
     favorite: true,
-    brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    brand: 'Marca 2',
+    category: 'Estetica',
+    subCategory: [''],
+    available: true,
   },
   {
     id: 11,
@@ -138,9 +148,10 @@ export const products = [
     price: 385.75,
     discount: 5,
     favorite: true,
-    brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    brand: 'Marca 4',
+    category: 'Estetica',
+    subCategory: [''],
+    available: true,
   },
   {
     id: 12,
@@ -151,9 +162,10 @@ export const products = [
     price: 385.75,
     discount: 5,
     favorite: true,
-    brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    brand: 'Marca 3',
+    category: 'Barberia',
+    subCategory: [''],
+    available: true,
   },
   {
     id: 13,
@@ -164,33 +176,31 @@ export const products = [
     price: 385.75,
     discount: 5,
     favorite: true,
-    brand: 'Marca 1',
-    category: ['Crema','Coloracion','Aparatologia'],
-    subCategory: ['']
+    brand: 'Marca 2',
+    category: 'Barberia',
+    subCategory: [''],
+    available: false,
   },
 ];
 
 export const filters = [
   {
     title: 'Marcas',
+    titleBackend: 'brand',
     options: ['Marca 1', 'Marca 2', 'Marca 3', 'Marca 4', 'Marca 5', 'Marca 6'],
   },
   {
     title: 'Categoria',
-    options: [
-      'Categoria 1',
-      'Categoria 2',
-      'Categoria 3',
-      'Categoria 4',
-      'Categoria 5',
-      'Categoria 6',
-    ],
+    titleBackend: 'category',
+    options: ['Peluqueria', 'Estetica', 'Barberia', 'Aparatologia'],
   },
   {
     title: 'Disponibilidad',
+    titleBackend: 'available',
     options: ['Disponible', 'No disponible'],
   },
 ];
+
 
 export const sortOptions = [
   {

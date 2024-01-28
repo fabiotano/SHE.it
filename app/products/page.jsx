@@ -8,12 +8,7 @@ import { products, sortOptions } from '@/constants.js';
 import PaginationControl from '@/components/PaginationControl';
 
 function Products({ searchParams }) {
-  const page = parseInt(searchParams.page) || 1;
-  const perPage = parseInt(searchParams.perPage) || 5;
-
-  const startIndex = (page - 1) * perPage;
-  const endIndex = startIndex + perPage;
-
+  // sort options
   if (searchParams.sort) {
     products.sort((a, b) => {
       if (searchParams.sort === 'lowToHigh') {
@@ -28,7 +23,46 @@ function Products({ searchParams }) {
     });
   }
 
-  const productsPaginated = products.slice(startIndex, endIndex);
+  // filter options
+
+  let filteredProducts = products;
+
+  if (searchParams.category) {
+    const arrValues = searchParams.category.split(',');
+    filteredProducts = filteredProducts.filter((product) => {
+      return arrValues.includes(product.category);
+    });
+  }
+
+  if (searchParams.brand) {
+    const arrValues = searchParams.brand.split(',');
+    filteredProducts = filteredProducts.filter((product) => {
+      return arrValues.includes(product.brand);
+    });
+  }
+
+  if (searchParams.available) {
+    let arrValues = searchParams.available.split(',');
+    arrValues = arrValues.map((value) => {
+      if (value === 'Disponible') return true;
+      return false;
+    });
+    filteredProducts = filteredProducts.filter((product) => {
+      return arrValues.includes(product.available);
+    });
+  }
+
+  // pagination
+
+  const page = parseInt(searchParams.page) || 1;
+  const perPage = parseInt(searchParams.perPage) || 5;
+
+  const startIndex = (page - 1) * perPage;
+  const endIndex = startIndex + perPage;
+
+  const productsPaginated = filteredProducts.slice(startIndex, endIndex);
+
+  console.log(filteredProducts.length / perPage);
 
   return (
     <div className="container">
@@ -66,10 +100,10 @@ function Products({ searchParams }) {
             ))}
           </div>
           <PaginationControl
-            hasNextPage={endIndex < products.length}
+            hasNextPage={endIndex <= filteredProducts.length}
             hasPreviousPage={startIndex > 0}
-            hasPagination={products.length > perPage}
-            pageQuantity={Math.ceil(products.length / perPage)}
+            hasPagination={filteredProducts.length >= perPage}
+            pageQuantity={Math.ceil(filteredProducts.length / perPage)}
           />
         </section>
       </div>

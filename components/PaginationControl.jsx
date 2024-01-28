@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,7 +19,6 @@ function PageButton({ page, perPage, setPagePagination, router }) {
           page: page,
           perPage: perPage,
         });
-        router.push(`?page=${page}&perPage=${perPage}`);
       }}
       disabled={parseInt(currentPage) === page}
     >
@@ -36,62 +35,72 @@ function PaginationControl({
 }) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const currentPage = parseInt(searchParams.get('page')) || 1;
 
   const [pagePagination, setPagePagination] = useState({
-    page: parseInt(searchParams.page) || 1,
+    page: currentPage,
     perPage: parseInt(searchParams.perPage) || 5,
   });
 
-  function handleNextPage() {
-    setPagePagination({
-      page: pagePagination.page + 1,
-      perPage: pagePagination.perPage,
-    });
-    router.push(
-      `?page=${pagePagination.page + 1}&perPage=${pagePagination.perPage}`
-    );
-  }
+  function handlePagination(paginationOption) {
+    let newPage;
 
-  function handlePreviousPage() {
-    setPagePagination({
-      page: pagePagination.page - 1,
-      perPage: pagePagination.perPage,
+    if (paginationOption === 'next') {
+      newPage = currentPage + 1;
+    } else if (paginationOption === 'previous') {
+      newPage = currentPage - 1;
+    } else if (typeof paginationOption === 'number') {
+      newPage = paginationOption;
+    }
+
+    console.log(paginationOption);
+
+    setPagePagination((prevPagination) => ({
+      ...prevPagination,
+      page: newPage,
+    }));
+
+    const newSearchParams = new URLSearchParams({
+      ...pagePagination,
+      page: newPage, // Use the new page number
     });
-    router.push(
-      `?page=${pagePagination.page - 1}&perPage=${pagePagination.perPage}`
-    );
+
+    // merge parameters and push new search params to router
+    const mergedSearchParams = mergeSearchParams(searchParams, newSearchParams);
+    router.push(`?${mergedSearchParams}`);
   }
 
   return (
     <div
       className={`flex justify-center gap-2 my-6 ${
-        !hasPagination ? 'hidden' : ''
+        !hasPagination ? 'hidden' : 'block'
       }`}
     >
       <button
         className={`border border-gray-400 px-2 py-2 outline-none ${
-          !hasPreviousPage ? 'bg-gray-300' : ''
+          !hasPreviousPage ? 'hidden' : ''
         }`}
-        onClick={handlePreviousPage}
-        disabled={!hasPreviousPage}
+        onClick={() => handlePagination('previous')}
       >
         <FontAwesomeIcon icon={faAngleLeft} />
       </button>
       {Array.from(Array(pageQuantity).keys()).map((page) => (
-        <PageButton
+        <button
+          className={`border border-gray-400 px-2 py-2 outline-none ${
+            parseInt(currentPage) === page + 1 ? 'bg-gray-300' : ''
+          } `}
           key={page}
-          page={page + 1}
-          perPage={pagePagination.perPage}
-          setPagePagination={setPagePagination}
-          router={router}
-        />
+          onClick={() => handlePagination(page + 1)}
+          disabled={parseInt(currentPage) === page + 1}
+        >
+          {page + 1}
+        </button>
       ))}
       <button
         className={`border border-gray-400 px-2 py-2 outline-none ${
-          !hasNextPage ? 'bg-gray-300' : ''
+          !hasNextPage ? 'hidden' : ''
         }`}
-        onClick={handleNextPage}
-        disabled={!hasNextPage}
+        onClick={() => handlePagination('next')}
       >
         <FontAwesomeIcon icon={faAngleRight} />
       </button>
@@ -100,3 +109,15 @@ function PaginationControl({
 }
 
 export default PaginationControl;
+
+function mergeSearchParams(existingParams, newParams) {
+  const mergedParams = new URLSearchParams(existingParams);
+  console.log('mergedParams', mergedParams.toString());
+  // override or add new parameters
+  for (const [key, value] of newParams) {
+    mergedParams.set(key, value);
+  }
+  console.log('mergedParams2', mergedParams.toString());
+
+  return mergedParams.toString();
+}

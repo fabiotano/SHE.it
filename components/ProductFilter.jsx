@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { filters } from '@/constants.js';
+import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -11,10 +12,79 @@ import {
 
 function ProductFilter() {
   const [showFilter, setShowFilter] = useState(false);
+  const [appliedFilter, setAppliedFilter] = useState({});
+
+  const router = useRouter();
+  const pathName = usePathname();
+  const searchParams = useSearchParams();
 
   const showFilterHandler = () => {
     setShowFilter(!showFilter);
   };
+
+  useEffect(() => {
+    const showSelectedFilters = () => {
+      searchParams.forEach((value, key) => {
+        if (key === 'category') {
+          const arrValues = value.split(',');
+          setAppliedFilter((prevState) => ({
+            ...prevState,
+            category: arrValues,
+          }));
+        }
+        if (key === 'brand') {
+          const arrValues = value.split(',');
+          setAppliedFilter((prevState) => ({
+            ...prevState,
+            brand: arrValues,
+          }));
+        }
+        if (key === 'available') {
+          const arrValues = value.split(',');
+          setAppliedFilter((prevState) => ({
+            ...prevState,
+            available: arrValues,
+          }));
+        }
+      });
+    };
+    showSelectedFilters();
+  }, []);
+
+  const handleFilters = (e) => {
+    const { filterCategory } = e.target.dataset;
+    const { name } = e.target;
+    const { checked } = e.target;
+
+    if (checked) {
+      setAppliedFilter((prevState) => ({
+        ...prevState,
+        [filterCategory]: [...(prevState[filterCategory] || []), name],
+      }));
+    }
+
+    if (!checked) {
+      setAppliedFilter((prevState) => {
+        const { [filterCategory]: rest, ...restOfFilters } = prevState;
+        const newFilters = rest.filter((filter) => filter !== name);
+
+        return newFilters.length > 0
+          ? { ...restOfFilters, [filterCategory]: newFilters }
+          : { ...restOfFilters };
+      });
+    }
+  };
+
+  const applyFilters = () => {
+    const filters = Object.entries(appliedFilter).map(([key, value]) => {
+      return `${key}=${value.join(',')}`;
+    });
+
+    const filtersString = filters.join('&');
+
+    router.push(`${pathName}?${filtersString}`);
+  };
+
   return (
     <section>
       <div
@@ -40,25 +110,42 @@ function ProductFilter() {
             onClick={showFilterHandler}
           />
         </div>
-        {filters.map((filter, index) => (
-          <div key={index} className="px-4 py-2">
-            <h3 className="text-sm font-bold">{filter.title}</h3>
-            <ul className="text-xs pl-2 mt-1">
-              {filter.options.map((option, index) => (
-                <li key={index} className="py-1">
-                  <label htmlFor={option} className="flex  gap-2">
-                    <input type="checkbox" name={option} id={option} />
-                    <span className="text-xs">{option}</span>
-                  </label>
-                </li>
-              ))}
-            </ul>
+        {
+          <div className="px-4 py-2">
+            {filters.map((filterOption, index) => (
+              <div key={index}>
+                <h3 className="text-sm font-bold">{filterOption.title}</h3>
+                <ul className="text-xs pl-2 mt-1">
+                  {filterOption.options.map((option, index) => (
+                    <li key={index} className="py-1">
+                      <label htmlFor={option} className="flex  gap-2">
+                        <input
+                          data-filter-category={filterOption.titleBackend}
+                          type="checkbox"
+                          checked={
+                            appliedFilter[filterOption.titleBackend] &&
+                            appliedFilter[filterOption.titleBackend].includes(
+                              option
+                            )
+                          }
+                          name={option}
+                          id={option}
+                          onChange={(e) => handleFilters(e)}
+                        />
+                        <span className="text-xs">{option}</span>
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        ))}
+        }
         <div className="px-4 py-4">
           <button
             type="button"
             className="bg-blue-500 text-white py-2 w-full  sm:m-0 text-md font-semibold rounded-md align-self-center sm:box-content sm:w-full"
+            onClick={applyFilters}
           >
             Aplicar
           </button>

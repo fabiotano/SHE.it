@@ -1,31 +1,10 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
-function PageButton({ page, perPage, setPagePagination, router }) {
-  const searchParams = useSearchParams();
-  const currentPage = parseInt(searchParams.get('page')) || 1;
-
-  return (
-    <button
-      className={`border border-gray-400 px-2 py-2 outline-none ${
-        parseInt(currentPage) === page ? 'bg-gray-300' : ''
-      } `}
-      onClick={() => {
-        setPagePagination({
-          page: page,
-          perPage: perPage,
-        });
-      }}
-      disabled={parseInt(currentPage) === page}
-    >
-      {page}
-    </button>
-  );
-}
 
 function PaginationControl({
   hasNextPage,

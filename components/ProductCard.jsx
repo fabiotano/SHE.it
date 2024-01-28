@@ -2,11 +2,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 function ProductCard(props) {
   const { product } = props;
   return (
-    <div className="relative w-[170px] h-[250px] sm:w-[210px] sm:h-[300px]  bg-white border rounded-md m-auto">
+    <Link
+      href={`/products/${product.id}`}
+      className="relative w-[170px] h-[250px] sm:w-[210px] sm:h-[300px]  bg-white border rounded-md m-auto"
+    >
       {product.newFlag && (
         <div className="absolute top-1/2 bg-red-400 sm:-translate-x-1/4 w-14 h-7 text-white text-xs font-bold flex justify-center items-center z-50">
           Nuevo!
@@ -35,7 +39,7 @@ function ProductCard(props) {
         {` ${Math.floor(product.price)}`}
         <sup>{(product.price % 1).toFixed(2).substring(2)}</sup>
       </h4>
-    </div>
+    </Link>
   );
 }
 

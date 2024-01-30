@@ -1,11 +1,11 @@
-import ProductFilter from '@/components/ProductFilter';
-import ProductSort from '@/components/ProductSort';
+import ProductFilter from '@/components/client/ProductFilter';
+import ProductSort from '@/components/client/ProductSort';
 import ProductCard from '@/components/ProductCard';
 import { eugenpermaProducts } from '@/eugenpermaProduct';
 
 import Link from 'next/link';
 import { products, sortOptions } from '@/constants.js';
-import PaginationControl from '@/components/PaginationControl';
+import PaginationControl from '@/components/client/PaginationControl';
 
 function Products({ searchParams }) {
   // sort options
@@ -61,7 +61,6 @@ function Products({ searchParams }) {
   const endIndex = startIndex + perPage;
 
   const productsPaginated = filteredProducts.slice(startIndex, endIndex);
-
 
   return (
     <div className="container">

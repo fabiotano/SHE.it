@@ -183,6 +183,11 @@ export const products = [
   },
 ];
 
+export const mainMenu = [{
+  title: 'PRODOTTI',href: 'products',
+},{  title: 'COSMETICI',href: 'products'},
+{title: 'ABOUT US',href: 'products'}]
+
 export const filters = [
   {
     title: 'Marcas',

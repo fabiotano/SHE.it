@@ -1,23 +1,23 @@
-import ProductFilter from '@/components/client/ProductFilter';
-import ProductSort from '@/components/client/ProductSort';
-import ProductCard from '@/components/ProductCard';
-import { eugenpermaProducts } from '@/eugenpermaProduct';
+import ProductFilter from "@/components/client/ProductFilter";
+import ProductSort from "@/components/client/ProductSort";
+import ProductCard from "@/components/ProductCard";
+import { eugenpermaProducts } from "@/eugenpermaProduct";
 
-import Link from 'next/link';
-import { products, sortOptions } from '@/constants.js';
-import PaginationControl from '@/components/client/PaginationControl';
+import Link from "next/link";
+import { products, sortOptions } from "@/constants.js";
+import PaginationControl from "@/components/client/PaginationControl";
 
 function Products({ searchParams }) {
   // sort options
   if (searchParams.sort) {
     products.sort((a, b) => {
-      if (searchParams.sort === 'lowToHigh') {
+      if (searchParams.sort === "lowToHigh") {
         return a.price - b.price;
-      } else if (searchParams.sort === 'highToLow') {
+      } else if (searchParams.sort === "highToLow") {
         return b.price - a.price;
-      } else if (searchParams.sort === 'aToZ') {
+      } else if (searchParams.sort === "aToZ") {
         return a.title.localeCompare(b.title);
-      } else if (searchParams.sort === 'zToA') {
+      } else if (searchParams.sort === "zToA") {
         return b.title.localeCompare(a.title);
       }
     });
@@ -28,23 +28,23 @@ function Products({ searchParams }) {
   let filteredProducts = products;
 
   if (searchParams.category) {
-    const arrValues = searchParams.category.split(',');
+    const arrValues = searchParams.category.split(",");
     filteredProducts = filteredProducts.filter((product) => {
       return arrValues.includes(product.category);
     });
   }
 
   if (searchParams.brand) {
-    const arrValues = searchParams.brand.split(',');
+    const arrValues = searchParams.brand.split(",");
     filteredProducts = filteredProducts.filter((product) => {
       return arrValues.includes(product.brand);
     });
   }
 
   if (searchParams.available) {
-    let arrValues = searchParams.available.split(',');
+    let arrValues = searchParams.available.split(",");
     arrValues = arrValues.map((value) => {
-      if (value === 'Disponible') return true;
+      if (value === "Disponible") return true;
       return false;
     });
     filteredProducts = filteredProducts.filter((product) => {
@@ -66,31 +66,31 @@ function Products({ searchParams }) {
     <div className="container">
       <div className="text-2xs py-2 pl-3">
         <p>
-          <Link href={'/'}>Inicio</Link> /{' '}
+          <Link href={"/"}>Inicio</Link> /{" "}
           <span className="text-gray-300">Peluqueria</span>
         </p>
       </div>
-      <div className="sm:flex">
+      <div>
+        <h2 className="text-5xl font-bold text-center">Peluquería</h2>
+        <p className="text-center text-gray-400 text-xs mt-4 hidden sm:block">
+          ¿Buscas las mejores ofertas online en productos Peluquería ? No
+          busques más que nuestra tienda online ofrecemos una amplia variedad de
+          productos de Peluquería a los precios más competitivos en línea.
+          Además, ofrecemos regularmente promociones y descuentos especiales en
+          nuestros productos, por lo que seguro que encontrarás la mejor oferta
+          posible. Así que si buscas cualquier tipo de producto de Peluquería ,
+          ¡asegúrate de consultar primero nuestra tienda online!
+        </p>
+      </div>
+      {/* Sort Results */}
+      <div className="flex justify-center sm:justify-end my-6">
+        <p className="text-sm py-3 hidden sm:block">Ordenar por:</p>
+        <ProductSort />
+      </div>
+      <div className="mt-6 sm:flex">
         <ProductFilter />
-        <section className="mt-6 flex-grow">
-          <div>
-            <h2 className="text-5xl font-bold text-center">Peluquería</h2>
-            <p className="text-center text-gray-400 text-xs mt-4 hidden sm:block">
-              ¿Buscas las mejores ofertas online en productos Peluquería ? No
-              busques más que nuestra tienda online ofrecemos una amplia
-              variedad de productos de Peluquería a los precios más competitivos
-              en línea. Además, ofrecemos regularmente promociones y descuentos
-              especiales en nuestros productos, por lo que seguro que
-              encontrarás la mejor oferta posible. Así que si buscas cualquier
-              tipo de producto de Peluquería , ¡asegúrate de consultar primero
-              nuestra tienda online!
-            </p>
-          </div>
-          {/* Sort Results */}
-          <div className="flex justify-center sm:justify-end my-6">
-            <p className="text-sm py-3 hidden sm:block">Ordenar por:</p>
-            <ProductSort />
-          </div>
+
+        <section className="flex-grow">
           {/* Products */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-4 py-4">
             {productsPaginated.map((product, index) => (

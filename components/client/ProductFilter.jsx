@@ -115,7 +115,7 @@ function ProductFilter() {
             {filters.map((filterOption, index) => (
               <div key={index}>
                 <h3 className="text-sm font-bold">{filterOption.title}</h3>
-                <ul className="text-xs pl-2 mt-1">
+                <ul className="text-xs pl-2 mt-1 mb-3">
                   {filterOption.options.map((option, index) => (
                     <li key={index} className="py-1">
                       <label htmlFor={option} className="flex  gap-2">

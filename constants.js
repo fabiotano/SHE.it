@@ -187,7 +187,7 @@ export const filters = [
   {
     title: 'Marcas',
     titleBackend: 'brand',
-    options: ['Marca 1', 'Marca 2', 'Marca 3', 'Marca 4', 'Marca 5', 'Marca 6'],
+    options: ['Marca 1', 'Marca 2', 'Marca 3', 'Marca 4'],
   },
   {
     title: 'Categoria',

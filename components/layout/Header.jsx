@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Link from "next/link";
+import { mainMenu } from "@/constants";
 
 export default function Header2() {
   const [showMenu, setShowMenu] = useState(false);
@@ -98,18 +99,20 @@ export default function Header2() {
                 </form>
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="h-4" />
               </li>
-              {["PRODOTTI", "COSMETICI", "BALSAMI", "CREME", "ABOUT US"].map(
-                (item, idx) => (
-                  <li
+              {/* <Link href="products" */}
+              {mainMenu.map(
+                (menuItem, idx) => (
+                  <Link
+                    href={`/${menuItem.href}`}
                     key={idx}
-                    className={`hidden text-lef ${
-                      idx > 0 ? "pl-[5%]" : ""
-                    }  sm:flex sm:text-lg lg:text-lg`}
+                    className={`hidden text-lef ${idx > 0 ? "pl-[5%]" : ""
+                      }  sm:flex sm:text-lg lg:text-lg`}
                   >
-                    {item}
-                  </li>
+                    {menuItem.title}
+                  </Link>
                 )
               )}
+              {/* </Link> */}
             </ul>
           </nav>
         </div>

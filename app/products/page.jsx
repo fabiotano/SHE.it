@@ -1,10 +1,9 @@
 import ProductFilter from "@/components/client/ProductFilter";
 import ProductSort from "@/components/client/ProductSort";
 import ProductCard from "@/components/ProductCard";
-import { eugenpermaProducts } from "@/eugenpermaProduct";
 
 import Link from "next/link";
-import { products, sortOptions } from "@/constants.js";
+import { products, sortOptions } from "@/eugenpermaProduct.js";
 import PaginationControl from "@/components/client/PaginationControl";
 
 function Products({ searchParams }) {

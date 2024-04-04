@@ -134,7 +134,7 @@ export default function Header2() {
                 onClick={clickMenuHandler}
                 className="text-white hover:underline"
               >
-                PRODOTTI
+                CAPELLI
               </Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
@@ -154,7 +154,7 @@ export default function Header2() {
                 onClick={clickMenuHandler}
                 className="text-white hover:underline"
               >
-                BALSAMI
+                BARBERIA
               </Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
@@ -164,7 +164,7 @@ export default function Header2() {
                 onClick={clickMenuHandler}
                 className="text-white hover:underline"
               >
-                CREME
+                ACCESSORI
               </Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>

@@ -61,7 +61,7 @@ function PaginationControl({
       >
         <FontAwesomeIcon icon={faAngleLeft} />
       </button>
-      {Array.from(Array(pageQuantity).keys()).map((page) => (
+      {Array.from(Array(Math.min(3, pageQuantity)).keys()).map((page) => (
         <button
           className={`border border-gray-400 px-2 py-2 outline-none ${
             parseInt(currentPage) === page + 1 ? 'bg-gray-300' : ''

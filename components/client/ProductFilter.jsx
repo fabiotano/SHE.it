@@ -141,7 +141,7 @@ function ProductFilter() {
             ))}
           </div>
         }
-        <div className="px-4 py-4">
+        <div className="px-4 pb-4">
           <button
             type="button"
             className="bg-blue-500 text-white py-2 w-full  sm:m-0 text-md font-semibold rounded-md align-self-center sm:box-content sm:w-full"

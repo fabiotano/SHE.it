@@ -1,6 +1,7 @@
 import BrandCarousel from '@/components/client/BrandCarousel';
 import Carousel from '@/components/client/Carousel';
 import ProductCarousel from '@/components/client/ProductCarousel';
+import ProductCategory from '@/components/client/ProductCategory';
 
 import React from 'react';
 
@@ -26,7 +27,9 @@ function Home() {
         <p className="text-sm text-center text-gray-400">
           Descubri las categorias de nuestras marcas
         </p>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:mt-5">
+
           {/* first div con clases diversas */}
           <div className="relative border rounded-md bg-white h-[333px] bg-cover bg-no-repeat bg-top mt-5 m-auto md:mt-2">
             <img
@@ -42,82 +45,12 @@ function Home() {
               </p>
             </div>
           </div>
+          <ProductCategory />
+          <ProductCategory />
+          <ProductCategory />
+          <ProductCategory />
+          <ProductCategory />
 
-          <div className="relative border rounded-md bg-white h-[333px] bg-cover bg-no-repeat mt-2 m-auto">
-            <img
-              className="w-full object-cover h-full"
-              src="/Carrousell-image1.jpg"
-              alt="Descripción de la imagen"
-            />
-            <div className="absolute inset-x-0 bottom-0 w-5/6 m-auto bg-white p-3">
-              <h2 className="font-bold text-xl mb-2 text-black">SHAMPOO</h2>
-              <p className="text-lg text-gray-400 mb-2">Descubre los packs</p>
-              <p className="font-bold text-sm text-red-500 mb-2">
-                Ver Todos --
-              </p>
-            </div>
-          </div>
-
-          <div className="relative border rounded-md bg-white h-[333px] bg-cover bg-no-repeat mt-2 m-auto">
-            <img
-              className="w-full object-cover h-full"
-              src="/Carrousell-image1.jpg"
-              alt="Descripción de la imagen"
-            />
-            <div className="absolute inset-x-0 bottom-0 w-5/6 m-auto bg-white p-3">
-              <h2 className="font-bold text-xl mb-2 text-black">SHAMPOO</h2>
-              <p className="text-lg text-gray-400 mb-2">Descubre los packs</p>
-              <p className="font-bold text-sm text-red-500 mb-2">
-                Ver Todos --
-              </p>
-            </div>
-          </div>
-
-          <div className="relative border rounded-md bg-white h-[333px] bg-cover bg-no-repeat mt-2 m-auto">
-            <img
-              className="w-full object-cover h-full"
-              src="/Carrousell-image1.jpg"
-              alt="Descripción de la imagen"
-            />
-            <div className="absolute inset-x-0 bottom-0 w-5/6 m-auto bg-white p-3">
-              <h2 className="font-bold text-xl mb-2 text-black">SHAMPOO</h2>
-              <p className="text-lg text-gray-400 mb-2">Descubre los packs</p>
-              <p className="font-bold text-sm text-red-500 mb-2">
-                Ver Todos --
-              </p>
-            </div>
-          </div>
-
-          <div className="relative border rounded-md bg-white h-[333px] bg-cover bg-no-repeat mt-2 m-auto">
-            <img
-              className="w-full object-cover h-full"
-              src="/Carrousell-image1.jpg"
-              alt="Descripción de la imagen"
-            />
-            <div className="absolute inset-x-0 bottom-0 w-5/6 m-auto bg-white p-3">
-              <h2 className="font-bold text-xl mb-2 text-black">SHAMPOO</h2>
-              <p className="text-lg text-gray-400 mb-2">Descubre los packs</p>
-              <p className="font-bold text-sm text-red-500 mb-2">
-                Ver Todos --
-              </p>
-            </div>
-          </div>
-
-          {/* last div con clases diversas */}
-          <div className="relative border rounded-md bg-white h-[333px] bg-cover bg-no-repeat mt-2 mb-8 m-auto">
-            <img
-              className="w-full object-cover h-full"
-              src="/Carrousell-image1.jpg"
-              alt="Descripción de la imagen"
-            />
-            <div className="absolute inset-x-0 bottom-0 w-5/6 m-auto bg-white p-3">
-              <h2 className="font-bold text-xl mb-2 text-black">SOLARES</h2>
-              <p className="text-lg text-gray-400 mb-2">Descubre los packs</p>
-              <p className="font-bold text-sm text-red-500 mb-2">
-                Ver Todos --
-              </p>
-            </div>
-          </div>
         </div>
       </section>
     </div>

@@ -41,12 +41,18 @@ export default function page() {
 
   return (
     <div className="relative">
-      <h1 className="text-md md:text-xl text-center mt-6">
-        {isClicked ? (
-          <span style={{ color: 'red' }}>HAI SELEZIONATO {selectedRegion}</span>
-        ) : (
-          isHovered ? selectedRegion : "Indique la región de donde pides"
-        )}
+      <h1 className="text-md md:text-lg text-center h-10 mt-6 mb-4">
+      {isClicked ? (
+  <span style={{ color: 'red' }}>HAI SELEZIONATO {selectedRegion}</span>
+) : (
+  isHovered ? selectedRegion : (
+    <span>
+      Da dove ci stai contattando? <br />
+      Ti offriremo tutti i nostri prodotti disponibili per la tua regione.
+    </span>
+  )
+)}
+
       </h1>
       <ComposableMap
         projection="geoAzimuthalEqualArea"

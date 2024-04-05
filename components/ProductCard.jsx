@@ -11,6 +11,9 @@ function ProductCard(props) {
       href={`/products/${product.id}`}
       className="relative w-[170px] h-[250px] sm:w-[210px] sm:h-[300px]  bg-white border rounded-md m-auto"
     >
+      <h3 className="text-center font-italic text-xs mt-1 text-gray-600">
+        {product.subCategory}
+      </h3>
       {product.newFlag && (
         <div className="absolute top-1/2 bg-red-400 sm:-translate-x-1/4 w-14 h-7 text-white text-xs font-bold flex justify-center items-center z-50">
           Nuevo!
@@ -32,6 +35,9 @@ function ProductCard(props) {
       </div>
       <h3 className="text-center font-semibold text-md mt-3">
         {product.title}
+      </h3>
+      <h3 className="text-center text-sm mt-1">
+        {product.format}
       </h3>
       <h6 className="text-center text-xs text-gray-400">{product.desc}</h6>
       <h4 className="text-center font-bold mt-3">

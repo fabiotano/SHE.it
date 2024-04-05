@@ -18,7 +18,7 @@ function PaginationControl({
 
   const [pagePagination, setPagePagination] = useState({
     page: currentPage,
-    perPage: parseInt(searchParams.perPage) || 5,
+    perPage: parseInt(searchParams.perPage) || 8,
   });
 
   function handlePagination(paginationOption) {
@@ -49,7 +49,7 @@ function PaginationControl({
 
   return (
     <div
-      className={`flex justify-center gap-2 my-6 ${
+      className={`flex justify-center gap-2 mt-6 mb-12 ${
         !hasPagination ? 'hidden' : 'block'
       }`}
     >

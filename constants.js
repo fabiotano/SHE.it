@@ -202,11 +202,11 @@ export const filters = [
     titleBackend: "category",
     options: ["Capelli", "Cosmetica", "Barberia", "Accessori"],
   },
-  {
-    title: "Entrega Inmediata",
-    titleBackend: "available",
-    options: ["Disponible", "No disponible"],
-  },
+  // {
+  //   title: "Entrega Inmediata",
+  //   titleBackend: "available",
+  //   options: ["Disponible", "No disponible"],
+  // },
 ];
 
 export const sortOptions = [

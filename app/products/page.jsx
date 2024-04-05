@@ -54,7 +54,7 @@ function Products({ searchParams }) {
   // pagination
 
   const page = parseInt(searchParams.page) || 1;
-  const perPage = parseInt(searchParams.perPage) || 5;
+  const perPage = parseInt(searchParams.perPage) || 8;
 
   const startIndex = (page - 1) * perPage;
   const endIndex = startIndex + perPage;
@@ -66,23 +66,17 @@ function Products({ searchParams }) {
       <div className="text-2xs py-2 pl-3">
         <p>
           <Link href={"/"}>Inicio</Link> /{" "}
-          <span className="text-gray-300">Peluqueria</span>
+          <span className="text-gray-300">Parruchhieri</span>
         </p>
       </div>
       <div>
-        <h2 className="text-5xl font-bold text-center">Peluquería</h2>
+        <h2 className="text-5xl font-bold text-center">Parrucchieria</h2>
         <p className="text-center text-gray-400 text-xs mt-4 hidden sm:block">
-          ¿Buscas las mejores ofertas online en productos Peluquería ? No
-          busques más que nuestra tienda online ofrecemos una amplia variedad de
-          productos de Peluquería a los precios más competitivos en línea.
-          Además, ofrecemos regularmente promociones y descuentos especiales en
-          nuestros productos, por lo que seguro que encontrarás la mejor oferta
-          posible. Así que si buscas cualquier tipo de producto de Peluquería ,
-          ¡asegúrate de consultar primero nuestra tienda online!
+        Esplora la nostra collezione di prodotti per capelli professionali, progettati per offrire risultati straordinari e un look impeccabile ad ogni utilizzo.
         </p>
       </div>
       {/* Sort Results */}
-      <div className="flex justify-center sm:justify-end my-6">
+      <div className="flex justify-center sm:justify-end my-5">
         <p className="text-sm py-3 hidden sm:block">Ordenar por:</p>
         <ProductSort />
       </div>

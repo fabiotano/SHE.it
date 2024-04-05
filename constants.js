@@ -185,8 +185,8 @@
 
 export const mainMenu = [
   { title: "CAPELLI", href: "products" },
-  { title: "COSMETICI", href: "products"},
-  { title: "BARBERIA", href: "products" },
+  // { title: "COSMETICI", href: "products"},
+  // { title: "BARBERIA", href: "products" },
   { title: "ACCESSORI", href: "products" },
   { title: "ABOUT US", href: "products" },
 ];
@@ -200,7 +200,7 @@ export const filters = [
   {
     title: "Subcategoria",
     titleBackend: "category",
-    options: ["Capelli", "Cosmetica", "Barberia", "Accessori"],
+    options: ["Capelli", "Accessori"],
   },
   // {
   //   title: "Entrega Inmediata",

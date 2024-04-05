@@ -25,7 +25,7 @@ export default function page() {
   // Introducir un retraso de 3 segundos antes de la redirección
   setTimeout(() => {
     router.push('/home');
-  }, 1500);
+  }, 300);
 };
 
   const regionReset = () => {
@@ -43,7 +43,7 @@ export default function page() {
     <div className="relative">
       <h1 className="text-md md:text-lg text-center h-10 mt-6 mb-4">
       {isClicked ? (
-  <span style={{ color: 'red' }}>HAI SELEZIONATO {selectedRegion}</span>
+  <span style={{ color: 'red' }}>{selectedRegion}</span>
 ) : (
   isHovered ? selectedRegion : (
     <span>

@@ -1,35 +1,36 @@
-import BrandCarousel from '@/components/client/BrandCarousel';
-import Carousel from '@/components/client/Carousel';
-import ProductCarousel from '@/components/client/ProductCarousel';
-import ProductCategory from '@/components/client/ProductCategory';
+import BrandCarousel from "@/components/client/BrandCarousel";
+import Carousel from "@/components/client/Carousel";
+import ProductCarousel from "@/components/client/ProductCarousel";
+import ProductCategory from "@/components/client/ProductCategory";
 
-import React from 'react';
+import React from "react";
 
 function Home() {
   return (
     <div className="container m-auto ">
       <Carousel />
       <section className="pt-8 pb-3 px-1">
-        <h2 className="text-2xl font-bold text-center">Productos Destacados</h2>
-        <p className="text-sm text-center text-gray-400">
-          Tienda Online de productos de Peluqueria y Estetica
+        <h2 className="text-2xl font-bold text-center">Le nostre scelte per te</h2>
+        <p className="text-sm text-center text-gray-400 mt-2 mb-4">
+          Scopri i prodotti in primo piano che renderanno i tuoi capelli
+          impeccabili. Entra e porta l'eccellenza nel tuo salone!
         </p>
         <ProductCarousel />
       </section>
 
       <section className="pt-8 pb-3 bg-gray-100">
-        <h2 className="text-2xl font-bold text-center ">Nuestras Marcas</h2>
+        {/* <h2 className="text-2xl font-bold text-center">Brands</h2> */}
         <BrandCarousel />
       </section>
 
       <section className="pt-8 px-8 pb-3 ">
-        <h2 className="text-2xl font-bold text-center">Categorias</h2>
-        <p className="text-sm text-center text-gray-400">
-          Descubri las categorias de nuestras marcas
+        <h2 className="text-2xl font-bold text-center">Categorie</h2>
+        <p className="text-sm text-center text-gray-400 mt-2 mb-4">
+          Scopri la nostra vasta gamma di prodotti per capelli, accessori e
+          creme
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:mt-5">
-
           {/* first div con clases diversas */}
           <div className="relative border rounded-md bg-white h-[333px] bg-cover bg-no-repeat bg-top mt-5 m-auto md:mt-2">
             <img
@@ -50,7 +51,6 @@ function Home() {
           <ProductCategory />
           <ProductCategory />
           <ProductCategory />
-
         </div>
       </section>
     </div>

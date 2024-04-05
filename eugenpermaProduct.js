@@ -9,7 +9,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
   },
@@ -23,7 +23,7 @@ export const products = [
     subCategory: [''],
     newFlag: true,
     favorite: true,
-    available: false,
+    selected: false,
     image: '/products/image-2.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -38,7 +38,7 @@ export const products = [
     subCategory: [''],
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -53,7 +53,7 @@ export const products = [
     subCategory: [''],
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-2.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -68,7 +68,7 @@ export const products = [
     subCategory: [''],
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -83,7 +83,7 @@ export const products = [
     subCategory: 'STIRATURA',
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -98,7 +98,7 @@ export const products = [
     subCategory: "STIRATURA",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -113,7 +113,7 @@ export const products = [
     subCategory: "STIRATURA",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -128,7 +128,7 @@ export const products = [
     subCategory: "COLORAZIONE PERMANENTE",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -143,7 +143,7 @@ export const products = [
     subsubCategory: "COLORAZIONE PERMANENTE",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -158,7 +158,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -173,7 +173,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -188,7 +188,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -203,7 +203,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -218,7 +218,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -233,7 +233,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -248,7 +248,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -263,7 +263,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -278,7 +278,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -293,7 +293,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -308,7 +308,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -323,7 +323,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -338,7 +338,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -353,7 +353,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -368,7 +368,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -383,7 +383,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -398,7 +398,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -413,7 +413,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -428,7 +428,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -443,7 +443,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -458,7 +458,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -473,7 +473,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -488,7 +488,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -503,7 +503,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -518,7 +518,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -533,7 +533,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -548,7 +548,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -564,7 +564,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -579,7 +579,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -594,7 +594,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -609,7 +609,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -624,7 +624,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -639,7 +639,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -654,7 +654,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -669,7 +669,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -684,7 +684,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -699,7 +699,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -714,7 +714,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -729,7 +729,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -744,7 +744,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -759,7 +759,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -774,7 +774,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -789,7 +789,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -804,7 +804,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -819,7 +819,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -834,7 +834,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -849,7 +849,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -864,7 +864,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -879,7 +879,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -894,7 +894,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -909,7 +909,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -924,7 +924,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -939,7 +939,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -953,7 +953,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -967,7 +967,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -981,7 +981,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -995,7 +995,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1009,7 +1009,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1023,7 +1023,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1037,7 +1037,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1051,7 +1051,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1065,7 +1065,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1079,7 +1079,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1093,7 +1093,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1107,7 +1107,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1121,7 +1121,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1135,7 +1135,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1150,7 +1150,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1164,7 +1164,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1178,7 +1178,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1192,7 +1192,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1206,7 +1206,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1220,7 +1220,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1234,7 +1234,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1248,7 +1248,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1262,7 +1262,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1276,7 +1276,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1290,7 +1290,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1304,7 +1304,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1318,7 +1318,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1332,7 +1332,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1346,7 +1346,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1360,7 +1360,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1374,7 +1374,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1388,7 +1388,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1402,7 +1402,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1416,7 +1416,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1430,7 +1430,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1444,7 +1444,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1458,7 +1458,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1472,7 +1472,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1486,7 +1486,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1500,7 +1500,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1514,7 +1514,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1528,7 +1528,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1542,7 +1542,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1556,7 +1556,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1570,7 +1570,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1584,7 +1584,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1598,7 +1598,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1612,7 +1612,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1626,7 +1626,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1640,7 +1640,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1654,7 +1654,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1668,7 +1668,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1682,7 +1682,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1696,7 +1696,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1710,7 +1710,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1724,7 +1724,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1738,7 +1738,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1752,7 +1752,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1766,7 +1766,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1780,7 +1780,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1794,7 +1794,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1808,7 +1808,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1822,7 +1822,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1836,7 +1836,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1850,7 +1850,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1864,7 +1864,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1878,7 +1878,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1892,7 +1892,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1906,7 +1906,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1920,7 +1920,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1934,7 +1934,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1948,7 +1948,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1962,7 +1962,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1976,7 +1976,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -1990,7 +1990,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -2004,7 +2004,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -2018,7 +2018,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -2032,7 +2032,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -2046,7 +2046,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -2060,7 +2060,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -2074,7 +2074,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -2088,7 +2088,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -2102,7 +2102,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -2116,7 +2116,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -2130,7 +2130,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 
@@ -2144,7 +2144,7 @@ export const products = [
     category: "Capelli",
     newFlag: true,
     favorite: true,
-    available: true,
+    selected: true,
     image: '/products/image-1.jpg',
     region: ['Abruzzo', 'Lazio']
 

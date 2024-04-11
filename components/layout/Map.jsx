@@ -1,16 +1,20 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
+
+import { useMediaQuery } from "@react-hook/media-query";
 
 const geoUrl =
   "https://raw.githubusercontent.com/openpolis/geojson-italy/master/geojson/limits_IT_regions.geojson";
 
-export default function page() {
+export default function Page() {
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [isClicked, setIsClicked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter(); // Descomenta esta línea
+
+  const isMobile = useMediaQuery("(max-width: 768px)"); // Mover el hook aquí
 
   const showRegion = (geo) => {
     setIsHovered(true);
@@ -22,11 +26,11 @@ export default function page() {
     setIsClicked(true);
     setIsHovered(false);
 
-  // Introducir un retraso de 3 segundos antes de la redirección
-  setTimeout(() => {
-    router.push('/home');
-  }, 300);
-};
+    // Introducir un retraso de 3 segundos antes de la redirección
+    setTimeout(() => {
+      router.push("/home");
+    }, 450);
+  };
 
   const regionReset = () => {
     setIsClicked(false);
@@ -41,25 +45,35 @@ export default function page() {
 
   return (
     <div className="relative">
-      <h1 className="text-md md:text-lg text-center h-10 mt-6 mb-4">
-      {isClicked ? (
-  <span style={{ color: 'red' }}>{selectedRegion}</span>
-) : (
-  isHovered ? selectedRegion : (
-    <span>
-      Da dove ci stai contattando? <br />
-      Ti offriremo tutti i nostri prodotti disponibili per la tua regione.
-    </span>
-  )
-)}
+      <div className="text-center h-10 mt-6 mb-4">
+        {isClicked ? (
+          <p className="text-xl" style={{ color: "red" }}> {selectedRegion}</p>
+        ) : (
+          <>
+            {isHovered ? (
+              selectedRegion
+            ) : (
+              <>
+                <p className="text-sm md:text-lg mb-2">
+                  Da dove ci stai contattando?
+                </p>
+                <p className="text-xs md:text-md">
+                  Mostreremo tutti i nostri prodotti disponibili per la tua
+                  regione.
+                </p>
+              </>
+            )}
+          </>
+        )}
+      </div>
 
-      </h1>
       <ComposableMap
+        className="w-full md:w-auto"
         projection="geoAzimuthalEqualArea"
         projectionConfig={{
           rotate: [-11.0, -53, 0],
-          center: [0, -18.5],
-          scale: 1300,
+          center: isMobile ? [0, -11.5] : [0, -17.5],
+          scale: isMobile ? 2600 : 1400,
         }}
       >
         <Geographies geography={geoUrl}>

@@ -3,7 +3,7 @@ import ProductSort from "@/components/client/ProductSort";
 import ProductCard from "@/components/ProductCard";
 
 import Link from "next/link";
-import { products, sortOptions } from "@/eugenpermaProduct.js";
+import { products, sortOptions } from "@/products.js";
 import PaginationControl from "@/components/client/PaginationControl";
 
 function Products({ searchParams }) {
@@ -80,7 +80,7 @@ function Products({ searchParams }) {
         <p className="text-sm py-3 hidden sm:block">Ordenar por:</p>
         <ProductSort />
       </div>
-      <div className="mt-6 sm:flex">
+      <div className="mt-4 mb-4 sm:flex">
         <ProductFilter />
 
         <section className="flex-grow">

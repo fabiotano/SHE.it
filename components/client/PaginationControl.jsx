@@ -49,7 +49,7 @@ function PaginationControl({
 
   return (
     <div
-      className={`flex justify-center gap-2 mt-6 mb-12 ${
+      className={`flex justify-center gap-2 mt-6 mb-8 ${
         !hasPagination ? 'hidden' : 'block'
       }`}
     >

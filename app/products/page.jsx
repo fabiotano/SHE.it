@@ -1,6 +1,6 @@
 import ProductFilter from "@/components/client/ProductFilter";
 import ProductSort from "@/components/client/ProductSort";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/client/ProductCard";
 
 import Link from "next/link";
 import { products, sortOptions } from "@/products.js";
@@ -66,13 +66,13 @@ function Products({ searchParams }) {
       <div className="text-2xs py-2 pl-3">
         <p>
           <Link href={"/"}>Inicio</Link> /{" "}
-          <span className="text-gray-300">Parruchhieri</span>
+          <span className="text-gray-300">Parrucchieria</span>
         </p>
       </div>
       <div>
         <h2 className="text-5xl font-bold text-center">Parrucchieria</h2>
         <p className="text-center text-gray-400 text-xs mt-4 hidden sm:block">
-        Esplora la nostra collezione di prodotti per capelli professionali, progettati per offrire risultati straordinari e un look impeccabile ad ogni utilizzo.
+          Esplora la nostra collezione di prodotti per capelli professionali, progettati per offrire risultati straordinari e un look impeccabile ad ogni utilizzo.
         </p>
       </div>
       {/* Sort Results */}
@@ -84,19 +84,22 @@ function Products({ searchParams }) {
         <ProductFilter />
 
         <section className="flex-grow">
-          {/* Products */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-4 py-4">
-            {productsPaginated.map((product, index) => (
-              <ProductCard key={index} product={product} />
-            ))}
-          </div>
-          <PaginationControl
-            hasNextPage={endIndex <= filteredProducts.length}
-            hasPreviousPage={startIndex > 0}
-            hasPagination={filteredProducts.length >= perPage}
-            pageQuantity={Math.ceil(filteredProducts.length / perPage)}
-          />
+          <Link href={"/product"}>
+            {/* Products */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-4 py-4">
+              {productsPaginated.map((product, index) => (
+                <ProductCard key={index} product={product} />
+              ))}
+            </div>
+            <PaginationControl
+              hasNextPage={endIndex <= filteredProducts.length}
+              hasPreviousPage={startIndex > 0}
+              hasPagination={filteredProducts.length >= perPage}
+              pageQuantity={Math.ceil(filteredProducts.length / perPage)}
+            />
+          </Link>
         </section>
+
       </div>
     </div>
   );

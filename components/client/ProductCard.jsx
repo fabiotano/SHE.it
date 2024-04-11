@@ -11,6 +11,8 @@ function ProductCard(props) {
       href={`/products/${product.id}`}
       className="relative w-[170px] h-[250px] sm:w-[210px] sm:h-[300px]  bg-white border rounded-md m-auto"
     >
+      <img src={product.brandLogo} className="{absolute top-1 left-1 z-50 h-3 cursor-pointer text-xs"></img> 
+      
       <h3 className="text-center font-italic text-xs mt-1 text-gray-600">
         {product.subCategory}
       </h3>

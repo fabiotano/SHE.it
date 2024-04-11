@@ -45,7 +45,7 @@ export default function Header2() {
             <div className="flex flex-auto justify-center sm:justify-start ">
               <Link href="/">
                 <img
-                  src="/logo.jpg"
+                  src="/logoShe.jpg"
                   alt="LogoSHE"
                   className="h-14 lg:-ml-2  sm:h-19 lg:h-21 sm:order-first"
                 />

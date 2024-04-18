@@ -25,7 +25,7 @@ export default function Header2() {
       <header className="borde border border-b-red-900 shadow-md">
         <div className="hidden sm:flex  justify-end items-center h-7 text-xs bg-gray-100">
           <ul className="flex items-center space-x-2 p-2">
-            <li>Aiuto e Contatto</li>
+            <li><a>info@she.com</a></li>
             <li>
               <FontAwesomeIcon icon={faPhone} className="h-3 ml-1" />
             </li>
@@ -45,7 +45,7 @@ export default function Header2() {
             <div className="flex flex-auto justify-center sm:justify-start ">
               <Link href="/">
                 <img
-                  src="/logoShe.jpg"
+                  src="/logoShe.png"
                   alt="LogoSHE"
                   className="h-14 lg:-ml-2  sm:h-19 lg:h-21 sm:order-first"
                 />
@@ -100,18 +100,17 @@ export default function Header2() {
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="h-4" />
               </li>
               {/* <Link href="products" */}
-              {mainMenu.map(
-                (menuItem, idx) => (
-                  <Link
-                    href={`/${menuItem.href}`}
-                    key={idx}
-                    className={`hidden text-lef ${idx > 0 ? "pl-[5%]" : ""
-                      }  sm:flex sm:text-lg lg:text-lg`}
-                  >
-                    {menuItem.title}
-                  </Link>
-                )
-              )}
+              {mainMenu.map((menuItem, idx) => (
+                <Link
+                  href={`/${menuItem.href}`}
+                  key={idx}
+                  className={`hidden text-lef ${
+                    idx > 0 ? "pl-[5%]" : ""
+                  }  sm:flex sm:text-lg lg:text-lg`}
+                >
+                  {menuItem.title}
+                </Link>
+              ))}
               {/* </Link> */}
             </ul>
           </nav>
@@ -138,7 +137,7 @@ export default function Header2() {
               </Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
-            <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
+            {/* <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
               <Link
                 href="products"
                 onClick={clickMenuHandler}
@@ -147,8 +146,8 @@ export default function Header2() {
                 COSMETICI
               </Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
-            </li>
-            <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
+            </li> */}
+            {/* <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
               <Link
                 href="products"
                 onClick={clickMenuHandler}
@@ -157,7 +156,7 @@ export default function Header2() {
                 BARBERIA
               </Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
-            </li>
+            </li> */}
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
               <Link
                 href="products"
@@ -170,7 +169,7 @@ export default function Header2() {
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
               <Link
-                href="products"
+                href="aboutUs"
                 onClick={clickMenuHandler}
                 className="text-white hover:underline"
               >

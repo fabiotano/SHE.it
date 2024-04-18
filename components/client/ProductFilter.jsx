@@ -25,21 +25,21 @@ function ProductFilter() {
   useEffect(() => {
     const showSelectedFilters = () => {
       searchParams.forEach((value, key) => {
-        if (key === 'category') {
+        if (key == 'subCategory') {
           const arrValues = value.split(',');
           setAppliedFilter((prevState) => ({
             ...prevState,
             category: arrValues,
           }));
         }
-        if (key === 'brand') {
+        if (key == 'brand') {
           const arrValues = value.split(',');
           setAppliedFilter((prevState) => ({
             ...prevState,
             brand: arrValues,
           }));
         }
-        if (key === 'available') {
+        if (key == 'price') {
           const arrValues = value.split(',');
           setAppliedFilter((prevState) => ({
             ...prevState,

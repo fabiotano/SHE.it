@@ -16,13 +16,11 @@ function Footer() {
                             height={32}
                         />
                         <div className="ps-2">
-                            <h3 className="font-bold text-lg">
-                                Lista de favoritos
+                            <h3 className="font-bold text-lg m-2">
+                                Lista dei favoriti
                             </h3>
                             <p className="text-sm">
-                                Guarda en tu perfil los artículos que más te
-                                gustan para no perderlos de vista hasta que
-                                llegue tu momento de comprar.
+                            Guarda nel tuo profilo gli articoli che preferisci, in modo da poterli tenere d'occhio fino a quando arriverà il momento di acquistarli.
                             </p>
                         </div>
                     </div>
@@ -33,25 +31,26 @@ function Footer() {
                             height={32}
                         />
                         <div className="ps-2">
-                            <h3 className="font-bold text-lg">
-                                Entrega rápida
+                            <h3 className="font-bold text-lg m-2">
+                                Consegna veloce
                             </h3>
                             <p className="text-sm">
-                                Todos los envíos realizados en el menor tiempo
-                                posible garantizado. Durante la tramitación del
-                                pedido, te ofreceremos una fecha de entrega
-                                garantizada o estimada.
+                            Tutte le spedizioni vengono effettuate nel minor tempo possibile, garantito. Durante l'elaborazione dell'ordine, ti forniremo una data di consegna garantita o stimata.
                             </p>
                         </div>
                     </div>
                     <div className="text-gray-50 flex align-top px-4 py-4">
                         <Image src={'/24_7.svg'} width={32} height={32} />
                         <div className="ps-2">
-                            <h3 className="font-bold text-lg">Pedidos 24/7</h3>
+                            <h3 className="font-bold text-lg m-2">Ordini disponibili 24/7</h3>
                             <p className="text-sm">
-                                Gestionamos tus pedidos en cualquier momento del
-                                día y de la semana, siempre buscando ofrecerte
-                                el mejor servicio.
+                            Gestiamo i tuoi ordini in qualsiasi momento del giorno e della settimana, cercando sempre di offrirti il miglior servizio possibile.
+
+
+
+
+
+
                             </p>
                         </div>
                     </div>
@@ -59,7 +58,7 @@ function Footer() {
             </div>
             <div className="flex p-6 max-width px-8 container ">
                 <div className="flex flex-col">
-                    <Image src={'/logo.jpg'} height={70} width={100} />
+                    <Image src={'/logoShe.jpg'} height={70} width={100} />
                     <p className="text-gray-500 text-sm w-64 mt-2">
                         Skin Hair Expo SRL
                     </p>

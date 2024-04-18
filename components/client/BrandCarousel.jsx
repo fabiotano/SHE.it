@@ -1,5 +1,5 @@
 'use client';
-const brands = Array.from({ length: 13 }, (_, index) => index + 1).map(
+const brands = Array.from({ length: 8 }, (_, index) => index + 1).map(
   (brand) => `/brands/${brand}.svg`
 );
 

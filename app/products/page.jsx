@@ -40,14 +40,14 @@ function Products({ searchParams }) {
     });
   }
 
-  if (searchParams.available) {
-    let arrValues = searchParams.available.split(",");
+  if (searchParams.price) {
+    let arrValues = searchParams.price.split(",");
     arrValues = arrValues.map((value) => {
       if (value === "Disponible") return true;
       return false;
     });
     filteredProducts = filteredProducts.filter((product) => {
-      return arrValues.includes(product.available);
+      return arrValues.includes(product.price);
     });
   }
 
@@ -86,7 +86,7 @@ function Products({ searchParams }) {
         <section className="flex-grow">
           <Link href={"/product"}>
             {/* Products */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-4 py-4">
+            <div className="flex flex-wrap gap-y-5 gap-x-4 py-4 m-4">
               {productsPaginated.map((product, index) => (
                 <ProductCard key={index} product={product} />
               ))}

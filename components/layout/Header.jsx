@@ -45,7 +45,7 @@ export default function Header2() {
             </div>
             {/* Logo */}
             <div className="flex flex-auto justify-center sm:justify-start ">
-              <Link href="/">
+              <Link href="/home">
                 <img
                   src="/logoShe.png"
                   alt="LogoSHE"
@@ -105,9 +105,9 @@ export default function Header2() {
               {/* <Link href="products" */}
               {mainMenu.map((menuItem, idx) => (
                 <Link
-                  href={`/${menuItem.href}`}
+                  href={`${menuItem.href}`}
                   key={idx}
-                  className={`hover:bg-gray-300 w-40 py-2 flex-shrink-0 flex-grow-0 flex-shrink hidden sm:flex sm:text-lg lg:text-lg ${
+                  className={`hover:bg-gray-200 w-32 py-2 flex-shrink-0 flex-grow-0 flex-shrink hidden sm:flex sm:text-lg lg:text-lg ${
                     idx === 0 ? "first:px-0" : "px-3"
                   }`}
                 >
@@ -133,7 +133,7 @@ export default function Header2() {
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
               <Link
-                href="/products"
+                href="/products/capelli"
                 onClick={clickMenuHandler}
                 className="text-white hover:underline"
               >
@@ -144,7 +144,7 @@ export default function Header2() {
 
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
               <Link
-                href="products"
+                href="/products/accessori"
                 onClick={clickMenuHandler}
                 className="text-white hover:underline"
               >

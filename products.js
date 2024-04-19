@@ -2151,7 +2151,7 @@ export const products = [
     region: ["Abruzzo", "Lazio"],
   },
   {
-    id: 1,
+    id: 100,
     title: "CARTELLA COLORI Liposome Hair Color - BIG",
     price: 65.0,
     format: "1 pz",

@@ -184,10 +184,10 @@
 // ];
 
 export const mainMenu = [
-  { title: "CAPELLI", href: "products" },
+  { title: "CAPELLI", href: "/products?category=Capelli" },
   // { title: "COSMETICI", href: "products"},
   // { title: "BARBERIA", href: "products" },
-  { title: "ACCESSORI", href: "products" },
+  { title: "ACCESSORI", href: "/products?category=Accessori"},
   { title: "ABOUT US", href: "us" },
 ];
 

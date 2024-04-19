@@ -7,6 +7,8 @@ import { products, sortOptions } from "@/products.js";
 import PaginationControl from "@/components/client/PaginationControl";
 
 function Products({ searchParams }) {
+  console.log(searchParams)
+  console.log('hola')
   // sort options
   if (searchParams.sort) {
     products.sort((a, b) => {

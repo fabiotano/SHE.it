@@ -188,7 +188,7 @@ export const mainMenu = [
   // { title: "COSMETICI", href: "products"},
   // { title: "BARBERIA", href: "products" },
   { title: "ACCESSORI", href: "products" },
-  { title: "ABOUT US", href: "aboutUs" },
+  { title: "ABOUT US", href: "us" },
 ];
 
 export const filters = [

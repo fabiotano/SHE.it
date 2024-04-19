@@ -169,7 +169,7 @@ export default function Header2() {
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
               <Link
-                href="aboutUs"
+                href="us"
                 onClick={clickMenuHandler}
                 className="text-white hover:underline"
               >

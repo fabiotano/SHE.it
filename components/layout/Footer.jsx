@@ -58,7 +58,7 @@ function Footer() {
             </div>
             <div className="flex p-6 max-width px-8 container ">
                 <div className="flex flex-col">
-                    <Image src={'/logoShe.jpg'} height={70} width={100} />
+                    <Image src={'/logoShe.png'} height={70} width={100} />
                     <p className="text-gray-500 text-sm w-64 mt-2">
                         Skin Hair Expo SRL
                     </p>

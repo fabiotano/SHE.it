@@ -11,35 +11,33 @@ const geoUrl =
 export default function Page() {
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [isClicked, setIsClicked] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const router = useRouter(); // Descomenta esta línea
-
-  const isMobile = useMediaQuery("(max-width: 768px)"); // Mover el hook aquí
+  const [isRedirected, setIsRedirected] = useState(false); // Nuevo estado
+  const router = useRouter();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const showRegion = (geo) => {
-    setIsHovered(true);
-    const regName = geo.properties.reg_name;
-    setSelectedRegion(regName);
+    if (!isRedirected) { // Evita que se ejecute si ya se redirigió
+      const regName = geo.properties.reg_name;
+      setSelectedRegion(regName);
+    }
   };
 
   const regionClicked = () => {
     setIsClicked(true);
-    setIsHovered(false);
-
+    setIsRedirected(true); // Establece isRedirected a true
     // Introducir un retraso de 3 segundos antes de la redirección
     setTimeout(() => {
       router.push("/home");
-    }, 450);
+    }, 500);
   };
 
   const regionReset = () => {
-    setIsClicked(false);
-    setIsHovered(false);
-    setSelectedRegion(null);
+    if (!isRedirected) { // Evita que se ejecute si ya se redirigió
+      setSelectedRegion(null);
+    }
   };
 
   useEffect(() => {
-    // Esta función se ejecutará cada vez que selectedRegion cambie
     console.log(`Has seleccionado la región ${selectedRegion}`);
   }, [selectedRegion]);
 
@@ -47,10 +45,10 @@ export default function Page() {
     <div className="relative">
       <div className="text-center h-10 mt-6 mb-4">
         {isClicked ? (
-          <p className="text-xl" style={{ color: "red" }}> {selectedRegion}</p>
+          <p className="text-xl" style={{ color: "red", fontSize : "40px" }}> {selectedRegion}</p>
         ) : (
           <>
-            {isHovered ? (
+            {selectedRegion && !isRedirected ? ( // Mostrar solo si se ha seleccionado y no se ha redirigido
               selectedRegion
             ) : (
               <>

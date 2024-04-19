@@ -25,7 +25,9 @@ export default function Header2() {
       <header className="borde border border-b-red-900 shadow-md">
         <div className="hidden sm:flex  justify-end items-center h-7 text-xs bg-gray-100">
           <ul className="flex items-center space-x-2 p-2">
-            <li><a>info@she.com</a></li>
+            <li>
+              <a>info@she.com</a>
+            </li>
             <li>
               <FontAwesomeIcon icon={faPhone} className="h-3 ml-1" />
             </li>
@@ -43,7 +45,7 @@ export default function Header2() {
             </div>
             {/* Logo */}
             <div className="flex flex-auto justify-center sm:justify-start ">
-              <Link href="/">
+              <Link href="/home">
                 <img
                   src="/logoShe.png"
                   alt="LogoSHE"
@@ -88,7 +90,7 @@ export default function Header2() {
           </div>
           <div className="border border-b-grey-300"></div>
           <nav>
-            <ul className="flex items-center text-sm py-2 sm:p-3 lg:pl-0 container">
+            <ul className="flex items-center text-sm py-2 sm:py-0 sm:p-3 lg:pl-0 container">
               <li className="sm:hidden flex items-center text-xs border border-gray-300 rounded-md justify-between w-full p-2 pl-3 mx-4 sm:text-lg lg:text-xl my-2">
                 <form className="flex-auto" action="">
                   <input
@@ -99,18 +101,20 @@ export default function Header2() {
                 </form>
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="h-4" />
               </li>
+
               {/* <Link href="products" */}
               {mainMenu.map((menuItem, idx) => (
                 <Link
-                  href={`/${menuItem.href}`}
+                  href={`${menuItem.href}`}
                   key={idx}
-                  className={`hidden text-lef ${
-                    idx > 0 ? "pl-[5%]" : ""
-                  }  sm:flex sm:text-lg lg:text-lg`}
+                  className={`hover:bg-gray-200 w-32 py-2 flex-shrink-0 flex-grow-0 flex-shrink hidden sm:flex sm:text-lg lg:text-lg ${
+                    idx === 0 ? "first:px-0" : "px-3"
+                  }`}
                 >
-                  {menuItem.title}
+                  <span>{menuItem.title}</span>
                 </Link>
               ))}
+
               {/* </Link> */}
             </ul>
           </nav>
@@ -129,7 +133,7 @@ export default function Header2() {
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
               <Link
-                href="/products"
+                href="/products/capelli"
                 onClick={clickMenuHandler}
                 className="text-white hover:underline"
               >
@@ -137,29 +141,10 @@ export default function Header2() {
               </Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
             </li>
-            {/* <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <Link
-                href="products"
-                onClick={clickMenuHandler}
-                className="text-white hover:underline"
-              >
-                COSMETICI
-              </Link>
-              <FontAwesomeIcon icon={faChevronDown} className="text-white" />
-            </li> */}
-            {/* <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <Link
-                href="products"
-                onClick={clickMenuHandler}
-                className="text-white hover:underline"
-              >
-                BARBERIA
-              </Link>
-              <FontAwesomeIcon icon={faChevronDown} className="text-white" />
-            </li> */}
+
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
               <Link
-                href="products"
+                href="/products/accessori"
                 onClick={clickMenuHandler}
                 className="text-white hover:underline"
               >
@@ -169,7 +154,7 @@ export default function Header2() {
             </li>
             <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
               <Link
-                href="aboutUs"
+                href="us"
                 onClick={clickMenuHandler}
                 className="text-white hover:underline"
               >

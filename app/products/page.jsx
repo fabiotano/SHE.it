@@ -7,6 +7,8 @@ import { products, sortOptions } from "@/products.js";
 import PaginationControl from "@/components/client/PaginationControl";
 
 function Products({ searchParams }) {
+  console.log(searchParams)
+  console.log('hola')
   // sort options
   if (searchParams.sort) {
     products.sort((a, b) => {
@@ -70,7 +72,7 @@ function Products({ searchParams }) {
         </p>
       </div>
       <div>
-        <h2 className="text-5xl font-bold text-center">Parrucchieria</h2>
+        <h2 className="text-3xl sm:text-5xl my-2 font-bold text-center">Parrucchieria</h2>
         <p className="text-center text-gray-400 text-xs mt-4 hidden sm:block">
           Esplora la nostra collezione di prodotti per capelli professionali, progettati per offrire risultati straordinari e un look impeccabile ad ogni utilizzo.
         </p>

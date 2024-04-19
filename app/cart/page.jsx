@@ -97,7 +97,7 @@ const Cart = () => {
           <Link href={"/"}>Carrito</Link>
         </p>
       </div>
-      <h2 className="text-5xl font-bold text-center">Carrito</h2>
+      <h2 className="text-3xl sm:text-5xl my-2 font-bold text-center">Carrito</h2>
       <section className="mt-6 flex-grow md:flex">
         <ul className="mt-6 mx-4 flex-auto flex flex-col flex-wrap justify-center md:mb-4">
           {products.map((product) => (

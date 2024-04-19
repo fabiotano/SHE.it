@@ -23,7 +23,7 @@ function Home() {
         <BrandCarousel />
       </section>
 
-      <section className="pt-8 px-8 pb-6 sm:pb-8 ">
+      <section className="pt-8 px-8 pb-8 sm:pb-8 ">
         <h2 className="text-2xl font-bold text-center">Categorie</h2>
         <p className="text-sm text-center text-gray-400 mt-2 mb-4">
           Scopri la nostra vasta gamma di prodotti per capelli, accessori e

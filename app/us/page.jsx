@@ -8,11 +8,10 @@ const About = () => {
           <a href="/">Inicio</a> / <span class="text-gray-300">About Us</span>
         </p>
       </div>
-      <h2 class="text-5xl font-bold text-center mb-6">Skin Hair Expo</h2>
-      <div className="my-8 grid grid-cols-2">
+      <h2 className="text-3xl md:text-5xl font-bold text-center my-2">Skin Hair Expo</h2>
+      <div className="md:my-6 md:grid md:grid-cols-2 items-center">
         <div>
-        {/* <h3 className="text-center text-3xl">SHE</h3> */}
-        <p className="text-center leading-9 p-8">
+        <p className="text-justify md:text-center leading-7 md:leading-9 px-10 py-5 md:p-12 font-italic text-md">
           SHE è un marchio di cosmetici specializzato nella produzione e vendita
           di prodotti professionali per parrucchieri ed estetisti. Con una vasta
           gamma di prodotti di alta qualità, SHE si distingue per offrire
@@ -29,9 +28,9 @@ const About = () => {
         </div>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11708.111169420341!2d13.92824824286415!3d42.808898738795655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331f2cad0da6a43%3A0xfea06498cf5a7d72!2s64018%20Tortoreto%2C%20Teramo%2C%20Italia!5e0!3m2!1ses-419!2sve!4v1713550582459!5m2!1ses-419!2sve"
-          width="600"
-          height="450"
-          style={{ border: 0 , padding: 3}} // Estilos CSS pasados como un objeto JavaScript
+          width="100%"
+          height="400"
+          style={{ border: 0 , width: "full"}} // Estilos CSS pasados como un objeto JavaScript
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"

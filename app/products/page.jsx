@@ -7,8 +7,7 @@ import { products, sortOptions } from "@/products.js";
 import PaginationControl from "@/components/client/PaginationControl";
 
 function Products({ searchParams }) {
-  console.log(searchParams)
-  console.log('hola')
+  // console.log(searchParams)
   // sort options
   if (searchParams.sort) {
     products.sort((a, b) => {
@@ -88,7 +87,7 @@ function Products({ searchParams }) {
         <section className="flex-grow">
           <Link href={"/products"}>
             {/* Products */}
-            <div className="flex flex-wrap -5 gap-x-4 py-4 m-4">
+            <div className="flex flex-wrap gap-4 py-4 m-4">
               {productsPaginated.map((product, index) => (
                 <ProductCard key={index} product={product} />
               ))}

@@ -5,15 +5,16 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="border">
+    <footer className="w-full max-w-6xl mx-auto pt-4 md:pt-8">
       <div className="max-width">
-        <div className="md:flex-row  sm:flex-col sm:flex bg-red-500 sm:py-4">
+        <div className="md:flex-row sm:flex-col sm:flex bg-red-400 sm:py-4">
           <div className="text-gray-50 flex align-top px-4 pt-4">
             <Image
               className="align-top"
               src={"/favoritos.svg"}
               width={32}
               height={32}
+              alt="Lista dei favoriti"
             />
             <div className="ps-2">
               <h3 className="font-bold text-lg m-2">Lista dei favoriti</h3>
@@ -25,7 +26,7 @@ function Footer() {
             </div>
           </div>
           <div className="text-gray-50 flex align-top px-4 py-4">
-            <Image src={"/entrega_rapida.svg"} width={32} height={32} />
+            <Image src={"/entrega_rapida.svg"} width={32} height={32} alt="Consegna veloce" />
             <div className="ps-2">
               <h3 className="font-bold text-lg m-2">Consegna veloce</h3>
               <p className="text-sm">
@@ -36,7 +37,7 @@ function Footer() {
             </div>
           </div>
           <div className="text-gray-50 flex align-top px-4 py-4">
-            <Image src={"/24_7.svg"} width={32} height={32} />
+            <Image src={"/24_7.svg"} width={32} height={32} alt="Ordini disponibili 24/7" />
             <div className="ps-2">
               <h3 className="font-bold text-lg m-2">Ordini disponibili 24/7</h3>
               <p className="text-sm">
@@ -48,46 +49,59 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex p-6 max-width px-8 container items-end">
-        <div className="flex flex-col">
-          <Image src={"/logoShe.png"} height={80} width={120} />
+
+      <div className="container max-w-6xl pt-5 md:py-10 mx-auto bg-white">
+
+      <div class="flex flex-col items-center justify-center mt-4 space-y-6 h-full md:flex-row md:space-y-0 md:justify-between md:items-start">
+    <div class="flex flex-col items-center space-y-8 md:items-start md:space-y-4">
+        <div class="h-14 flex items-center">
+            <Image src="/logoShe.png" height={50} width={75} className="w-32 md:ml-3" alt="Logo SHE" />
         </div>
-        <div className="flex flex-col xs:hidden ps-6">
-          <p className="text-gray-500 text-sm w-64">Skin Hair Expo SRL</p>
-          <Link href="" className="text-gray-500 text-sm mt-2">
-            Tortoreto 64018 (TE)
-          </Link>
+        <div class="flex flex-col items-center space-y-4 font-bold text-gray-600 md:flex-row md:space-y-0 md:space-x-6 md:ml-3">
+        <div className="group">
+                <Link href="" className="h-10 text-gray-600">Prodotti</Link>
+                <div className="mx-2 group-hover:border-b group-hover:border-red-500"></div>
+            </div>
+            <div className="group">
+                <Link href="" className="h-10 text-gray-600">Marche</Link>
+                <div className="mx-2 group-hover:border-b group-hover:border-red-500"></div>
+            </div>
+            <div className="group">
+                <Link href="" className="h-10 text-gray-600">Contatti</Link>
+                <div className="mx-2 group-hover:border-b group-hover:border-red-500"></div>
+            </div>
+            <div className="group">
+                <Link href="" className="h-10 text-gray-600">About us</Link>
+                <div className="mx-2 group-hover:border-b group-hover:border-red-500"></div>
+            </div>
         </div>
-        <div className="flex flex-col xs:hidden ps-1">
-          <Link href={""} className="text-gray-500 text-sm font-bold mb-1">
-            Prodotti
-          </Link>
-          <Link href={""} className="text-gray-500 text-xs pb-1">
-            Peluqueria
-          </Link>
-          <Link href={""} className="text-gray-500 text-xs">
-            Marche
-          </Link>
+    </div>
+
+    <div class="flex flex-col items-start justify-between space-y-4 text-gray-500">
+        <div class="flex items-center justify-center mx-auto space-x-4 md:justify-end md:mx-0">
+            <div class="h-14 flex items-center">
+                <Link href="#">
+                    <img src="images/icon-facebook.svg" alt="Facebook" className="h-6 text-black" />
+                </Link>
+            </div>
+            <div class="h-14 flex items-center">
+                <Link href="#">
+                    <img src="images/icon-twitter.svg" alt="Twitter" className="h-6" />
+                </Link>
+            </div>
+            <div class="h-14 flex items-center">
+                <Link href="#">
+                    <img src="images/icon-instagram.svg" alt="Instagram" className="h-6" />
+                </Link>
+            </div>
         </div>
-        <div className="flex flex-col xs:hidden ps-6">
-          <Link href={""} className="text-gray-500 text-sm font-bold mb-1">
-            Informazioni
-          </Link>
-          <Link
-            href={"https://wa.me/393294131136"}
-            className="text-gray-500 text-xs pb-1"
-          >
-            Contatti
-          </Link>
-          <Link href={"/us"} className="text-gray-500 text-xs">
-            About us
-          </Link>
+        <div class="font-bold justify-center text-gray-400">
+            &copy; 2023 - SHE. All rights reserved.
         </div>
-      </div>
-      <div className="h-6 bg-gray-200 flex justify-center align-middle">
-        <p className="text-center text-gray-500 text-xs m-auto">
-          &copy;2023 - SHE. All rights reserved.
-        </p>
+    </div>
+</div>
+
+        
       </div>
     </footer>
   );

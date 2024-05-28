@@ -9,7 +9,7 @@ function Home() {
   return (
     <div className="container m-auto ">
       <Carousel />
-      <section className="pt-8 pb-3 px-1">
+      <section className="w-full max-w-6xl mx-auto px-6 py-8 md:py-14">
         <h2 className="text-2xl font-bold text-center">Le nostre scelte per te</h2>
         <p className="text-sm text-center text-gray-400 mt-2 mb-4">
           Scopri i prodotti in primo piano che renderanno i tuoi capelli
@@ -18,12 +18,12 @@ function Home() {
         <ProductCarousel />
       </section>
 
-      <section className="pt-8 pb-3 bg-gray-100">
+      <section className="py-4 md:py-8 bg-gray-100">
         {/* <h2 className="text-2xl font-bold text-center">Brands</h2> */}
         <BrandCarousel />
       </section>
 
-      <section className="pt-8 px-8 pb-8 sm:pb-8 ">
+      <section className="w-full max-w-6xl mx-auto px-6  py-8 md:py-14 sm:pb-8 ">
         <h2 className="text-2xl font-bold text-center">Categorie</h2>
         <p className="text-sm text-center text-gray-400 mt-2 mb-4">
           Scopri la nostra vasta gamma di prodotti per capelli, accessori e

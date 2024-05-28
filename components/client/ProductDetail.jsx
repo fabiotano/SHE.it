@@ -25,9 +25,9 @@ function ProductCard(props) {
       </div>
 
       {/* Main content area */}
-      <div className="md:grid grid-cols-1 md:grid-cols-2 md:gap-8 w-full md:max-w-none mx-auto md:justify-evenly mt-1 mb-4 md:mt-10 md:mb-6">
+      <div className="md:grid grid-cols-1 md:grid-cols-2 md:gap-8 w-full md:max-w-none mx-auto md:justify-evenly mb-4 md:mt-6">
         {/* Product image with magnify feature */}
-        <div className="relative max-w-[350px] m-auto flex-shrink-0 justify-center mt-28 items-center border md:w-[350px] md:h-[350px]">
+        <div className="relative max-w-[350px] m-auto flex-shrink-0 justify-center mt-4 md:mt-20 items-center border md:w-[350px] md:h-[350px]">
           <div className="flex items-center justify-center h-full">
             <div className="object-cover">
               <img

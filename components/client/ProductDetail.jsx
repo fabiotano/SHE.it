@@ -1,7 +1,6 @@
 "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
-import ReactImageMagnify from "react-image-magnify";
 import Link from "next/link";
 
 function ProductCard(props) {
@@ -31,22 +30,10 @@ function ProductCard(props) {
         <div className="relative max-w-[350px] m-auto flex-shrink-0 justify-center mt-28 items-center border md:w-[350px] md:h-[350px]">
           <div className="flex items-center justify-center h-full">
             <div className="object-cover">
-              <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    alt: "Wristwatch by Ted Baker London",
-                    isFluidWidth: true,
-                    src: product.image,
-                  },
-                  largeImage: {
-                    src: product.image,
-                    width: 1200,
-                    height: 1800,
-                  },
-                  isHintEnabled: true,
-                  enlargedImagePosition: "over",
-                  lensStyle: { backgroundColor: "rgba(0,0,0,0.6)" },
-                }}
+              <img
+                src={product.image}
+                className="object-cover w-full h-full"
+                alt="Product"
               />
             </div>
           </div>

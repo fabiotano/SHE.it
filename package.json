@@ -16,7 +16,6 @@
     "next": "^14.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-image-magnify": "^2.7.4",
     "react-simple-maps": "^3.0.0",
     "swiper": "^11.0.5"
   },

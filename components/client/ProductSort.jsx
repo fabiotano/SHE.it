@@ -24,7 +24,7 @@ function ProductSort() {
 
   return (
     <select
-      className="border-b border-gray-400  px-2 text-sm mx-10 py-3 outline-none w-full sm:w-auto"
+      className="border-b border-gray-400 px-8 text-sm mx-10 py-3 outline-none w-1/2 sm:w-auto"
       onChange={handleSort}
     >
       {sortOptions.map((option, index) => (

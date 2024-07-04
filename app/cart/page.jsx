@@ -163,7 +163,7 @@ const Cart = () => {
             </li>
           ))}
 
-          <button className="hover:bg-gray-200 mx-8 border border border-gray-400 text-sm px-5 py-2 mt-6 mb-5">
+          <button className="hover:bg-gray-200 mx-8 border border-gray-400 text-sm px-5 py-2 mt-6 mb-5">
             {" "}
             <FontAwesomeIcon
               icon={faPersonRunning}

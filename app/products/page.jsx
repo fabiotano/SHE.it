@@ -64,30 +64,37 @@ function Products({ searchParams }) {
 
   return (
     <div className="container">
+
+      {/* Titulo */}
+
       <div className="text-2xs py-2 pl-3">
         <p>
           <Link href={"/"}>Inicio</Link> /{" "}
           <span className="text-gray-300">Parrucchieria</span>
         </p>
       </div>
+
       <div>
         <h2 className="text-3xl sm:text-5xl my-2 font-bold text-center">Parrucchieria</h2>
         <p className="text-center text-gray-400 text-xs mt-4 hidden sm:block">
           Esplora la nostra collezione di prodotti per capelli professionali, progettati per offrire risultati straordinari e un look impeccabile ad ogni utilizzo.
         </p>
       </div>
+
       {/* Sort Results */}
       <div className="flex justify-center sm:justify-end my-5">
         <p className="text-sm py-3 hidden sm:block">Ordenar por:</p>
         <ProductSort />
       </div>
+
+      {/* Filter */}
       <div className="mt-4 mb-4 sm:flex">
         <ProductFilter />
 
         <section className="flex-grow">
           <Link href={"/products"}>
             {/* Products */}
-            <div className="flex flex-wrap gap-4 py-4 m-4">
+            <div className="flex flex-wrap gap-2 py-2 m-2">
               {productsPaginated.map((product, index) => (
                 <ProductCard key={index} product={product} />
               ))}

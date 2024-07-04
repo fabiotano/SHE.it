@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { filters } from '@/constants.js';
-import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { useEffect, useState } from "react";
+import { filters } from "@/constants.js";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFilter,
   faFilterCircleXmark,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
 function ProductFilter() {
   const [showFilter, setShowFilter] = useState(false);
@@ -25,22 +25,22 @@ function ProductFilter() {
   useEffect(() => {
     const showSelectedFilters = () => {
       searchParams.forEach((value, key) => {
-        if (key == 'subCategory') {
-          const arrValues = value.split(',');
+        if (key == "subCategory") {
+          const arrValues = value.split(",");
           setAppliedFilter((prevState) => ({
             ...prevState,
             category: arrValues,
           }));
         }
-        if (key == 'brand') {
-          const arrValues = value.split(',');
+        if (key == "brand") {
+          const arrValues = value.split(",");
           setAppliedFilter((prevState) => ({
             ...prevState,
             brand: arrValues,
           }));
         }
-        if (key == 'price') {
-          const arrValues = value.split(',');
+        if (key == "price") {
+          const arrValues = value.split(",");
           setAppliedFilter((prevState) => ({
             ...prevState,
             available: arrValues,
@@ -77,10 +77,10 @@ function ProductFilter() {
 
   const applyFilters = () => {
     const filters = Object.entries(appliedFilter).map(([key, value]) => {
-      return `${key}=${value.join(',')}`;
+      return `${key}=${value.join(",")}`;
     });
 
-    const filtersString = filters.join('&');
+    const filtersString = filters.join("&");
 
     router.push(`${pathName}?${filtersString}`);
   };
@@ -89,7 +89,7 @@ function ProductFilter() {
     <section>
       <div
         onClick={showFilterHandler}
-        className="flex gap-2 justify-center h-10 border border-gray-400 rounded-md text-sm mx-4 mt-4 cursor-pointer sm:hidden "
+        className="flex gap-2 mx-auto justify-center h-10 border hover:bg-red-400 border-gray-400 rounded-md text-sm w-1/2 mt-4 cursor-pointer sm:hidden "
       >
         <FontAwesomeIcon
           icon={faFilter}
@@ -99,19 +99,19 @@ function ProductFilter() {
       </div>
       <div
         className={`${
-          showFilter ? 'block' : 'hidden'
+          showFilter ? "block" : "hidden"
         } sm:block sm:w-[200px] border border-gray-400 rounded-md text-sm mx-4 mt-4 flex flex-col `}
       >
         <div className="flex justify-between items-center px-4 py-2">
           <p className="text-gray-400 sm:text-lg">Filtros</p>
           <FontAwesomeIcon
             icon={faFilterCircleXmark}
-            className="text-gray-400 h-4 cursor-pointer sm:hidden"
+            className="text-gray-400 h-4 cursor-pointer"
             onClick={showFilterHandler}
           />
         </div>
         {
-          <div className="px-4 py-2">
+          <div className="pl-4 py-2">
             {filters.map((filterOption, index) => (
               <div key={index}>
                 <h3 className="text-sm font-bold">{filterOption.title}</h3>
@@ -150,6 +150,7 @@ function ProductFilter() {
             Aplicar
           </button>
         </div>
+        
       </div>
     </section>
   );

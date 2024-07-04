@@ -90,7 +90,7 @@ export default function Header2() {
           </div>
           <div className="border border-b-grey-300"></div>
           <nav>
-            <ul className="flex items-center text-sm py-2 sm:py-0 sm:p-3 lg:pl-0 container">
+            <ul className="flex items-center text-sm py-2 sm:py-0 sm:p-3 lg:pl-1 container">
               <li className="sm:hidden flex items-center text-xs border border-gray-300 rounded-md justify-between w-full p-2 pl-3 mx-4 sm:text-lg lg:text-xl my-2">
                 <form className="flex-auto" action="">
                   <input
@@ -102,19 +102,23 @@ export default function Header2() {
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="h-4" />
               </li>
 
+              <li className= "hidden sm:flex sm:text-lg lg:text-lg m-2">
               {/* <Link href="products" */}
               {mainMenu.map((menuItem, idx) => (
                 <Link
                   href={`${menuItem.href}`}
                   key={idx}
-                  className={`hover:bg-gray-200 w-32 py-2 flex-shrink-0 flex-grow-0 flex-shrink hidden sm:flex sm:text-lg lg:text-lg ${
+                  className={`justify-center hover:bg-gray-200 w-32 py-2 flex-shrink-0 flex-grow-0 hidden sm:flex sm:text-lg lg:text-lg ${
                     idx === 0 ? "first:px-0" : "px-3"
                   }`}
                 >
-                  <span>{menuItem.title}</span>
+                  <div>
+                  <span className="flex text-sm items-center justify-center">{menuItem.title}</span>
+                  <span className="flex items-center justify-center text-xs pt-2 text-gray-700">{menuItem.logo}</span>
+                  </div>
                 </Link>
               ))}
-
+            </li>
               {/* </Link> */}
             </ul>
           </nav>

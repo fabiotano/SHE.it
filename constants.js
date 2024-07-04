@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+
 // export const products = [
 //   {
 //     id: 1,
@@ -184,11 +187,15 @@
 // ];
 
 export const mainMenu = [
-  { title: "CAPELLI", href: "/products?category=Capelli" },
+  { title: "PARRUCCHIERI", href: "/products?category=Capelli" , logo: <FontAwesomeIcon icon={faHouse} /> },
   // { title: "COSMETICI", href: "products"},
   // { title: "BARBERIA", href: "products" },
-  { title: "ACCESSORI", href: "/products?category=Accessori"},
-  { title: "ABOUT US", href: "us" },
+  { title: "ACCESSORI", href: "/products?category=Accessori" , logo: <FontAwesomeIcon icon={faHouse} /> },
+  { title: "ABOUT US", href: "us", logo: <FontAwesomeIcon icon={faHouse} />  },
+  { title: "PARRUCCHIERI", href: "/products?category=Capelli" , logo: <FontAwesomeIcon icon={faHouse} /> },
+  // { title: "COSMETICI", href: "products"},
+  // { title: "BARBERIA", href: "products" },
+  { title: "ACCESSORI", href: "/products?category=Accessori" , logo: <FontAwesomeIcon icon={faHouse} /> },
 ];
 
 export const filters = [

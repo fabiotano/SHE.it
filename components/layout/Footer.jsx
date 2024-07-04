@@ -101,7 +101,7 @@ function Footer() {
           </div>
 
           <div class="flex flex-col items-start justify-between space-y-4 text-gray-500">
-            <div class="flex items-center justify-center mx-auto space-x-4 md:justify-end md:mx-0">
+            <div class="flex items-center justify-center mx-auto space-x-4 md:justify-end sm:mx-0">
               <div class="h-14 flex items-center">
                 <Link href="#">
                   <img

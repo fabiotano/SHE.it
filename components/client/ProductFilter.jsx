@@ -89,7 +89,7 @@ function ProductFilter() {
     <section>
       <div
         onClick={showFilterHandler}
-        className="flex gap-2 mx-auto justify-center h-10 border hover:bg-red-400 border-gray-400 rounded-md text-sm w-1/2 mt-4 cursor-pointer sm:hidden "
+        className=" flex gap-2 mx-auto justify-center h-10 border hover:bg-red-400 border-gray-400 rounded-md text-sm w-1/2 mt-4 cursor-pointer sm:hidden "
       >
         <FontAwesomeIcon
           icon={faFilter}
@@ -100,7 +100,7 @@ function ProductFilter() {
       <div
         className={`${
           showFilter ? "block" : "hidden"
-        } sm:block sm:w-[200px] border border-gray-400 rounded-md text-sm mx-4 mt-4 flex flex-col `}
+        } sm:block sm:w-[300px] border border-gray-400 rounded-md text-sm mx-4 md:mx-0 flex flex-col mr-6`}
       >
         <div className="flex justify-between items-center px-4 py-2">
           <p className="text-gray-400 sm:text-lg">Filtros</p>

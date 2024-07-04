@@ -90,7 +90,7 @@ export default function Header2() {
           </div>
           <div className="border border-b-grey-300"></div>
           <nav>
-            <ul className="flex items-center text-sm py-2 sm:py-0 sm:p-3 lg:pl-1 container">
+            <ul className="flex items-center justify-center text-sm py-2 sm:py-0 sm:p-3 lg:pl-1 container">
               <li className="sm:hidden flex items-center text-xs border border-gray-300 rounded-md justify-between w-full p-2 pl-3 mx-4 sm:text-lg lg:text-xl my-2">
                 <form className="flex-auto" action="">
                   <input

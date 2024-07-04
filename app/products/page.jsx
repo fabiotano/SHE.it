@@ -88,13 +88,13 @@ function Products({ searchParams }) {
       </div>
 
       {/* Filter */}
-      <div className="mt-4 mb-4 sm:flex">
-        <ProductFilter />
+      <div className="mt-4 mb-4 sm:flex ">
+        <ProductFilter/>
 
-        <section className="flex-grow">
+        <section className="flex-grow ml-8">
           <Link href={"/products"}>
             {/* Products */}
-            <div className="flex flex-wrap gap-2 py-2 m-2">
+            <div className="flex flex-wrap gap-2">
               {productsPaginated.map((product, index) => (
                 <ProductCard key={index} product={product} />
               ))}

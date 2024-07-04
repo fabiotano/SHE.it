@@ -9,7 +9,7 @@ function ProductCard(props) {
   return (
     <Link
       href={`/products/${product.id}`}
-      className="bg-white border border-gray-100 rounded-md hover:bg-gray-100 w-1/3 max-w-[230px] mx-auto flex-wrap flex-grow relative group transform transition-transform duration-300 hover:-translate-y-2"
+      className="bg-white border border-gray-100 rounded-md hover:bg-gray-100 w-1/3 max-w-[200px] mx-auto flex-wrap flex-grow relative group transform transition-transform duration-300 hover:-translate-y-2"
     >
       {/* LOGO */}
       <div className="bg-red-100 w-5 h-5 flex items-center justify-center absolute top-2 left-2">

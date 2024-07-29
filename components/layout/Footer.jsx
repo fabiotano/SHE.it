@@ -11,7 +11,7 @@ function Footer() {
           <div className="text-gray-50 flex align-top px-4 pt-4">
             <Image
               className="align-top"
-              src={"/favoritos.svg"}
+              src={'/favoritos.svg'}
               width={32}
               height={32}
               alt="Lista dei favoriti"
@@ -27,7 +27,7 @@ function Footer() {
           </div>
           <div className="text-gray-50 flex align-top px-4 pt-4">
             <Image
-              src={"/entrega_rapida.svg"}
+              src={'/entrega_rapida.svg'}
               width={32}
               height={32}
               alt="Consegna veloce"
@@ -43,7 +43,7 @@ function Footer() {
           </div>
           <div className="text-gray-50 flex align-top px-4 py-4">
             <Image
-              src={"/24_7.svg"}
+              src={'/24_7.svg'}
               width={32}
               height={32}
               alt="Ordini disponibili 24/7"
@@ -61,9 +61,9 @@ function Footer() {
       </div>
 
       <div className="container max-w-6xl pt-5 md:py-10 mx-auto bg-white">
-        <div class="flex flex-col items-center justify-center mt-4 space-y-6 h-full md:flex-row md:space-y-0 md:justify-between md:items-start">
-          <div class="flex flex-col items-center space-y-8 md:items-start md:space-y-4">
-            <div class="h-14 flex items-center">
+        <div className="flex flex-col items-center justify-center mt-4 space-y-6 h-full md:flex-row md:space-y-0 md:justify-between md:items-start">
+          <div className="flex flex-col items-center space-y-8 md:items-start md:space-y-4">
+            <div className="h-14 flex items-center">
               <Image
                 src="/logoShe.png"
                 height={50}
@@ -72,7 +72,7 @@ function Footer() {
                 alt="Logo SHE"
               />
             </div>
-            <div class="flex flex-col items-center space-y-4 font-bold text-gray-600 md:flex-row md:space-y-0 md:space-x-6 md:ml-3">
+            <div className="flex flex-col items-center space-y-4 font-bold text-gray-600 md:flex-row md:space-y-0 md:space-x-6 md:ml-3">
               <div className="group">
                 <Link href="" className="h-10 text-gray-600">
                   Prodotti
@@ -100,9 +100,9 @@ function Footer() {
             </div>
           </div>
 
-          <div class="flex flex-col items-start justify-between space-y-4 text-gray-500">
-            <div class="flex items-center justify-center mx-auto space-x-4 md:justify-end sm:mx-0">
-              <div class="h-14 flex items-center">
+          <div className="flex flex-col items-start justify-between space-y-4 text-gray-500">
+            <div className="flex items-center justify-center mx-auto space-x-4 md:justify-end sm:mx-0">
+              <div className="h-14 flex items-center">
                 <Link href="#">
                   <img
                     src="images/icon-facebook.svg"
@@ -111,7 +111,7 @@ function Footer() {
                   />
                 </Link>
               </div>
-              <div class="h-14 flex items-center">
+              <div className="h-14 flex items-center">
                 <Link href="#">
                   <img
                     src="images/icon-twitter.svg"
@@ -120,7 +120,7 @@ function Footer() {
                   />
                 </Link>
               </div>
-              <div class="h-14 flex items-center">
+              <div className="h-14 flex items-center">
                 <Link href="#">
                   <img
                     src="images/icon-instagram.svg"
@@ -130,7 +130,7 @@ function Footer() {
                 </Link>
               </div>
             </div>
-            <div class="font-bold justify-center text-gray-400">
+            <div className="font-bold justify-center text-gray-400">
               &copy; 2023 - SHE. All rights reserved.
             </div>
           </div>

@@ -1,8 +1,10 @@
-'use client';
+"use client";
 
-import { createClient } from '@/app/lib/supabase/client';
-import { createProduct, updateProduct } from '@/app/services/products';
-import { useProducts } from '@/app/context/ProductContext';
+import regions from "@/regions";
+
+import { createClient } from "@/app/lib/supabase/client";
+import { createProduct, updateProduct } from "@/app/services/products";
+import { useProducts } from "@/app/context/ProductContext";
 
 function FormUpload() {
   const supabase = createClient();
@@ -13,17 +15,17 @@ function FormUpload() {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     const file_name = e.target.files[0].name;
-    dispatch({ type: 'SET_PRODUCT_FORM', payload: { file, file_name } });
+    dispatch({ type: "SET_PRODUCT_FORM", payload: { file, file_name } });
   };
 
   const handleInput = (e) => {
     switch (e.target.name) {
-      case 'file':
+      case "file":
         handleFileChange(e);
         break;
       default:
         dispatch({
-          type: 'SET_PRODUCT_FORM',
+          type: "SET_PRODUCT_FORM",
           payload: {
             ...productForm,
             [e.target.name]: e.target.value,
@@ -35,6 +37,8 @@ function FormUpload() {
 
   const submitForm = async (e) => {
     e.preventDefault();
+    console.log(productForm);
+
     if (edit) {
       const updatedProduct = await updateProduct({
         dbClient: supabase,
@@ -46,14 +50,14 @@ function FormUpload() {
         product._id === productSelected ? updatedProduct : product
       );
 
-      dispatch({ type: 'SET_PRODUCTS', payload: updatedProducts });
-      dispatch({ type: 'SET_EDIT', payload: false });
-      dispatch({ type: 'RESET_FORM' });
+      dispatch({ type: "SET_PRODUCTS", payload: updatedProducts });
+      dispatch({ type: "SET_EDIT", payload: false });
+      dispatch({ type: "RESET_FORM" });
 
       return;
     }
     if (!productForm.file) {
-      alert('Please upload an image');
+      alert("Please upload an image");
       return;
     }
 
@@ -61,9 +65,13 @@ function FormUpload() {
       dbClient: supabase,
       data: productForm,
     });
-    dispatch({ type: 'SET_PRODUCTS', payload: [...products, productData] });
-    dispatch({ type: 'RESET_FORM' });
+    dispatch({ type: "SET_PRODUCTS", payload: [...products, productData] });
+    dispatch({ type: "RESET_FORM" });
   };
+
+  // const handleDeleteImage = () => {
+  //   dispatch({ type: 'SET_PRODUCT_FORM', payload: { ...productForm, file: null, imageUrl: '' } });
+  // };
 
   return (
     <div className="max-w-2xl text-center bg-white mx-auto">
@@ -73,7 +81,8 @@ function FormUpload() {
         ) : (
           <h2 className="text-2xl font-bold mb-4">Create Product</h2>
         )}
-        <div className="flex flex-col mt-4">
+
+        <div className="relative flex flex-col mt-4">
           <label className="mb-3 font-bold text-gray-700">Upload File</label>
           <input
             type="file"
@@ -82,14 +91,24 @@ function FormUpload() {
             onChange={handleFileChange}
             className="p-1 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          {productForm.imageUrl && (
-            <img
-              src={productForm.imageUrl}
-              alt="Preview"
-              className="mt-2 w-32 h-auto rounded"
-            />
+          {productForm.image_url && (
+            <div className="relative mt-2 w-32 h-auto">
+              <img
+                src={productForm.image_url}
+                alt="Preview"
+                className="w-full h-full object-cover rounded"
+              />
+              <button
+                type="button"
+                className="absolute top-1 right-1 bg-red-600 text-white rounded-full p-1 focus:outline-none"
+                // onClick={handleDeleteImage}
+              >
+                X
+              </button>
+            </div>
           )}
         </div>
+
         <div className="flex flex-col mt-4">
           <label className="mb-3 font-bold text-gray-700">Name</label>
           <input
@@ -102,22 +121,146 @@ function FormUpload() {
           />
         </div>
         <div className="flex flex-col my-4">
-          <label className="mb-3 font-bold text-gray-700">Description</label>
+          <label className="mb-3 font-bold text-gray-700">Format</label>
           <input
             type="text"
-            name="description"
-            value={productForm.description}
+            name="format"
+            value={productForm.format}
             onChange={handleInput}
             required
             className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
+
+        <div className="flex flex-col my-4">
+          <label className="mb-3 font-bold text-gray-700">Category</label>
+          <input
+            type="text"
+            name="category"
+            value={productForm.category}
+            onChange={handleInput}
+            required
+            className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div className="flex flex-col my-4">
+          <label className="mb-3 font-bold text-gray-700">Subcategory</label>
+          <input
+            type="text"
+            name="subcategory"
+            value={productForm.subcategory}
+            onChange={handleInput}
+            required
+            className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div className="flex flex-col my-4">
+          <label className="mb-3 font-bold text-gray-700">Price</label>
+          <input
+            type="text"
+            name="price"
+            value={productForm.price}
+            onChange={handleInput}
+            required
+            className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div className="flex flex-col my-4">
+          <label className="mb-3 font-bold text-gray-700">Brand</label>
+          <select
+            name="brand"
+            value={productForm.brand}
+            onChange={(e) => handleInput(e)}
+            required
+            className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option selected hidden="">
+              --
+            </option>
+            <option value="she">She</option>
+            <option value="chenice">Chenice</option>
+            <option value="eugenperma">Eugenperma</option>
+          </select>
+        </div>
+
+        <div className="flex flex-col my-4">
+          <label className="mb-3 font-bold text-gray-700">New Product</label>
+          <select
+            name="newflag"
+            value={productForm.newflag}
+            onChange={(e) => handleInput(e)}
+            required
+            className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option selected hidden value="">
+              --
+            </option>
+            <option value="false">False</option>
+            <option value="true">True</option>
+          </select>
+        </div>
+
+        <div className="flex flex-col my-4">
+          <label className="mb-3 font-bold text-gray-700">Best Seller</label>
+          <select
+            name="selected"
+            value={productForm.selected}
+            onChange={(e) => handleInput(e)}
+            required
+            className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option selected hidden value="">
+              --
+            </option>
+            <option value="false">False</option>
+            <option value="true">True</option>
+          </select>
+        </div>
+
+        <div className="flex flex-col my-4">
+          <label className="mb-3 font-bold text-gray-700">Favorite</label>
+          <select
+            name="favorite"
+            value={productForm.favorite}
+            onChange={(e) => handleInput(e)}
+            required
+            className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option selected hidden value="">
+              --
+            </option>
+            <option value="false">False</option>
+            <option value="true">True</option>
+          </select>
+        </div>
+        <div className="flex flex-col my-4">
+          <label className="mb-3 font-bold text-gray-700">
+            Regions Available
+          </label>
+          <select
+            name="region"
+            multiple
+            value={productForm.selectedRegions}
+            onChange={(e) => handleInput(e)}
+            className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            {regions.map((region) => (
+              <option key={region} value={region}>
+                {region}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <div className="mt-10">
           <button
             type="submit"
             className=" py-2 px-4 w-1/3 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            {edit ? 'Edit' : 'Create'}
+            {edit ? "Edit" : "Create"}
           </button>
         </div>
       </form>

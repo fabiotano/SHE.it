@@ -11,6 +11,11 @@ function FormUpload() {
 
   const { state, dispatch } = useProducts();
   const { edit, productForm, productSelected, products } = state;
+  let productSelectedImage 
+
+  if (productSelected) {
+    productSelectedImage = products.find(product => product._id === productSelected).image_url;
+  }
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -22,6 +27,31 @@ function FormUpload() {
     switch (e.target.name) {
       case "file":
         handleFileChange(e);
+        break;
+      case "region":
+        const regionSelected = e.target.value 
+        console.log(regionSelected)
+        const regions = productForm.region
+        console.log(regions)
+        if (!regions.find(reg => reg === regionSelected)) {
+          dispatch({
+            type: "SET_PRODUCT_FORM",
+            payload: {
+             ...productForm,
+              region: [...productForm.region, regionSelected],
+            },
+          });
+        }
+        else {
+          const filteredRegions = regions.filter( reg => reg !== regionSelected)
+          dispatch({
+            type: "SET_PRODUCT_FORM",
+            payload: {
+             ...productForm,
+              region: filteredRegions,
+            },
+          });
+        } 
         break;
       default:
         dispatch({
@@ -37,8 +67,6 @@ function FormUpload() {
 
   const submitForm = async (e) => {
     e.preventDefault();
-    console.log(productForm);
-
     if (edit) {
       const updatedProduct = await updateProduct({
         dbClient: supabase,
@@ -69,10 +97,6 @@ function FormUpload() {
     dispatch({ type: "RESET_FORM" });
   };
 
-  // const handleDeleteImage = () => {
-  //   dispatch({ type: 'SET_PRODUCT_FORM', payload: { ...productForm, file: null, imageUrl: '' } });
-  // };
-
   return (
     <div className="max-w-2xl text-center bg-white mx-auto">
       <form onSubmit={submitForm} className="border rounded shadow px-10 py-6">
@@ -91,22 +115,9 @@ function FormUpload() {
             onChange={handleFileChange}
             className="p-1 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          {productForm.image_url && (
-            <div className="relative mt-2 w-32 h-auto">
-              <img
-                src={productForm.image_url}
-                alt="Preview"
-                className="w-full h-full object-cover rounded"
-              />
-              <button
-                type="button"
-                className="absolute top-1 right-1 bg-red-600 text-white rounded-full p-1 focus:outline-none"
-                // onClick={handleDeleteImage}
-              >
-                X
-              </button>
-            </div>
-          )}
+            <div className="flex border-b justify-center items-center h-48">
+            {productSelected && <img src={productSelectedImage} alt="Image Product" className="h-44"/> }
+          </div>
         </div>
 
         <div className="flex flex-col mt-4">
@@ -177,7 +188,7 @@ function FormUpload() {
             required
             className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option selected hidden="">
+            <option hidden value="">
               --
             </option>
             <option value="she">She</option>
@@ -195,7 +206,7 @@ function FormUpload() {
             required
             className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option selected hidden value="">
+            <option hidden value="">
               --
             </option>
             <option value="false">False</option>
@@ -212,7 +223,7 @@ function FormUpload() {
             required
             className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option selected hidden value="">
+            <option hidden value="">
               --
             </option>
             <option value="false">False</option>
@@ -229,7 +240,7 @@ function FormUpload() {
             required
             className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option selected hidden value="">
+            <option hidden value="">
               --
             </option>
             <option value="false">False</option>

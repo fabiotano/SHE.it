@@ -11,10 +11,12 @@ function FormUpload() {
 
   const { state, dispatch } = useProducts();
   const { edit, productForm, productSelected, products } = state;
-  let productSelectedImage 
+  let productSelectedImage;
 
   if (productSelected) {
-    productSelectedImage = products.find(product => product._id === productSelected).image_url;
+    productSelectedImage = products.find(
+      (product) => product._id === productSelected
+    ).image_url;
   }
 
   const handleFileChange = (e) => {
@@ -29,29 +31,30 @@ function FormUpload() {
         handleFileChange(e);
         break;
       case "region":
-        const regionSelected = e.target.value 
-        console.log(regionSelected)
-        const regions = productForm.region
-        console.log(regions)
-        if (!regions.find(reg => reg === regionSelected)) {
+        const regionSelected = e.target.value;
+        console.log(regionSelected);
+        const regions = productForm.region;
+        console.log(regions);
+        if (!regions.find((reg) => reg === regionSelected)) {
           dispatch({
             type: "SET_PRODUCT_FORM",
             payload: {
-             ...productForm,
+              ...productForm,
               region: [...productForm.region, regionSelected],
             },
           });
-        }
-        else {
-          const filteredRegions = regions.filter( reg => reg !== regionSelected)
+        } else {
+          const filteredRegions = regions.filter(
+            (reg) => reg !== regionSelected
+          );
           dispatch({
             type: "SET_PRODUCT_FORM",
             payload: {
-             ...productForm,
+              ...productForm,
               region: filteredRegions,
             },
           });
-        } 
+        }
         break;
       default:
         dispatch({
@@ -107,16 +110,26 @@ function FormUpload() {
         )}
 
         <div className="relative flex flex-col mt-4">
-          <label className="mb-3 font-bold text-gray-700">Upload File</label>
+          <label className="mb-3 font-bold text-gray-700">Upload File</label>{" "}
           <input
             type="file"
             name="file"
             accept="image/*"
             onChange={handleFileChange}
-            className="p-1 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="p-1 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 w-1/2 mx-auto"
           />
-            <div className="flex border-b justify-center items-center h-48">
-            {productSelected && <img src={productSelectedImage} alt="Image Product" className="h-44"/> }
+          <span className="text-sm italic text-gray-500">
+            {" "}
+            (Nome sin caracteres especiales y/o espacios)
+          </span>
+          <div className="flex border-b justify-center items-center h-48">
+            {productSelected && (
+              <img
+                src={productSelectedImage}
+                alt="Image Product"
+                className="h-44"
+              />
+            )}
           </div>
         </div>
 

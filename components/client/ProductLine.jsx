@@ -20,12 +20,12 @@ function ProductLine(props) {
   };
 
   const handleEdit = (id) => {
-    const { name, format, category, subcategory, price, brand, newflag, favorite, selected, region } = products.find(
+    const { name, format, category, subcategory, price, brand, newflag, favorite, bestseller, region } = products.find(
       (product) => product._id === id
     );
 
     dispatch({ type: 'SET_PRODUCT_SELECTED', payload: id });
-    dispatch({ type: 'SET_PRODUCT_FORM', payload: { name, format, category, subcategory, price, brand, newflag, favorite, selected, region } });
+    dispatch({ type: 'SET_PRODUCT_FORM', payload: { name, format, category, subcategory, price, brand, newflag, favorite, bestseller, region } });
     dispatch({ type: 'SET_EDIT', payload: true });
 
     // Desplazar hacia la parte superior de la página
@@ -39,7 +39,7 @@ function ProductLine(props) {
   <img
     src={product.image_url}
     alt={product.name}
-    className="w-full h-48 object-cover rounded-lg mb-4 border border-gray-200"
+    className="w-full h-55 object-cover rounded-lg mb-4 border border-gray-200"
   />
   <div className="flex items-center justify-between mb-4">
     <h3 className="text-xl font-semibold text-gray-800">{product.name}</h3>
@@ -101,7 +101,7 @@ function ProductLine(props) {
   )}
   </div>
   <div className="absolute top-12 right-1 text-sm text-gray-700 bg-gray-100 px-2 py-1 rounded-md shadow-sm">
-  {product.selected ? (
+  {product.bestseller ? (
     <FontAwesomeIcon icon={faMedal} className="text-red-500" />
   ) : (
     <FontAwesomeIcon icon={faMedal} className="text-gray-400" />

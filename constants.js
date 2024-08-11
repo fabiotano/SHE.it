@@ -187,15 +187,15 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons';
 // ];
 
 export const mainMenu = [
-  { title: "PARRUCCHIERI", href: "/products?category=Capelli" , logo: <FontAwesomeIcon icon={faHouse} /> },
+  { title: "PARRUCCHIERI", href: "/products?category=Capelli" , logo: <img src="/iconos/pelo-de-mujer.png" alt="Parrucchieri Logo" /> },
   // { title: "COSMETICI", href: "products"},
   // { title: "BARBERIA", href: "products" },
-  { title: "ACCESSORI", href: "/products?category=Accessori" , logo: <FontAwesomeIcon icon={faHouse} /> },
-  { title: "ABOUT US", href: "us", logo: <FontAwesomeIcon icon={faHouse} />  },
-  { title: "PARRUCCHIERI", href: "/products?category=Capelli" , logo: <FontAwesomeIcon icon={faHouse} /> },
+  { title: "ACCESSORI", href: "/products?category=Accessori" , logo: <img src="/iconos/secador-de-pelo.png" alt="Accessoori Logo" /> },
+  { title: "COSMETICI", href: "/products?category=Accessori" , logo: <img src="/iconos/cosmetici.png" alt="Cosmetici Logo" /> },
+  { title: "BARBERSHOP", href: "/products?category=barbershop" , logo: <img src="/iconos/hombre.png" alt="Barbershop Logo" /> },
+  { title: "ABOUT US", href: "us", logo: <img src="/iconos/equipo.png" alt="Noi Logo" /> },
   // { title: "COSMETICI", href: "products"},
   // { title: "BARBERIA", href: "products" },
-  { title: "ACCESSORI", href: "/products?category=Accessori" , logo: <FontAwesomeIcon icon={faHouse} /> },
 ];
 
 export const filters = [

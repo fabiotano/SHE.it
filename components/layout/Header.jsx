@@ -22,7 +22,7 @@ export default function Header2() {
 
   return (
     <div>
-      <header className="borde border border-b-red-900 shadow-md">
+      <header className="border border-b-red-900 shadow-md">
         <div className="hidden sm:flex  justify-end items-center h-7 text-xs bg-gray-100">
           <ul className="flex items-center space-x-2 p-2">
             <li>
@@ -71,19 +71,16 @@ export default function Header2() {
                 <Link href="/login">
                   <FontAwesomeIcon
                     icon={faUserCircle}
-                    className="text-gray-700 h-6"
+                    className="text-gray-600 h-7 hover:text-gray-800 transform transition-transform duration-200 hover:scale-125"
                   />
                 </Link>
               </div>
-              <div className="flex relative">
+              <div className="flex text-gray-600 relative hover:text-gray-800 transform transition-transform duration-200 hover:scale-125 space-x-3">
                 <Link href="/cart">
-                  <div className="absolute  -top-2 -right-1 flex justify-center items-center rounded-full w-4 h-4 bg-red-500 text-white text-xs">
+                  <div className="absolute -top-2 -right-1 flex justify-center items-center rounded-full w-4 h-4 bg-red-500 text-white text-xs">
                     12
                   </div>
-                  <FontAwesomeIcon
-                    icon={faCartShopping}
-                    className="text-gray-700 h-6"
-                  />
+                  <FontAwesomeIcon icon={faCartShopping} className="h-7" />
                 </Link>
               </div>
             </div>
@@ -102,23 +99,25 @@ export default function Header2() {
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="h-4" />
               </li>
 
-              <li className= "hidden sm:flex sm:text-lg lg:text-lg m-2">
-              {/* <Link href="products" */}
-              {mainMenu.map((menuItem, idx) => (
-                <Link
-                  href={`${menuItem.href}`}
-                  key={idx}
-                  className={`justify-center hover:bg-gray-200 w-32 py-2 flex-shrink-0 flex-grow-0 hidden sm:flex sm:text-lg lg:text-lg ${
-                    idx === 0 ? "first:px-0" : "px-3"
-                  }`}
-                >
-                  <div>
-                  <span className="flex text-sm items-center justify-center">{menuItem.title}</span>
-                  <span className="flex items-center justify-center text-xs pt-2 text-gray-700">{menuItem.logo}</span>
-                  </div>
-                </Link>
-              ))}
-            </li>
+              <li className="hidden sm:flex space-x-3 p-2">
+                {/* <Link href="products" */}
+                {mainMenu.map((menuItem, idx) => (
+                  <Link
+                    href={`${menuItem.href}`}
+                    key={idx}
+                    className="justify-center w-32 py-3 flex-shrink-0 flex-grow-0 hidden sm:flex"
+                  >
+                    <div className="text-gray-500 hover:text-gray-800 font-semibold sm:text-sm lg:text-md transform transition-transform duration-200 hover:scale-125">
+                      <span className="flex items-center justify-center">
+                        {menuItem.title}
+                      </span>
+                      <span className="flex items-center justify-center text-xs pt-2">
+                        {menuItem.logo}
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </li>
               {/* </Link> */}
             </ul>
           </nav>
@@ -127,44 +126,88 @@ export default function Header2() {
       {showMenu && (
         <div className="p-6 left-0 w-full h-screen bg-red-500 opacity-95 z-20 items-center">
           <ul className="gap-5 flex flex-col justify-center">
-            <li className="mt-4 pb-5 border-white text-center">
+            <li className="mt-4 pb-5 w-auto border-white text-center">
               <div
                 onClick={clickMenuHandler}
-                className="text-white hover:underline"
+                className="text-gray-300 hover:underline inline-flex justify-center items-center w-max p-2 rounded cursor-pointer transform transition-transform duration-100 group"
               >
-                <FontAwesomeIcon className="h-7" icon={faCircleXmark} />
+                <FontAwesomeIcon
+                  className="h-7 transform transition-transform duration-300 group-hover:scale-150 group-hover:text-white"
+                  icon={faCircleXmark}
+                />
               </div>
             </li>
-            <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
+
+            <li className="pb-4 flex justify-between relative group">
               <Link
                 href="/products/capelli"
                 onClick={clickMenuHandler}
-                className="text-white hover:underline"
+                className="text-white hover:underline flex items-center transform transition-transform duration-300 group-hover:translate-x-8"
               >
-                CAPELLI
-              </Link>
-              <FontAwesomeIcon icon={faChevronDown} className="text-white" />
-            </li>
-
-            <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
-              <Link
-                href="/products/accessori"
-                onClick={clickMenuHandler}
-                className="text-white hover:underline"
-              >
+                <img
+                  src="/iconos/secador-de-pelo.png"
+                  alt="Accessori Logo"
+                  className="h-6 mr-4"
+                />
                 ACCESSORI
               </Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
+
+              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white opacity-50 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
             </li>
-            <li className="border-b pb-4 border-white border-opacity-50 flex justify-between">
+
+            <li className="pb-4 flex justify-between relative group">
               <Link
-                href="us"
+                href="/products/capelli"
                 onClick={clickMenuHandler}
-                className="text-white hover:underline"
+                className="text-white hover:underline flex items-center transform transition-transform duration-300 group-hover:translate-x-8"
               >
+                <img
+                  src="/iconos/cosmetici.png"
+                  alt="Cosmetici Logo"
+                  className="h-6 mr-4"
+                />
+                COSMETICI
+              </Link>
+              <FontAwesomeIcon icon={faChevronDown} className="text-white" />
+
+              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white opacity-50 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
+            </li>
+
+            <li className="pb-4 flex justify-between relative group">
+              <Link
+                href="/products/capelli"
+                onClick={clickMenuHandler}
+                className="text-white hover:underline flex items-center transform transition-transform duration-300 group-hover:translate-x-8"
+              >
+                <img
+                  src="/iconos/hombre.png"
+                  alt="Barbershop Logo"
+                  className="h-6 mr-4"
+                />
+                BARBERSHOP
+              </Link>
+              <FontAwesomeIcon icon={faChevronDown} className="text-white" />
+
+              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white opacity-50 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
+            </li>
+
+            <li className="pb-4 flex justify-between relative group">
+              <Link
+                href="/products/capelli"
+                onClick={clickMenuHandler}
+                className="text-white hover:underline flex items-center transform transition-transform duration-300 group-hover:translate-x-8"
+              >
+                <img
+                  src="/iconos/equipo.png"
+                  alt="Noi Logo"
+                  className="h-6 mr-4"
+                />
                 ABOUT US
               </Link>
               <FontAwesomeIcon icon={faChevronDown} className="text-white" />
+
+              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white opacity-50 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
             </li>
           </ul>
         </div>

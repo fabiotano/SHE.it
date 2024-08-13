@@ -20,12 +20,11 @@ function ProductLine(props) {
   };
 
   const handleEdit = (id) => {
-    const { name, format, category, subcategory, price, brand, newflag, favorite, bestseller, region } = products.find(
+    const { name, format, category, subcategory, price, brand, newflag, bestseller, favorite, region } = products.find(
       (product) => product._id === id
     );
-
     dispatch({ type: 'SET_PRODUCT_SELECTED', payload: id });
-    dispatch({ type: 'SET_PRODUCT_FORM', payload: { name, format, category, subcategory, price, brand, newflag, favorite, bestseller, region } });
+    dispatch({ type: 'SET_PRODUCT_FORM', payload: { name, format, category, subcategory, price, brand, newflag, bestseller, favorite, region } });
     dispatch({ type: 'SET_EDIT', payload: true });
 
     // Desplazar hacia la parte superior de la página
@@ -35,14 +34,17 @@ function ProductLine(props) {
   const { product } = props;
 
   return (
-<div className="relative bg-white rounded-lg shadow-lg p-10 max-w-xs w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+<div className="relative bg-white rounded-lg shadow-lg py-8 px-5 max-w-xs w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+<div className="relative w-full h-48 my-4 overflow-hidden rounded-lg border border-gray-200">
   <img
     src={product.image_url}
     alt={product.name}
-    className="w-full h-55 object-cover rounded-lg mb-4 border border-gray-200"
+    className="absolute inset-0 w-full h-full object-cover"
   />
+</div>
+
   <div className="flex items-center justify-between mb-4">
-    <h3 className="text-xl font-semibold text-gray-800">{product.name}</h3>
+    <h3 className="text-xl text-left font-semibold mr-4 text-gray-800">{product.name}</h3>
     <div className="flex gap-2">
       <button
         onClick={() => handleEdit(product._id)}
@@ -93,27 +95,34 @@ function ProductLine(props) {
   })()}
 </div>
 
+<div className="absolute top-14 left-8 w-12 h-12 flex items-center justify-center text-xl text-yellow-200 bg-orange-400 p-2 rounded-full">
+  {product.id}
+</div>
+
   <div className="absolute top-4 right-1 text-sm text-gray-700 bg-gray-100 px-2 py-1 rounded-md shadow-sm">
-  {product.newflag ? (
+  {product.newflag === true ? (
     <FontAwesomeIcon icon={faFlag} className="text-red-500" />
   ) : (
     <FontAwesomeIcon icon={faFlag} className="text-gray-400" />
   )}
   </div>
+
   <div className="absolute top-12 right-1 text-sm text-gray-700 bg-gray-100 px-2 py-1 rounded-md shadow-sm">
-  {product.bestseller ? (
+  {product.bestseller === true ? (
     <FontAwesomeIcon icon={faMedal} className="text-red-500" />
   ) : (
     <FontAwesomeIcon icon={faMedal} className="text-gray-400" />
   )}
-  </div>
+</div>
+
   <div className="absolute top-20 right-1 text-sm text-gray-700 bg-gray-100 px-2 py-1 rounded-md shadow-sm">
-  {product.favorite ? (
+  {product.favorite === true ? (
     <FontAwesomeIcon icon={faHeart} className="text-red-500" />
   ) : (
     <FontAwesomeIcon icon={faHeart} className="text-gray-400" />
   )}
   </div>
+
   <p className="text-md font-semibold text-gray-800 mb-2">
     €{product.price} 
   </p>

@@ -204,9 +204,9 @@ function FormUpload() {
             <option hidden value="">
               --
             </option>
-            <option value="she">She</option>
-            <option value="chenice">Chenice</option>
-            <option value="eugenperma">Eugenperma</option>
+            <option value="She">She</option>
+            <option value="Chenice">Chenice</option>
+            <option value="Eugenperma">Eugenperma</option>
           </select>
         </div>
 
@@ -230,8 +230,8 @@ function FormUpload() {
         <div className="flex flex-col my-4">
           <label className="mb-3 font-bold text-gray-700">Best Seller</label>
           <select
-            name="selected"
-            value={productForm.selected}
+            name="bestseller"
+            value={productForm.bestseller}
             onChange={(e) => handleInput(e)}
             required
             className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"

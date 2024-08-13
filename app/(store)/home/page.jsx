@@ -2,7 +2,7 @@ import BrandCarousel from "@/components/client/BrandCarousel";
 import Carousel from "@/components/client/Carousel";
 import ProductCarousel from "@/components/client/ProductCarousel";
 import ProductCategory from "@/components/client/ProductCategory";
-
+import {products}  from "@/products";
 import React from "react";
 
 function Home() {
@@ -15,7 +15,7 @@ function Home() {
           Scopri i prodotti in primo piano che renderanno i tuoi capelli
           impeccabili. Entra e porta l'eccellenza nel tuo salone!
         </p>
-        <ProductCarousel />
+        <ProductCarousel products={products}/>
       </section>
 
       <section className="py-4 md:py-8 bg-gray-100">

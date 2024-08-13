@@ -9,10 +9,10 @@ function ProductCard(props) {
   return (
     <Link
       href={`/products/${product.id}`}
-      className="bg-white border border-gray-100 rounded-md hover:bg-gray-100 w-1/3 max-w-[200px] mx-auto flex-wrap flex-grow relative group transform transition-transform duration-300 hover:-translate-y-2"
+      className="bg-white border-b border-x border-b-gray-100 border-x-gray-100 rounded-md hover:bg-gray-100 w-1/3 max-w-[200px] mx-auto flex-wrap flex-grow relative group transform transition-transform duration-300 hover:-translate-y-2"
     >
       {/* LOGO */}
-      <div className="bg-red-100 w-5 h-5 flex items-center justify-center absolute top-2 left-2">
+      <div className="w-8 h-6 z-10 flex items-center justify-center absolute top-2 left-2">
         <img src={product.brandLogo} className="object-contain" alt="Logo" />
       </div>
 
@@ -30,7 +30,7 @@ function ProductCard(props) {
       />
 
       {/* IMAGE */}
-      <div className="relative w-full h-0 pb-[100%] mt-2">
+      <div className="relative w-full p-6 h-0 pb-[100%] mt-2">
         <Image
           src={product.image}
           alt={product.title}

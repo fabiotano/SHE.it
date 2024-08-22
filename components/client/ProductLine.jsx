@@ -35,11 +35,11 @@ function ProductLine(props) {
 
   return (
 <div className="relative bg-white rounded-lg shadow-lg py-8 px-5 max-w-xs w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-<div className="relative w-full h-48 my-4 overflow-hidden rounded-lg border border-gray-200">
+<div className="relative w-full h-56 my-4 overflow-hidden rounded-lg border border-gray-200">
   <img
     src={product.image_url}
     alt={product.name}
-    className="absolute inset-0 w-full h-full object-cover"
+    className="absolute inset-0 w-full h-full object-contain"
   />
 </div>
 
@@ -63,30 +63,30 @@ function ProductLine(props) {
     </div>
   </div>
 
-<div className="absolute top-2 left-1 text-sm text-gray-700 bg-gray-100 px-2 py-1 rounded-md shadow-sm">
+<div className="absolute top-1 left-3 text-sm rounded-md shadow-sm -z-10">
   {(() => {
     if (product.brand == 'She') {
       return (
         <img
           src="/logoShe.png"
           alt="She Logo"
-          className="h-6 w-auto"
+          className="w-20"
+        />
+      );
+    } else if (product.brand == 'Eugeneperma') {
+      return (
+        <img
+          src="/logoEugeneperma.png"
+          alt="Eugeneperma Logo"
+          className="w-24"
         />
       );
     } else if (product.brand == 'Chenice') {
       return (
         <img
-          src="/logoEugenperma.png"
-          alt="Chenice Logo"
-          className="h-6 w-auto"
-        />
-      );
-    } else if (product.brand == 'Eugenperma') {
-      return (
-        <img
           src="/logoChenice.png"
-          alt="Eugenperma Logo"
-          className="h-6 w-auto"
+          alt="Chenice Logo"
+          className="w-20"
         />
       );
     } else {
@@ -95,7 +95,7 @@ function ProductLine(props) {
   })()}
 </div>
 
-<div className="absolute top-14 left-8 w-12 h-12 flex items-center justify-center text-xl text-yellow-200 bg-orange-400 p-2 rounded-full">
+<div className="absolute top-14 left-8 w-10 h-10 flex items-center justify-center text-xl text-white bg-blue-400 p-2 rounded-full">
   {product.id}
 </div>
 

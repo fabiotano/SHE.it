@@ -101,8 +101,8 @@ function FormUpload() {
   };
 
   return (
-    <div className="max-w-2xl text-center bg-white mx-auto">
-      <form onSubmit={submitForm} className="border rounded shadow px-10 py-6">
+    <div className="text-center mx-auto">
+      <form onSubmit={submitForm} className="border rounded shadow px-8 py-6">
         {edit ? (
           <h2 className="text-2xl font-bold mb-4">Edit Product</h2>
         ) : (

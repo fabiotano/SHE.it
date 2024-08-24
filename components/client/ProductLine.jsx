@@ -34,36 +34,38 @@ function ProductLine(props) {
   const { product } = props;
 
   return (
-<div className="relative bg-white rounded-lg shadow-lg py-8 px-5 max-w-xs w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-<div className="relative w-full h-56 my-4 overflow-hidden rounded-lg border border-gray-200">
-  <img
-    src={product.image_url}
-    alt={product.name}
-    className="absolute inset-0 w-full h-full object-contain"
-  />
-</div>
+<div className="relative bg-white rounded-lg shadow-lg pt-8 pb-1 px-5 max-w-xs w-full flex-shrink-0 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+<div>
+  <div className="relative w-full h-56 my-4 overflow-hidden rounded-lg border border-gray-200">
+    <img
+      src={product.image_url}
+      alt={product.name}
+      className="absolute inset-0 w-full h-full object-contain"
+    />
+  </div>
 
-  <div className="flex items-center justify-between mb-4">
-    <h3 className="text-xl text-left font-semibold mr-4 text-gray-800">{product.name}</h3>
-    <div className="flex gap-2">
-      <button
-        onClick={() => handleEdit(product._id)}
-        className="text-blue-600 hover:text-blue-700 focus:outline-none"
-        aria-label="Edit"
-      >
-        <FontAwesomeIcon icon={faEdit} />
-      </button>
-      <button
-        onClick={() => handleDeleteProduct(product._id)}
-        className="text-red-600 hover:text-red-700 focus:outline-none"
-        aria-label="Delete"
-      >
-        <FontAwesomeIcon icon={faTimes} />
-      </button>
+    <div className="flex items-center justify-between mb-4">
+      <h3 className="text-xl text-left font-semibold mr-4 text-gray-800">{product.name}</h3>
+      <div className="flex gap-2">
+        <button
+          onClick={() => handleEdit(product._id)}
+          className="text-blue-600 hover:text-blue-700 focus:outline-none"
+          aria-label="Edit"
+        >
+          <FontAwesomeIcon icon={faEdit} />
+        </button>
+        <button
+          onClick={() => handleDeleteProduct(product._id)}
+          className="text-red-600 hover:text-red-700 focus:outline-none"
+          aria-label="Delete"
+        >
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
+      </div>
     </div>
   </div>
 
-<div className="absolute top-1 left-3 text-sm rounded-md shadow-sm -z-10">
+{/* <div className="absolute top-1 left-3 text-sm rounded-md shadow-sm -z-10">
   {(() => {
     if (product.brand == 'She') {
       return (
@@ -121,17 +123,19 @@ function ProductLine(props) {
   ) : (
     <FontAwesomeIcon icon={faHeart} className="text-gray-400" />
   )}
-  </div>
+  </div> */}
 
-  <p className="text-md font-semibold text-gray-800 mb-2">
-    €{product.price} 
-  </p>
-  <p className="text-sm text-gray-600 mb-2">
-    {product.format} • {product.category} • {product.subcategory}
-  </p>
-  <p className="text-sm text-gray-600">
-    {product.region}
-  </p>
+  <div>
+    <p className="text-md font-semibold text-gray-800 mb-2">
+      €{product.price} 
+    </p>
+    <p className="text-sm text-gray-600 mb-2">
+      {product.format} • {product.category} • {product.subcategory}
+    </p>
+    <p className="text-sm text-gray-600">
+      {product.region}
+    </p>
+  </div>
 </div>
 
   );

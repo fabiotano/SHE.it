@@ -9,8 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       container: {
         screens: {
@@ -28,7 +27,16 @@ module.exports = {
       fontSize: {
         '2xs': '.625rem',
       },
+      animation: {
+        'fade-in': 'fadeIn 5s ease-out forwards', // Añadir nueva animación
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
     },
-    plugins: [],
   },
-};
+  plugins: [],
+}

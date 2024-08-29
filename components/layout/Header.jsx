@@ -71,7 +71,7 @@ export default function Header2() {
                 <Link href="/login">
                   <FontAwesomeIcon
                     icon={faUserCircle}
-                    className="text-gray-600 h-7 hover:text-gray-800 transform transition-transform duration-200 hover:scale-125"
+                    className="text-gray-600 h-6 md:h-7 hover:text-gray-800 transform transition-transform duration-200 hover:scale-125"
                   />
                 </Link>
               </div>
@@ -80,7 +80,7 @@ export default function Header2() {
                   <div className="absolute -top-2 -right-1 flex justify-center items-center rounded-full w-4 h-4 bg-red-500 text-white text-xs">
                     12
                   </div>
-                  <FontAwesomeIcon icon={faCartShopping} className="h-7" />
+                  <FontAwesomeIcon icon={faCartShopping} className="h-6 md:h-7" />
                 </Link>
               </div>
             </div>

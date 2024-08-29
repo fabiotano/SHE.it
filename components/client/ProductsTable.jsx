@@ -12,13 +12,12 @@ function ProductsTable() {
     fetchProducts();
   }, []);
 
-  // Ordena los productos por nombre
-  // Ordena los productos por nombre, manejando valores nulos o indefinidos
-  const sortedProducts = [...products].sort((a, b) => {
-    const nameA = a.name || ''; // Usa una cadena vacía si `name` es nulo o indefinido
-    const nameB = b.name || ''; // Usa una cadena vacía si `name` es nulo o indefinido
-    return nameA.localeCompare(nameB);
-  });
+// Ordena los productos por ID, manejando valores nulos o indefinidos
+const sortedProducts = [...products].sort((a, b) => {
+  const idA = a.id ?? Number.MAX_SAFE_INTEGER; // Usa un valor muy alto si `id` es nulo o indefinido
+  const idB = b.id ?? Number.MAX_SAFE_INTEGER; // Usa un valor muy alto si `id` es nulo o indefinido
+  return idA - idB;
+});
 
   const productsGrid = sortedProducts.map((product, idx) => (
     <ProductLine product={product} key={idx} />

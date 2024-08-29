@@ -65,7 +65,7 @@ function ProductLine(props) {
     </div>
   </div>
 
-{/* <div className="absolute top-1 left-3 text-sm rounded-md shadow-sm -z-10">
+<div className="absolute top-1 left-3 text-sm rounded-md shadow-sm -z-10">
   {(() => {
     if (product.brand == 'She') {
       return (
@@ -123,7 +123,7 @@ function ProductLine(props) {
   ) : (
     <FontAwesomeIcon icon={faHeart} className="text-gray-400" />
   )}
-  </div> */}
+  </div>
 
   <div>
     <p className="text-md font-semibold text-gray-800 mb-2">

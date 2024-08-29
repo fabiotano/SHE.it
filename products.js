@@ -108,7 +108,7 @@ export const products = [
     id: 8,
     title: "NEUTRALIZZANTE",
     format: "1000 ML",
-    category: "Capelli",
+    category: "Cosmetici",
     price: 24.64,
     brand: "Eugeneperma",
     brandLogo: "/logoEugeneperma.png",

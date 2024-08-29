@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { useRouter } from "next/navigation";
-
 import { useMediaQuery } from "@react-hook/media-query";
 
 const geoUrl =
@@ -11,12 +10,12 @@ const geoUrl =
 export default function Page() {
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [isClicked, setIsClicked] = useState(false);
-  const [isRedirected, setIsRedirected] = useState(false); // Nuevo estado
+  const [isRedirected, setIsRedirected] = useState(false);
   const router = useRouter();
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const showRegion = (geo) => {
-    if (!isRedirected) { // Evita que se ejecute si ya se redirigió
+    if (!isRedirected) {
       const regName = geo.properties.reg_name;
       setSelectedRegion(regName);
     }
@@ -24,54 +23,56 @@ export default function Page() {
 
   const regionClicked = () => {
     setIsClicked(true);
-    setIsRedirected(true); // Establece isRedirected a true
-    // Introducir un retraso de 3 segundos antes de la redirección
+    setIsRedirected(true);
     setTimeout(() => {
       router.push("/home");
     }, 500);
   };
 
   const regionReset = () => {
-    if (!isRedirected) { // Evita que se ejecute si ya se redirigió
+    if (!isRedirected) {
       setSelectedRegion(null);
     }
   };
 
   useEffect(() => {
-    console.log(`Has seleccionado la región ${selectedRegion}`);
+    console.log(`Hai selezionato la regione ${selectedRegion}`);
   }, [selectedRegion]);
 
   return (
-    <div className="relative">
-      <div className="text-center h-10 mt-6 mb-4">
-        {isClicked ? (
-          <p className="text-xl" style={{ color: "red", fontSize : "40px" }}> {selectedRegion}</p>
+    <div className="relative p-6">
+      {/* Testo introduttivo minimalista */}
+      <p className="absolute left-1/3 font-bold transform -translate-x-1/2 top-52 text-gray-600 text-lg md:text-2xl">
+        Seleziona la tua regione
+      </p>
+      <p className="absolute left-1/3 transform -translate-x-1/2 top-60 mt-3 text-gray-600 text-md md:text-md">
+        per vedere prodotti e offerte disponibili.
+      </p>
+
+      {/* Nome della regione selezionata */}
+      <div
+        className={`absolute left-1/3 transform -translate-x-1/2 top-80 ${
+          selectedRegion
+            ? "shadow-lg rounded-full bg-gray-400 px-6 py-3 w-auto text-center text-xl font-semibold text-gray-700 border border-gray-500"
+            : "bg-transparent"
+        }`}
+      >
+        {isClicked && selectedRegion ? (
+          <p className="text-white">{selectedRegion}</p>
         ) : (
-          <>
-            {selectedRegion && !isRedirected ? ( // Mostrar solo si se ha seleccionado y no se ha redirigido
-              selectedRegion
-            ) : (
-              <>
-                <p className="text-sm md:text-lg mb-2">
-                  Da dove ci stai contattando?
-                </p>
-                <p className="text-xs md:text-md">
-                  Mostreremo tutti i nostri prodotti disponibili per la tua
-                  regione.
-                </p>
-              </>
-            )}
-          </>
+          selectedRegion &&
+          !isRedirected && <p className="text-lg">{selectedRegion}</p>
         )}
       </div>
 
+      {/* Mappa minimalista con maggiore visibilità */}
       <ComposableMap
-        className="w-full md:w-auto"
+        className="rounded-lg overflow-hidden shadow-lg"
         projection="geoAzimuthalEqualArea"
         projectionConfig={{
-          rotate: [-11.0, -53, 0],
-          center: isMobile ? [0, -11.5] : [0, -17.5],
-          scale: isMobile ? 2600 : 1400,
+          rotate: [-10, -53, -2],
+          center: isMobile ? [0, -11.5] : [-3, -16.1],
+          scale: isMobile ? 3000 : 1600,
         }}
       >
         <Geographies geography={geoUrl}>
@@ -85,18 +86,24 @@ export default function Page() {
                 onClick={regionClicked}
                 style={{
                   default: {
-                    fill: "#C0C0C0",
-                    stroke: "#404040",
-                    strokeWidth: 0.1,
+                    fill: "#d0d0d0",
+                    stroke: "#909090",
+                    strokeWidth: 0.4,
                     outline: "none",
+                    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                   },
                   hover: {
-                    fill: "#404040",
+                    fill: "#909090",
                     outline: "none",
+                    transition: "fill 0.3s ease, transform 0.5s ease",
+                    transform: "translateY(-3px)",
+                    zIndex: 10,
                   },
                   pressed: {
-                    fill: "yellow",
+                    fill: "#FFDD57",
                     outline: "none",
+                    transition: "fill 0.6s, transform 0.5s ease",
+                    transform: "translateY(-5px)",
                   },
                 }}
               />

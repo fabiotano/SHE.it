@@ -16,12 +16,11 @@ export default function Page() {
   const [confirmRegion, setConfirmRegion] = useState(null);
   const router = useRouter();
 
-  // Media queries para mobile, tablet, y laptop
   const isMobile = useMediaQuery("(max-width: 480px)");
   const isTablet = useMediaQuery("(min-width: 481px) and (max-width: 1023px)");
   const isLaptop = useMediaQuery("(min-width: 1024px)");
 
-  let timeoutId; // Variable para guardar el ID del timeout
+  let timeoutId;
 
   const handleRegion = (geo) => {
     if (!isRedirected) {
@@ -30,7 +29,7 @@ export default function Page() {
       setConfirmRegion(regName);
       timeoutId = setTimeout(() => {
         setShowConfirm(true);
-      }, 500);
+      }, 300);
     }
   };
 
@@ -38,22 +37,25 @@ export default function Page() {
     clearTimeout(timeoutId);
     setIsRedirected(true);
     setShowConfirm(false);
-    console.log(selectedRegion);
+    setIsClicked(true); // Marca el estado como clickeado
+    setSelectedRegion(null);
 
     const mapElement = document.querySelector(".map-container");
     if (mapElement) {
       mapElement.classList.add("animate-zoom-in");
+      mapElement.classList.remove("lg:border-l-2");
     }
 
     setTimeout(() => {
       router.push("/home");
-    }, 4000);
+    }, 1500);
   };
 
   const cancelSelection = () => {
-    clearTimeout(timeoutId); // Limpiar el timeout si se cancela
+    clearTimeout(timeoutId);
     setShowConfirm(false);
     setSelectedRegion(null);
+    setIsClicked(false); // Muestra el bloque si se cancela
   };
 
   const regionReset = () => {
@@ -90,7 +92,7 @@ export default function Page() {
   return (
     <div className="w-full h-screen flex flex-col lg:flex-row pt-4 px-4 overflow-hidden">
       {/* Texto */}
-      <div className="lg:w-1/2 flex flex-col flex-end justify-center items-center lg:items-end text-gray-600 text-center lg:text-left lg:mr-20 lg:mt-0">
+      <div className={`lg:w-1/2 flex flex-col flex-end justify-center items-center lg:items-end text-gray-600 text-center lg:text-left lg:mr-20 lg:mt-0 `}>
         <Image
           src="/logoShe.png"
           height={50}
@@ -104,12 +106,13 @@ export default function Page() {
         <p className="m-1 text-md lg:text-2xl animate-fade-in">
           per vedere i prodotti disponibili nella tua zona.
         </p>
-        {/* Nome della regione selezionata */}
+        {/* Nombre della regione selezionata */}
         <div
-          className={`m-4 w-auto min-h-12 flex items-center justify-center ${
-            selectedRegion
-              ? "shadow-lg rounded-lg bg-gray-200 px-4 py-2 text-center text-xl font-semibold text-gray-700 border border-gray-500"
-              : "bg-transparent text-gray-600" // Color de texto por defecto
+          className={`m-4 w-auto min-h-12 ${
+            isMobile ? "hidden" : "flex"
+          } ${!isClicked && selectedRegion
+            ? "shadow-lg rounded-lg bg-gray-200 px-4 py-2 text-center text-xl font-semibold text-gray-700 border border-gray-500"
+            : "bg-transparent text-gray-600"
           }`}
         >
           {isClicked && selectedRegion ? (
@@ -122,12 +125,11 @@ export default function Page() {
       </div>
 
       {/* Mappa */}
-<div
-  className={`map-container w-full h-full lg:border-l-2 border-gray-200 m-auto overflow-auto relative animate-fade-in ${
-    isMobile ? "max-w-[390px]" : isTablet ? "max-w-[475px]" : "max-w-none"
-  } lg:w-1/2`}
->
-        {" "}
+      <div
+        className={`map-container w-full h-full lg:border-l-2 border-gray-200 m-auto overflow-auto relative animate-fade-in ${
+          isMobile ? "max-w-[390px]" : isTablet ? "max-w-[475px]" : "max-w-none"
+        } lg:w-1/2`}
+      >
         <ComposableMap
           className="w-full h-full"
           projection="geoAzimuthalEqualArea"
@@ -140,27 +142,35 @@ export default function Page() {
                   className="h-full"
                   key={geo.rsmKey}
                   geography={geo}
-                  onMouseEnter={() => showRegion(geo)}
-                  onMouseLeave={regionReset}
-                  onClick={() => handleRegion(geo)}
+                  onMouseEnter={() => !isRedirected && showRegion(geo)}
+                  onMouseLeave={() => !isRedirected && regionReset()}
+                  onClick={() => !isRedirected && handleRegion(geo)}
                   style={{
                     default: {
-                      fill: "#d0d0d0",
+                      fill: isRedirected && geo.properties.reg_name === confirmRegion
+                        ? "#282624" // Gris oscuro para la región confirmada
+                        : "#d0d0d0", // Color por defecto para regiones no confirmadas
                       stroke: "#909090",
                       strokeWidth: 0.4,
                       outline: "none",
+                      cursor: isRedirected ? "default" : "pointer", // Cambiar cursor si ya está seleccionado
                     },
                     hover: {
-                      fill: "#909090",
+                      fill: isRedirected
+                        ? (geo.properties.reg_name === confirmRegion
+                            ? "#282624" // Gris oscuro para la región confirmada
+                            : "#d0d0d0") // Mantener el color de fondo para regiones no confirmadas
+                        : "#909090", // Color de hover para regiones no confirmadas
                       outline: "none",
                       transition: "fill 0.3s ease, transform 0.5s ease",
                       transform: "translateY(-3px)",
                       zIndex: 10,
+                      cursor: isRedirected ? "default" : "pointer", // Cambiar cursor si ya está seleccionado
                     },
                     pressed: {
                       fill: "#282624",
                       outline: "none",
-                      transition: "fill 0.6s, transform 0.5s ease",
+                      transition: "fill, transform 0.5s ease",
                       transform: "translateY(-5px)",
                     },
                   }}

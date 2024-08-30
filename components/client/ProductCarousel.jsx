@@ -25,7 +25,7 @@ export default function ProductCarousel({ products }) {
     <div className="relative">
       <Swiper
         slidesPerView={1}
-        spaceBetween={30}
+        spaceBetween={200}
         pagination={{
           clickable: true,
         }}
@@ -41,7 +41,7 @@ export default function ProductCarousel({ products }) {
           },
         }}
         autoplay={{
-          delay: 10000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}

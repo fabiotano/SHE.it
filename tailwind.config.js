@@ -28,8 +28,8 @@ module.exports = {
         '2xs': '.625rem',
       },
       animation: {
-        'fade-in': 'fadeIn 9s ease-out forwards', // Animación fade-in existente
-        'zoom-in': 'zoomIn 5s ease-out forwards', // Animación zoom-in más pronunciada
+        'fade-in': 'fadeIn 6s ease-out forwards', // Animación fade-in existente
+        'zoom-in': 'zoomIn 3s ease-out forwards', // Animación zoom-in más pronunciada
       },
       keyframes: {
         fadeIn: {

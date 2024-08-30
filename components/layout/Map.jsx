@@ -10,12 +10,16 @@ const geoUrl =
 
 export default function Page() {
   const [selectedRegion, setSelectedRegion] = useState(null);
+  const [isClicked, setIsClicked] = useState(false);
   const [isRedirected, setIsRedirected] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [confirmRegion, setConfirmRegion] = useState(null);
   const router = useRouter();
-  const isTablet = useMediaQuery("(max-width: 1025px)");
-  const isMobile = useMediaQuery("(max-width: 768px)");
+
+  // Media queries para mobile, tablet, y laptop
+  const isMobile = useMediaQuery("(max-width: 480px)");
+  const isTablet = useMediaQuery("(min-width: 481px) and (max-width: 1023px)");
+  const isLaptop = useMediaQuery("(min-width: 1024px)");
 
   let timeoutId; // Variable para guardar el ID del timeout
 
@@ -34,6 +38,7 @@ export default function Page() {
     clearTimeout(timeoutId); // Limpiar el timeout si se confirma
     setIsRedirected(true);
     setShowConfirm(false);
+    console.log(selectedRegion);
     setTimeout(() => {
       router.push("/home");
     }, 200);
@@ -45,6 +50,19 @@ export default function Page() {
     setSelectedRegion(null);
   };
 
+  const regionReset = () => {
+    if (!isRedirected) {
+      setSelectedRegion(null);
+    }
+  };
+
+  const showRegion = (geo) => {
+    if (!isRedirected) {
+      const regName = geo.properties.reg_name;
+      setSelectedRegion(regName);
+    }
+  };
+
   useEffect(() => {
     if (selectedRegion) {
       console.log(`Hai selezionato la regione ${selectedRegion}`);
@@ -53,14 +71,57 @@ export default function Page() {
 
   const projectionConfig = {
     rotate: [-10, -55.5, -2],
-    center: isMobile ? [1.5, -11.5] : isTablet ? [1.5, -11.5] : [3, -13.5],
-    scale: isMobile ? 5050 : isTablet ? 4250 : 4000,
+    center: isMobile
+      ? [1.5, -15]
+      : isTablet
+      ? [1.5, -13]
+      : isLaptop
+      ? [2, -13.5]
+      : [3, -13.5],
+    scale: isMobile ? 5050 : isTablet ? 5000 : isLaptop ? 4000 : 3700,
   };
 
   return (
-    <div className="w-full h-screen flex flex-col lg:flex-row-reverse pt-4 px-4 overflow-hidden">
+    <div className="w-full h-screen flex flex-col lg:flex-row pt-4 px-4 overflow-hidden">
+      {/* Texto */}
+      <div className="lg:w-1/2 flex flex-col flex-end justify-center items-center lg:items-end text-gray-600 text-center lg:text-left lg:mr-20 lg:mt-0">
+        <Image
+          src="/logoShe.png"
+          height={50}
+          width={75}
+          className="w-36 lg:w-44 m-2 lg:m-6"
+          alt="Logo SHE"
+        />
+        <p className="m-1 font-bold text-lg lg:text-3xl">
+          Seleziona la tua regione
+        </p>
+        <p className="m-1 text-md lg:text-2xl">
+          per vedere i prodotti disponibili nella tua zona.
+        </p>
+        {/* Nome della regione selezionata */}
+        <div
+          className={`m-4 w-auto min-h-12 flex items-center justify-center ${
+            selectedRegion
+              ? "shadow-lg rounded-lg bg-gray-200 px-4 py-2 text-center text-xl font-semibold text-gray-700 border border-gray-500"
+              : "bg-transparent text-gray-600" // Color de texto por defecto
+          }`}
+        >
+          {isClicked && selectedRegion ? (
+            <p className="text-white">{selectedRegion}</p>
+          ) : (
+            selectedRegion &&
+            !isRedirected && <p className="text-lg">{selectedRegion}</p>
+          )}
+        </div>
+      </div>
+
       {/* Mappa */}
-      <div className="w-full lg:w-1/2 max-h-screen overflow-auto relative">
+      <div
+        className={` w-full h-full lg:border-l-2 border-gray-200 m-auto overflow-auto relative animate-fade-in ${
+          isMobile ? "max-w-[390px]" : isTablet ? "max-w-[475px]" : "max-w-none"
+        } lg:w-1/2`}
+      >
+        {" "}
         <ComposableMap
           className="w-full h-full"
           projection="geoAzimuthalEqualArea"
@@ -73,6 +134,8 @@ export default function Page() {
                   className="h-full"
                   key={geo.rsmKey}
                   geography={geo}
+                  onMouseEnter={() => showRegion(geo)}
+                  onMouseLeave={regionReset}
                   onClick={() => handleRegion(geo)}
                   style={{
                     default: {
@@ -102,23 +165,6 @@ export default function Page() {
         </ComposableMap>
       </div>
 
-      {/* Texto */}
-      <div className="lg:w-1/2 flex flex-col flex-end justify-center items-center lg:items-end text-gray-600 text-center lg:text-left lg:mr-20 mt-4 lg:mt-0">
-        <Image
-          src="/logoShe.png"
-          height={50}
-          width={75}
-          className="w-36 lg:w-44 m-6"
-          alt="Logo SHE"
-        />
-        <p className="font-bold text-lg lg:text-3xl">
-          Seleziona la tua regione
-        </p>
-        <p className="mt-3 text-md lg:text-lg">
-          per vedere prodotti e offerte disponibili nella tua zona.
-        </p>
-      </div>
-
       {showConfirm && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 z-50 px-4 py-8">
           <div className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full mx-4 z-60">
@@ -132,13 +178,13 @@ export default function Page() {
             <div className="flex justify-end space-x-4 mt-4">
               <button
                 onClick={confirmSelection}
-                className="bg-blue-500 text-white px-6 py-2 rounded-md text-sm"
+                className="bg-blue-500 text-white px-6 py-2 rounded-md text-sm hover:scale-105 hover:opacity-60"
               >
                 Sì
               </button>
               <button
                 onClick={cancelSelection}
-                className="bg-gray-500 text-white px-6 py-2 rounded-md text-sm"
+                className="bg-gray-500 text-white px-6 py-2 rounded-md text-sm hover:scale-105 hover:opacity-60"
               >
                 No
               </button>

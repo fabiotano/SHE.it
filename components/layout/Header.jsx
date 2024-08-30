@@ -45,7 +45,7 @@ export default function Header2() {
             </div>
             {/* Logo */}
             <div className="flex flex-auto justify-center sm:justify-start ">
-              <Link href="/home">
+              <Link href="/">
                 <img
                   src="/logoShe.png"
                   alt="LogoSHE"

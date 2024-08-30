@@ -35,13 +35,19 @@ export default function Page() {
   };
 
   const confirmSelection = () => {
-    clearTimeout(timeoutId); // Limpiar el timeout si se confirma
+    clearTimeout(timeoutId);
     setIsRedirected(true);
     setShowConfirm(false);
     console.log(selectedRegion);
+
+    const mapElement = document.querySelector(".map-container");
+    if (mapElement) {
+      mapElement.classList.add("animate-zoom-in");
+    }
+
     setTimeout(() => {
       router.push("/home");
-    }, 200);
+    }, 4000);
   };
 
   const cancelSelection = () => {
@@ -89,13 +95,13 @@ export default function Page() {
           src="/logoShe.png"
           height={50}
           width={75}
-          className="w-36 lg:w-44 m-2 lg:m-6"
+          className="w-36 lg:w-52 m-2 lg:m-6"
           alt="Logo SHE"
         />
-        <p className="m-1 font-bold text-lg lg:text-3xl">
+        <p className="m-1 font-bold text-lg lg:text-3xl animate-fade-in">
           Seleziona la tua regione
         </p>
-        <p className="m-1 text-md lg:text-2xl">
+        <p className="m-1 text-md lg:text-2xl animate-fade-in">
           per vedere i prodotti disponibili nella tua zona.
         </p>
         {/* Nome della regione selezionata */}
@@ -116,11 +122,11 @@ export default function Page() {
       </div>
 
       {/* Mappa */}
-      <div
-        className={` w-full h-full lg:border-l-2 border-gray-200 m-auto overflow-auto relative animate-fade-in ${
-          isMobile ? "max-w-[390px]" : isTablet ? "max-w-[475px]" : "max-w-none"
-        } lg:w-1/2`}
-      >
+<div
+  className={`map-container w-full h-full lg:border-l-2 border-gray-200 m-auto overflow-auto relative animate-fade-in ${
+    isMobile ? "max-w-[390px]" : isTablet ? "max-w-[475px]" : "max-w-none"
+  } lg:w-1/2`}
+>
         {" "}
         <ComposableMap
           className="w-full h-full"

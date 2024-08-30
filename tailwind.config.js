@@ -28,12 +28,23 @@ module.exports = {
         '2xs': '.625rem',
       },
       animation: {
-        'fade-in': 'fadeIn 5s ease-out forwards', // Añadir nueva animación
+        'fade-in': 'fadeIn 9s ease-out forwards', // Animación fade-in existente
+        'zoom-in': 'zoomIn 5s ease-out forwards', // Animación zoom-in más pronunciada
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
+        },
+        zoomIn: {
+          '0%': {
+            transform: 'scale(1)',
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'scale(3)', // Mayor escala para un efecto más pronunciado
+            opacity: '0',
+          },
         },
       },
     },

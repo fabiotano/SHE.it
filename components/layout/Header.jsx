@@ -44,7 +44,7 @@ export default function Header2() {
         </div>
 
         <div>
-          <div className="flex w-full py-5 container">
+          <div className="flex w-full py-4 lg:py-2 container">
             {/* Menú desplegable para dispositivos pequeños */}
             <div
               onClick={clickMenuHandler}

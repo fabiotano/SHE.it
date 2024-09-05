@@ -1,9 +1,19 @@
-import { login } from './actions';
+import { login } from "./actions";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default async function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 max-w-md w-full p-8 rounded-lg shadow-md">
       <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+        <Link
+          href="/home"
+          className="flex items-center text-blue-600 hover:text-blue-800 transition-colors mb-4"
+        >
+          <FontAwesomeIcon icon={faArrowLeft} className="h-5 mr-2" />
+          Back to Home
+        </Link>
         <h2 className="text-2xl font-bold text-center mb-6">Admin Login</h2>
         <form className="space-y-6">
           <div>

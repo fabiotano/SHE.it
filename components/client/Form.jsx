@@ -26,6 +26,7 @@ function FormUpload() {
   };
 
   const handleInput = (e) => {
+    console.log(e.target)
     switch (e.target.name) {
       case "file":
         handleFileChange(e);
@@ -66,6 +67,7 @@ function FormUpload() {
         });
         break;
     }
+    console.log(productForm);
   };
 
   const submitForm = async (e) => {
@@ -102,7 +104,7 @@ function FormUpload() {
 
   return (
     <div className="text-center mx-auto">
-      <form onSubmit={submitForm} className="border rounded shadow px-8 py-6">
+      <form onSubmit={submitForm} className="px-8 py-6">
         {edit ? (
           <h2 className="text-2xl font-bold mb-4">Edit Product</h2>
         ) : (
@@ -264,11 +266,11 @@ function FormUpload() {
           <label className="mb-3 font-bold text-gray-700">
             Regions Available
           </label>
-          <select
+          {/* <select
             name="region"
             multiple
             value={productForm.selectedRegions}
-            onChange={(e) => handleInput(e)}
+            onClick={(e) => handleInput(e)}
             className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             {regions.map((region) => (
@@ -276,7 +278,7 @@ function FormUpload() {
                 {region}
               </option>
             ))}
-          </select>
+          </select> */}
         </div>
 
         <div className="mt-10">

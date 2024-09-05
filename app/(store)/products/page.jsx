@@ -1,12 +1,24 @@
+"use client";
 import ProductFilter from "@/components/client/ProductFilter";
 import ProductSort from "@/components/client/ProductSort";
 import ProductCard from "@/components/client/ProductCard";
+import { useEffect} from "react";
+import { useProducts } from '@/app/context/ProductContext';
 
 import Link from "next/link";
-import { products, sortOptions } from "@/products.js";
+import { sortOptions } from "@/products.js";
 import PaginationControl from "@/components/client/PaginationControl";
 
 function Products({ searchParams }) {
+
+  const { state, fetchProducts } = useProducts();
+  const { products, loading } = state;
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+
   // console.log(searchParams)
   // sort options
   if (searchParams.sort) {
@@ -16,9 +28,9 @@ function Products({ searchParams }) {
       } else if (searchParams.sort === "highToLow") {
         return b.price - a.price;
       } else if (searchParams.sort === "aToZ") {
-        return a.title.localeCompare(b.title);
+        return a.name.localeCompare(b.name);
       } else if (searchParams.sort === "zToA") {
-        return b.title.localeCompare(a.title);
+        return b.name.localeCompare(a.name);
       }
     });
   }

@@ -20,12 +20,15 @@ function Products() {
             Sign out
           </button>
         </form>
+
         <div className="flex flex-col md:flex-row w-lg">
-          <div className="justify-center w-2/5  bg-gray-100 max-w-lg  rounded-lg shadow-md">
-            <div className="rounded-lg shadow-md">
+
+          <div className="flex-none justify-center bg-gray-100">
+            <div className="">
               <FormUpload />
             </div>
           </div>
+
           <div className="flex-grow">
             <h2 className="text-2xl font-bold text-center mt-8 mb-4 md:my-0 md:py-6">
               Product List

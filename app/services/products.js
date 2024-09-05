@@ -124,6 +124,7 @@ async function insertProduct(dbClient, data) {
   const url = await getPublicUrl(dbClient, data.file.name);
   delete data.file;
   data.image_url = url;
+  console.dir(data.file, {depth: null} )
   const { data: productData, error } = await dbClient
     .from('products')
     .insert(data);

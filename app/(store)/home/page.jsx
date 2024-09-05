@@ -1,11 +1,22 @@
+"use client"
 import BrandCarousel from "@/components/client/BrandCarousel";
 import Carousel from "@/components/client/Carousel";
 import ProductCarousel from "@/components/client/ProductCarousel";
 import ProductCategory from "@/components/client/ProductCategory";
-import {products}  from "@/products";
-import React from "react";
+// import {products}  from "@/products";
+import {useEffect} from "react";
+import { useProducts } from '@/app/context/ProductContext';
+
 
 function Home() {
+  
+    const { state, fetchProducts } = useProducts();
+    const { products, loading } = state;
+  
+    useEffect(() => {
+      fetchProducts();
+    }, []);
+
   return (
     <div className="container m-auto ">
       <Carousel />

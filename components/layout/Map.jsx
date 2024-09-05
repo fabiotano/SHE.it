@@ -1,12 +1,11 @@
 "use client";
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { useRouter } from "next/navigation";
 import { useMediaQuery } from "@react-hook/media-query";
 
-const geoUrl =
-  "https://raw.githubusercontent.com/openpolis/geojson-italy/master/geojson/limits_IT_regions.geojson";
+const geoUrl = "https://raw.githubusercontent.com/openpolis/geojson-italy/master/geojson/limits_IT_regions.geojson";
 
 export default function Page() {
   const [selectedRegion, setSelectedRegion] = useState(null);
@@ -14,11 +13,22 @@ export default function Page() {
   const [isRedirected, setIsRedirected] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [confirmRegion, setConfirmRegion] = useState(null);
+  const [className, setClassName] = useState("map-container w-full h-full lg:border-l-2 border-gray-200 m-auto overflow-auto relative animate-fade-in lg:w-1/2");
+
   const router = useRouter();
 
+  // Media Queries
   const isMobile = useMediaQuery("(max-width: 480px)");
   const isTablet = useMediaQuery("(min-width: 481px) and (max-width: 1023px)");
   const isLaptop = useMediaQuery("(min-width: 1024px)");
+
+  useEffect(() => {
+    // Update the className state based on media queries
+    const updatedClassName = `map-container w-full h-full lg:border-l-2 border-gray-200 m-auto overflow-auto relative animate-fade-in ${
+      isMobile ? "max-w-[390px]" : isTablet ? "max-w-[475px]" : "max-w-none"
+    } lg:w-1/2`;
+    setClassName(updatedClassName);
+  }, [isMobile, isTablet, isLaptop]);
 
   let timeoutId;
 
@@ -92,12 +102,13 @@ export default function Page() {
   return (
     <div className="w-full h-screen flex flex-col lg:flex-row pt-4 px-4 overflow-hidden">
       {/* Texto */}
-      <div className={`lg:w-1/2 flex flex-col flex-end justify-center items-center lg:items-end text-gray-600 text-center lg:text-left lg:mr-20 lg:mt-0 `}>
+      <div className="lg:w-1/2 flex flex-col flex-end justify-center items-center lg:items-end text-gray-600 text-center lg:text-left lg:mr-20 lg:mt-0">
         <Image
           src="/logoShe.png"
           height={50}
           width={75}
           className="w-36 lg:w-52 m-2 lg:m-6"
+          priority
           alt="Logo SHE"
         />
         <p className="m-1 font-bold text-lg lg:text-3xl animate-fade-in">
@@ -107,14 +118,7 @@ export default function Page() {
           per vedere i prodotti disponibili nella tua zona.
         </p>
         {/* Nombre della regione selezionata */}
-        <div
-          className={`m-4 w-auto min-h-12 ${
-            isMobile ? "hidden" : "flex"
-          } ${!isClicked && selectedRegion
-            ? "shadow-lg rounded-lg bg-gray-200 px-4 py-2 text-center text-xl font-semibold text-gray-700 border border-gray-500"
-            : "bg-transparent text-gray-600"
-          }`}
-        >
+        <div className={`m-4 w-auto min-h-12 ${!isMobile ? "flex" : "hidden"} ${!isClicked && selectedRegion ? "shadow-lg rounded-lg bg-gray-200 px-4 py-2 text-center text-xl font-semibold text-gray-700 border border-gray-500" : "bg-transparent text-gray-600"}`}>
           {isClicked && selectedRegion ? (
             <p className="text-white">{selectedRegion}</p>
           ) : (
@@ -125,11 +129,7 @@ export default function Page() {
       </div>
 
       {/* Mappa */}
-      <div
-        className={`map-container w-full h-full lg:border-l-2 border-gray-200 m-auto overflow-auto relative animate-fade-in ${
-          isMobile ? "max-w-[390px]" : isTablet ? "max-w-[475px]" : "max-w-none"
-        } lg:w-1/2`}
-      >
+      <div className={className}>
         <ComposableMap
           className="w-full h-full"
           projection="geoAzimuthalEqualArea"
@@ -157,9 +157,9 @@ export default function Page() {
                     },
                     hover: {
                       fill: isRedirected
-                        ? (geo.properties.reg_name === confirmRegion
-                            ? "#282624" // Gris oscuro para la región confirmada
-                            : "#d0d0d0") // Mantener el color de fondo para regiones no confirmadas
+                        ? geo.properties.reg_name === confirmRegion
+                          ? "#282624" // Gris oscuro para la región confirmada
+                          : "#d0d0d0" // Mantener el color de fondo para regiones no confirmadas
                         : "#909090", // Color de hover para regiones no confirmadas
                       outline: "none",
                       transition: "fill 0.3s ease, transform 0.5s ease",

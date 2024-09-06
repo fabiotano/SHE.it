@@ -50,7 +50,10 @@ export default function Header2() {
               onClick={clickMenuHandler}
               className="sm:hidden w-14 flex-initial flex items-center justify-center"
             >
-              <FontAwesomeIcon icon={faBars} className="h-6 text-gray-700" />
+              <FontAwesomeIcon
+                icon={faBars}
+                className="h-5 md:h-6 text-gray-700"
+              />
             </div>
 
             {/* Logo */}
@@ -59,14 +62,14 @@ export default function Header2() {
                 <img
                   src="/logoShe.png"
                   alt="LogoSHE"
-                  className="h-14 lg:-ml-2 lg:h-20 sm:order-first"
+                  className="h-14 lg:-ml-2 lg:h-16 sm:order-first"
                 />
               </Link>
             </div>
 
             {/* Barra de búsqueda */}
             <div className="hidden sm:flex flex-auto items-center">
-              <div className="flex items-center border border-gray-300 p-1.5 h-10 w-5/6 mx-auto rounded-md bg-white">
+              <div className="flex items-center border border-gray-300 p-1.5 h-8 w-5/6 mx-auto rounded-md bg-white">
                 <form className="flex-auto flex">
                   <input
                     className="outline-none w-full h-full px-2 text-gray-700"
@@ -76,7 +79,7 @@ export default function Header2() {
                 </form>
                 <FontAwesomeIcon
                   icon={faMagnifyingGlass}
-                  className="h-6 text-gray-600 ml-2"
+                  className="h-4 text-gray-600 ml-2"
                 />
               </div>
             </div>
@@ -87,7 +90,7 @@ export default function Header2() {
                 <Link href="/">
                   <FontAwesomeIcon
                     icon={faGlobe}
-                    className="text-gray-600 h-6 mr-2 md:mr-6 md:h-7 hover:text-gray-800 transform transition-transform duration-200 hover:scale-125"
+                    className="text-gray-600 h-5 md:h-6 mr-2 md:mr-6 hover:text-gray-800 transform transition-transform duration-200 hover:scale-125"
                   />
                 </Link>
               </div>
@@ -96,18 +99,18 @@ export default function Header2() {
                   <Link href="/login">
                     <FontAwesomeIcon
                       icon={faUserCircle}
-                      className="text-gray-600 h-6 md:h-7 hover:text-gray-800 transform transition-transform duration-200 hover:scale-125"
+                      className="text-gray-600 h-5 md:h-6 hover:text-gray-800 transform transition-transform duration-200 hover:scale-125"
                     />
                   </Link>
                 </div>
                 <div className="flex text-gray-600 relative hover:text-gray-800 transform transition-transform duration-200 hover:scale-125">
                   <Link href="/cart">
-                    <div className="absolute -top-2 -right-1 flex justify-center items-center rounded-full w-4 h-4 bg-red-500 text-white text-xs">
+                    <div className="absolute -top-2 -right-1 md:-top-3 md:-right-2 flex justify-center items-center rounded-full w-4 h-4 md:w-5 md:h-5 bg-red-500 text-white text-xs">
                       12
                     </div>
                     <FontAwesomeIcon
                       icon={faCartShopping}
-                      className="h-6 md:h-7"
+                      className="h-5 md:h-6"
                     />
                   </Link>
                 </div>
@@ -135,14 +138,14 @@ export default function Header2() {
               </li>
 
               {/* Menú principal */}
-              <li className="hidden sm:flex space-x-3 p-2">
+              <li className="hidden sm:flex space-x-3">
                 {mainMenu.map((menuItem, idx) => (
                   <Link
                     href={`${menuItem.href}`}
                     key={idx}
                     className="justify-center w-32 py-3 flex-shrink-0 flex-grow-0 hidden sm:flex"
                   >
-                    <div className="text-gray-500 hover:text-gray-800 font-semibold sm:text-sm lg:text-md transform transition-transform duration-200 hover:scale-125">
+                    <div className="text-gray-500 hover:text-gray-800 font-semibold sm:text-sm lg:text-md transform transition-transform duration-200 hover:scale-110">
                       <span className="flex items-center justify-center">
                         {menuItem.title}
                       </span>
@@ -188,8 +191,7 @@ export default function Header2() {
                   {menuItem.title}
                 </Link>
                 <FontAwesomeIcon icon={faChevronDown} className="text-white" />
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white opacity-50 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100">
-                </span>
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white opacity-50 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
               </li>
             ))}
           </ul>

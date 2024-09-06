@@ -1,6 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
-
 export const mainMenu = [
   {
     title: "PARRUCCHIERI",
@@ -28,7 +25,6 @@ export const mainMenu = [
     href: "us",
     logo: <img src="/iconos/equipo.png" alt="Noi Logo" />,
   },
-
 ];
 
 export const filters = [
@@ -97,6 +93,30 @@ export const filters = [
   },
 ];
 
+export const colors = [
+  {
+    title: "Colore",
+    titleBackend: "color",
+    options: [
+      "red",
+      "blue",
+      "green",
+      "yellow",
+      "black",
+      "white",
+      "gray",
+      "brown",
+      "orange",
+      "pink",
+      "purple",
+      "silver",
+      "slate",
+      "forest",
+      "ocean",
+    ],
+  },
+];
+
 export const sortOptions = [
   {
     title: "",
@@ -119,4 +139,3 @@ export const sortOptions = [
     value: "zToA",
   },
 ];
-

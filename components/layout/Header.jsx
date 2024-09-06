@@ -184,15 +184,12 @@ export default function Header2() {
                   onClick={clickMenuHandler}
                   className="text-white hover:underline flex items-center transform transition-transform duration-300 group-hover:translate-x-8"
                 >
-                  <img
-                    src={menuItem.iconSrc}
-                    alt={`${menuItem.title} Logo`}
-                    className="h-6 mr-4"
-                  />
+                  <span className="h-6 mr-4">{menuItem.logo}</span>
                   {menuItem.title}
                 </Link>
                 <FontAwesomeIcon icon={faChevronDown} className="text-white" />
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white opacity-50 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white opacity-50 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100">
+                </span>
               </li>
             ))}
           </ul>

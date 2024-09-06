@@ -2,22 +2,20 @@
 import ProductFilter from "@/components/client/ProductFilter";
 import ProductSort from "@/components/client/ProductSort";
 import ProductCard from "@/components/client/ProductCard";
-import { useEffect} from "react";
-import { useProducts } from '@/app/context/ProductContext';
+import { useEffect } from "react";
+import { useProducts } from "@/app/context/ProductContext";
 
 import Link from "next/link";
 import { sortOptions } from "@/products.js";
 import PaginationControl from "@/components/client/PaginationControl";
 
 function Products({ searchParams }) {
-
   const { state, fetchProducts } = useProducts();
   const { products, loading } = state;
 
   useEffect(() => {
     fetchProducts();
   }, []);
-
 
   // console.log(searchParams)
   // sort options
@@ -76,37 +74,40 @@ function Products({ searchParams }) {
 
   return (
     <div className="container">
-
       {/* Titulo */}
 
       <div className="text-2xs py-2 pl-3">
         <p>
-          <Link href={"/"}>Inicio</Link> /{" "}
+          <Link href={"/home"}>Home</Link> /{" "}
           <span className="text-gray-300">Parrucchieria</span>
         </p>
       </div>
 
       <div>
-        <h2 className="text-3xl sm:text-5xl my-2 font-bold text-center">Parrucchieria</h2>
-        <p className="text-center text-gray-400 text-xs mt-4 hidden sm:block">
-          Esplora la nostra collezione di prodotti per capelli professionali, progettati per offrire risultati straordinari e un look impeccabile ad ogni utilizzo.
+        <h2 className="text-3xl sm:text-5xl my-4 font-bold text-center text-gray-800">
+          Parrucchieria
+        </h2>
+        <p className="text-center text-gray-400 text-sm my-4 hidden sm:block">
+          Esplora la nostra collezione di prodotti per capelli professionali,
+          progettati per offrire risultati straordinari e un look impeccabile ad
+          ogni utilizzo.
         </p>
       </div>
 
       {/* Sort Results */}
-      <div className="flex justify-center sm:justify-end my-5">
-        <p className="text-sm py-3 hidden sm:block">Ordenar por:</p>
+      <div className="flex justify-center items-center sm:justify-end my-5">
+        <p className="text-md hidden sm:block">Ordina per:</p>
         <ProductSort />
       </div>
 
       {/* Filter */}
       <div className="mt-4 mb-4 sm:flex ">
-        <ProductFilter/>
+        <ProductFilter />
 
         <section className="flex-grow m-3 lg:ml-10">
           <Link href={"/products"}>
             {/* Products */}
-            <div className="flex flex-wrap gap-x-4 gap-y-2">
+            <div className="flex flex-wrap justify-center gap-7">
               {productsPaginated.map((product, index) => (
                 <ProductCard key={index} product={product} />
               ))}
@@ -119,7 +120,6 @@ function Products({ searchParams }) {
             />
           </Link>
         </section>
-
       </div>
     </div>
   );

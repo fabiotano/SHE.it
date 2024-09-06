@@ -1,21 +1,39 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 export const mainMenu = [
-  { title: "PARRUCCHIERI", href: "/products?category=Capelli" , logo: <img src="/iconos/pelo-de-mujer.png" alt="Parrucchieri Logo" /> },
-  // { title: "COSMETICI", href: "products"},
-  // { title: "BARBERIA", href: "products" },
-  { title: "ACCESSORI", href: "/products?category=Accessori" , logo: <img src="/iconos/secador-de-pelo.png" alt="Accessoori Logo" /> },
-  { title: "COSMETICI", href: "/products?category=Cosmetici" , logo: <img src="/iconos/cosmetici.png" alt="Cosmetici Logo" /> },
-  { title: "BARBERSHOP", href: "/products?category=Barbershop" , logo: <img src="/iconos/hombre.png" alt="Barbershop Logo" /> },
-  { title: "ABOUT US", href: "us", logo: <img src="/iconos/equipo.png" alt="Noi Logo" /> },
-  // { title: "COSMETICI", href: "products"},
-  // { title: "BARBERIA", href: "products" },
+  {
+    title: "PARRUCCHIERI",
+    href: "/products?category=Capelli",
+    logo: <img src="/iconos/pelo-de-mujer.png" alt="Parrucchieri Logo" />,
+  },
+
+  {
+    title: "ACCESSORI",
+    href: "/products?category=Accessori",
+    logo: <img src="/iconos/secador-de-pelo.png" alt="Accessoori Logo" />,
+  },
+  {
+    title: "COSMETICI",
+    href: "/products?category=Cosmetici",
+    logo: <img src="/iconos/cosmetici.png" alt="Cosmetici Logo" />,
+  },
+  {
+    title: "BARBERSHOP",
+    href: "/products?category=Barbershop",
+    logo: <img src="/iconos/hombre.png" alt="Barbershop Logo" />,
+  },
+  {
+    title: "ABOUT US",
+    href: "us",
+    logo: <img src="/iconos/equipo.png" alt="Noi Logo" />,
+  },
+
 ];
 
 export const filters = [
   {
-    title: "Marcas",
+    title: "Marca",
     titleBackend: "brand",
     options: ["Eugeneperma", "Chenice", "She"],
   },
@@ -23,42 +41,53 @@ export const filters = [
     title: "Subcategoria",
     titleBackend: "subCategory",
     options: [
-      "Permanente",
-      "Semi-Permanente",
-      "Stiratura",
-      "Naturale",
-      "Diretta",
-      // "Decolorazione",
-      // "Complementi Tecnici",
-      // "Nutrizione",
-      // "Idratazione",
-      // "Volume",
-      // "Colore",
-      // "Silver",
-      // "Anti Forfora",
-      // "Styling",
-      // "Districante",
-      // "Purificante",
-      // "Shampoo Solido",
-      // "Capelli Fragili",
-      // "Tutti Tipi di Capelli",
-      // "Capelli Fini",
-      // "Capelli Ricci",
-      // "Capelli Secchi",
-      // "Capelli Grassi",
-      // "",
-      // "Anticaduta",
-      // "Cute Sensible",
-      // "Sun",
-      // "Anti-Age",
-      // "Green Care",
-      // "Biological Waves",
-      "Ifix",
-      "Urbn",
-      "Botox Effect",
-      "Moisturizing",
-      "Ricostruzione",
-      "Altro"
+      // **Coloración**
+      "Colorazione Permanente", // Permanente
+      "Colorazione Semi-Permanente", // Semi-permanente
+      "Colorazione Naturale", // Natural
+      "Diretta", // Directa
+
+      // **Tratamientos de Cabello**
+      "Permanenti", // Permanentes
+      "Stiratura", // Alisado
+
+      // **Tratamientos Especializados**
+      "Ifix", // Tratamiento específico
+      "Urbn", // Tratamiento específico
+      "Botox Effect", // Efecto Botox
+      "Ricostruzione", // Reconstrucción
+
+      // **Hidratación y Nutrición**
+      "Moisturizing", // Hidratación
+      // "Nutrizione", // Nutrición (opcional)
+      // "Idratazione", // Hidratación (opcional)
+
+      // **Productos de Cuidado y Estilo**
+      "Decolorazione", // Decoloración
+      "Styling", // Estilizado
+      "Districante", // Acondicionador
+      "Purificante", // Purificante
+      "Shampoo Solido", // Shampoo sólido
+
+      // **Cuidado Específico del Cabello**
+      "Capelli Fragili", // Cabello frágil
+      "Per Tutti i Capelli", // Para todo tipo de cabello
+      "Capelli Fini", // Cabello fino
+      "Capelli Ricci", // Cabello rizado
+      "Capelli Secchi", // Cabello seco
+      "Capelli Colorati", // Cabello teñido
+      "Capelli Biondi-Dec-Bianchi", // Cabello rubio y decolorado
+      "Capelli Grassi", // Cabello graso
+
+      // **Cuidado del Cuero Cabelludo**
+      "Anticaduta/Antiforfora", // Anticaída/Anticaspa
+      "Cute Sensible", // Cuero cabelludo sensible
+
+      // **Protección y Cuidado Adicional**
+      "Sun", // Protección solar
+      "Anti-Age", // Anti-envejecimiento
+      "Green Care", // Cuidado ecológico
+      "Biological Waves", // Ondas biológicas
     ],
   },
   {
@@ -70,19 +99,24 @@ export const filters = [
 
 export const sortOptions = [
   {
-    title: "Menor precio",
+    title: "",
+    value: "",
+  },
+  {
+    title: "Prezzo più Basso",
     value: "lowToHigh",
   },
   {
-    title: "Mayor precio",
+    title: "Prezzo più Alto",
     value: "highToLow",
   },
   {
-    title: "A a Z",
+    title: "Da A a Z",
     value: "aToZ",
   },
   {
-    title: "Z a A",
+    title: "Da Z a A",
     value: "zToA",
   },
 ];
+

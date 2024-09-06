@@ -89,29 +89,29 @@ function ProductFilter() {
     <section>
       <div
         onClick={showFilterHandler}
-        className=" flex gap-2 mx-auto justify-center h-10 border hover:bg-red-400 border-gray-400 rounded-md text-sm w-1/2 mt-4 cursor-pointer sm:hidden "
+        className=" flex gap-2 mx-auto justify-center h-10 border hover:bg-slate-300 border-gray-400 rounded-md text-sm w-1/2 mt-4 cursor-pointer sm:hidden "
       >
         <FontAwesomeIcon
           icon={faFilter}
-          className="text-gray-400 h-4 self-center"
+          className="text-gray-600 h-4 self-center"
         />
-        <p className="self-center">Filtros</p>
+        <p className="self-center">Filtri</p>
       </div>
       <div
         className={`${
           showFilter ? "block" : "hidden"
         } sm:block sm:w-[300px] border border-gray-400 rounded-md text-sm mx-4 md:mx-0 flex flex-col mr-6`}
       >
-        <div className="flex justify-between items-center px-4 py-2">
-          <p className="text-gray-400 sm:text-lg">Filtros</p>
+        <div className="flex justify-between items-center bg-slate-300 border-b-gray-200 px-4 py-2">
+          <p className="text-gray-600 font-semibold sm:text-lg">Filtri</p>
           <FontAwesomeIcon
             icon={faFilterCircleXmark}
-            className="text-gray-400 h-4 cursor-pointer"
+            className="text-gray-600 h-4 cursor-pointer"
             onClick={showFilterHandler}
           />
         </div>
         {
-          <div className="pl-4 py-2">
+          <div className="pl-4 py-4">
             {filters.map((filterOption, index) => (
               <div key={index}>
                 <h3 className="text-sm font-bold">{filterOption.title}</h3>
@@ -150,7 +150,6 @@ function ProductFilter() {
             Aplicar
           </button>
         </div>
-        
       </div>
     </section>
   );

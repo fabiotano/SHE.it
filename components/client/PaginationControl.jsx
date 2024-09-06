@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
-
 function PaginationControl({
   hasNextPage,
   hasPreviousPage,
@@ -18,7 +17,7 @@ function PaginationControl({
 
   const [pagePagination, setPagePagination] = useState({
     page: currentPage,
-    perPage: parseInt(searchParams.perPage) || 8,
+    perPage: parseInt(searchParams.get('perPage')) || 9, // Usa 'get' en lugar de acceso directo
   });
 
   function handlePagination(paginationOption) {
@@ -32,6 +31,9 @@ function PaginationControl({
       newPage = paginationOption;
     }
 
+    console.log('Current Page:', currentPage);
+    console.log('New Page:', newPage);
+
     setPagePagination((prevPagination) => ({
       ...prevPagination,
       page: newPage,
@@ -39,11 +41,12 @@ function PaginationControl({
 
     const newSearchParams = new URLSearchParams({
       ...pagePagination,
-      page: newPage, // Use the new page number
+      page: newPage,
     });
 
     // merge parameters and push new search params to router
     const mergedSearchParams = mergeSearchParams(searchParams, newSearchParams);
+    console.log('Merged Search Params:', mergedSearchParams);
     router.push(`?${mergedSearchParams}`);
   }
 

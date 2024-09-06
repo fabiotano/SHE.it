@@ -82,7 +82,7 @@ export default function Header2() {
             </div>
 
             {/* Iconos de usuario y carrito */}
-            <div className="w-24 flex-auto flex items-center justify-end space-x-3">
+            <div className="w-24 flex-auto mr-4 flex items-center justify-end space-x-3">
               <div>
                 <Link href="/">
                   <FontAwesomeIcon

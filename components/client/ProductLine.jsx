@@ -65,7 +65,7 @@ function ProductLine(props) {
     </div>
   </div>
 
-<div className="absolute top-1 left-3 text-sm rounded-md shadow-sm -z-10">
+<div className="absolute top-1 left-3 text-sm rounded-md shadow-sm -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ">
   {(() => {
     if (product.brand == 'She') {
       return (

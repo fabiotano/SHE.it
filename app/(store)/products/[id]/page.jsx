@@ -1,10 +1,6 @@
 // 'use client'
-import Link from "next/link";
 import ProductDetail from "@/components/client/ProductDetail";
 
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { products } from "@/products";
 
 async function ProductPage({ params }) {

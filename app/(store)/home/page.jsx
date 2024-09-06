@@ -1,42 +1,48 @@
-"use client"
+"use client";
 import BrandCarousel from "@/components/client/BrandCarousel";
 import Carousel from "@/components/client/Carousel";
 import ProductCarousel from "@/components/client/ProductCarousel";
 import ProductCategory from "@/components/client/ProductCategory";
 // import {products}  from "@/products";
-import {useEffect} from "react";
-import { useProducts } from '@/app/context/ProductContext';
-
+import { useEffect } from "react";
+import { useProducts } from "@/app/context/ProductContext";
 
 function Home() {
-  
-    const { state, fetchProducts } = useProducts();
-    const { products, loading } = state;
-  
-    useEffect(() => {
-      fetchProducts();
-    }, []);
+  const { state, fetchProducts } = useProducts();
+  const { products, loading } = state;
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   return (
     <div className="container m-auto ">
       <Carousel />
-      <section className="w-full max-w-6xl mx-auto px-6 py-8 md:py-14">
-        <h2 className="text-2xl font-bold text-center">Le nostre scelte per te</h2>
-        <p className="text-sm text-center text-gray-400 mt-2 mb-4">
+      <section className="w-full max-w-6xl mx-auto px-6 pt-8 md:pt-14">
+        <h2 className="text-2xl font-bold text-center my-2 text-gray-800">
+          Le nostre scelte per te
+        </h2>
+        <p className="text-sm text-center text-gray-400 mb-4">
           Scopri i prodotti in primo piano che renderanno i tuoi capelli
           impeccabili. Entra e porta l'eccellenza nel tuo salone!
         </p>
-        <ProductCarousel products={products}/>
+        <ProductCarousel products={products} />
       </section>
 
-      <section className="py-4 md:py-8 bg-gray-100">
-        {/* <h2 className="text-2xl font-bold text-center">Brands</h2> */}
+      <section className="w-full max-w-6xl mx-auto px-6 pt-8 md:pt-14 pb-5">
+        <h2 className="text-2xl font-bold text-center my-2 text-gray-800">Brands</h2>
+        <p className="text-sm text-center text-gray-400 mb-4">
+          Prodotti esclusivi per capelli, accessori e creme dalle migliori
+          etichette del settore.
+        </p>
+      </section>
+      <div className="bg-gray-100 p-6 mb-4">
         <BrandCarousel />
-      </section>
+      </div>
 
-      <section className="w-full max-w-6xl mx-auto px-6  py-8 md:py-14 sm:pb-8 ">
-        <h2 className="text-2xl font-bold text-center">Categorie</h2>
-        <p className="text-sm text-center text-gray-400 mt-2 mb-4">
+      <section className="w-full max-w-6xl mx-auto px-6 pt-8 md:pt-14 sm:pb-8 ">
+        <h2 className="text-2xl font-bold text-center my-2 text-gray-800">Categorie</h2>
+        <p className="text-sm text-center text-gray-400 mb-4">
           Scopri la nostra vasta gamma di prodotti per capelli, accessori e
           creme
         </p>

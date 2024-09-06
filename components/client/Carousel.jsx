@@ -11,11 +11,21 @@ import 'swiper/css/pagination';
 // import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
-// import required modules
+// Import required modules
 import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
 import Image from 'next/image';
 
 export default function Carousel() {
+  const images = [
+    '/carousel/image-1.jpg',
+    '/carousel/image-2.jpg',
+    '/carousel/image-3.jpg',
+    '/carousel/image-4.jpg',
+    '/carousel/image-5.jpg',
+    '/carousel/image-6.jpg',
+    // Añade más imágenes si es necesario
+  ];
+
   return (
     <div className="relative">
       <div className="absolute w-full h-full">
@@ -25,7 +35,7 @@ export default function Carousel() {
         />
         <FontAwesomeIcon
           icon={faArrowLeft}
-          className="absolute z-10 text-xl rounded-full prev p-4 bg-slate-400 bg-opacity-50  cursor-pointer top-1/2 -translate-y-1/2 left-2 ml-2 text-gray-100"
+          className="absolute z-10 text-xl rounded-full prev p-4 bg-slate-400 bg-opacity-50 cursor-pointer top-1/2 -translate-y-1/2 left-2 ml-2 text-gray-100"
         />
       </div>
       <Swiper
@@ -52,41 +62,18 @@ export default function Carousel() {
           prevEl: '.prev',
         }}
         modules={[Pagination, Navigation, EffectFade, Autoplay]}
-        className="mySwiper h-64 md:h-96"
-      >
-        <SwiperSlide className="h-full">
-          <Image
-            src="/carousel/image-1.jpg"
-            // style={{ objectFit: 'contain' }}
-            fill
-            style={{ objectFit: 'cover' }}
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src="/carousel/image-2.jpg"
-            fill
-            style={{ objectFit: 'cover' }}
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src="/carousel/image-3.jpg"
-            style={{ objectFit: 'cover' }}
-            fill
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src="/carousel/image-4.jpg"
-            style={{ objectFit: 'cover' }}
-            fill
-            alt=""
-          />
-        </SwiperSlide>
+        className="mySwiper h-72 md:h-[43vh] border"
+        >
+        {images.map((src, index) => (
+          <SwiperSlide key={index}>
+            <Image
+              src={src}
+              fill
+              style={{ objectFit: 'cover' }}
+              alt={`Slide image ${index + 1}`}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

@@ -11,12 +11,14 @@ function ProductCard(props) {
       href={`/products/${product.id}`}
       className="relative flex flex-col items-center group transform transition-transform duration-300 hover:scale-105 hover:translate-y-2"
     >
-              <div className="relative min-w-[230px] min-h-[290px] w-[250px] h-[300px] mx-auto my-5 bg-white border border-x rounded-md m-auto flex flex-col justify-between">
-              {/* LOGO */}
+      <div className="relative min-w-[230px] min-h-[300px] w-[260px] h-[320px] mx-auto my-5 bg-white border border-x rounded-md m-auto flex flex-col justify-between">
+        {/* LOGO */}
         <div className="z-10 flex items-center justify-center absolute top-2 left-2 lg:opacity-0 lg:group-hover:opacity-100 lg:transition-opacity lg:duration-300">
           {(() => {
             if (product.brand == "She") {
-              return <img src="/brands/1.svg" alt="She Logo" className="w-16" />;
+              return (
+                <img src="/brands/1.svg" alt="She Logo" className="w-16" />
+              );
             } else if (product.brand == "Eugeneperma") {
               return (
                 <img
@@ -50,14 +52,14 @@ function ProductCard(props) {
 
         {/* IMAGE */}
         <div className="">
-                  <img
-                    src={product.image_url}
-                    alt={product.title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="max-h-52 mx-auto pt-2"
-                  />
-                </div>
+          <img
+            src={product.image_url}
+            alt={product.title}
+            layout="fill"
+            objectFit="cover"
+            className="max-h-52 mx-auto pt-2"
+          />
+        </div>
 
         {/* PRODUCT INFO */}
         <div className="flex items-center justify-between rounded-md p-3 group-hover:bg-gray-200 transition-colors duration-300 flex-grow">
@@ -65,12 +67,15 @@ function ProductCard(props) {
             <h3 className="text-sm md:text-md font-semibold text-gray-700 line-clamp-2 overflow-hidden">
               {product.name}{" "}
             </h3>
-            <span className="text-xs">{product.format}</span>
-            </div>
+            <h5 className="text-sm">{product.format}</h5>
+            <span className="font-italic text-gray-500 text-xs">
+              {product.subcategory} {product.region}
+            </span>
+          </div>
 
           <div className="w-1/4 flex-none ml-2 text-center">
-          <h4 className="font-bold text-gray-700 text-md">
-          €{product.price}
+            <h4 className="font-bold text-gray-700 text-md">
+              €{product.price}
             </h4>
           </div>
         </div>

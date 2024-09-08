@@ -34,60 +34,59 @@ export const filters = [
     options: ["Eugeneperma", "Chenice", "She"],
   },
   {
-    title: "Subcategoria",
+    title: "Sottocategoria",
     titleBackend: "subCategory",
     options: [
-      // **Coloración**
-      "Colorazione Permanente", // Permanente
-      "Colorazione Semi-Permanente", // Semi-permanente
-      "Colorazione Naturale", // Natural
-      "Diretta", // Directa
-
-      // **Tratamientos de Cabello**
-      "Permanenti", // Permanentes
-      "Stiratura", // Alisado
-
-      // **Tratamientos Especializados**
-      "Ifix", // Tratamiento específico
-      "Urbn", // Tratamiento específico
-      "Botox Effect", // Efecto Botox
-      "Ricostruzione", // Reconstrucción
-
-      // **Hidratación y Nutrición**
-      "Moisturizing", // Hidratación
-      // "Nutrizione", // Nutrición (opcional)
-      // "Idratazione", // Hidratación (opcional)
-
-      // **Productos de Cuidado y Estilo**
-      "Decolorazione", // Decoloración
-      "Styling", // Estilizado
-      "Districante", // Acondicionador
-      "Purificante", // Purificante
-      "Shampoo Solido", // Shampoo sólido
-
-      // **Cuidado Específico del Cabello**
-      "Capelli Fragili", // Cabello frágil
-      "Per Tutti i Capelli", // Para todo tipo de cabello
-      "Capelli Fini", // Cabello fino
-      "Capelli Ricci", // Cabello rizado
-      "Capelli Secchi", // Cabello seco
-      "Capelli Colorati", // Cabello teñido
-      "Capelli Biondi-Dec-Bianchi", // Cabello rubio y decolorado
-      "Capelli Grassi", // Cabello graso
-
-      // **Cuidado del Cuero Cabelludo**
-      "Anticaduta/Antiforfora", // Anticaída/Anticaspa
-      "Cute Sensible", // Cuero cabelludo sensible
-
-      // **Protección y Cuidado Adicional**
-      "Sun", // Protección solar
-      "Anti-Age", // Anti-envejecimiento
-      "Green Care", // Cuidado ecológico
-      "Biological Waves", // Ondas biológicas
+      "Permanenti",
+      "Stiratura",
+      "Permanente",
+      "Semi-Permanente",
+      "Naturale",
+      "Diretta",
+      "Decolorazione",
+      "Complementi Tecnici",
+      "Crema",
+      "Mousse",
+      "Spray",
+      "Volume",
+      "Wax",
+      "Gel",
+      "Nutrizione",
+      "Uso Frequente",
+      "Colorati",
+      "Silver",
+      "Antiforfora",
+      "Lacca",
+      "Shampoo Districante",
+      "Shampoo Purificante",
+      "Shampoo Solido",
+      "Capelli Fragili",
+      "Tutti i Capelli",
+      "Capelli Fini",
+      "Capelli Ricci",
+      "Capelli Secchi",
+      "Capelli Colorati",
+      "Capelli Biondi-Dec-Bianchi",
+      "Anticaduta",
+      "Cute Sensibile",
+      "Capelli Grassi e Forfora",
+      "Sun",
     ],
   },
   {
-    title: "Precio",
+    title: "Categoria",
+    titleBackend: "category",
+    options: [
+      "Trattamento",
+      "Colorazione",
+      "Styling",
+      "Cura Quotidiana",
+      "Cuoio Capelluto",
+      "Protezione Extra",
+    ],
+  },
+  {
+    title: "Prezzo",
     titleBackend: "price",
     options: [100000],
   },

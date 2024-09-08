@@ -30,45 +30,32 @@ function Home() {
       </section>
 
       <section className="w-full max-w-6xl mx-auto px-6 pt-8 md:pt-14 pb-5">
-        <h2 className="text-2xl font-bold text-center my-2 text-gray-800">Brands</h2>
-        <p className="text-sm text-center text-gray-400 mb-4">
-          Prodotti esclusivi per capelli, accessori e creme dalle migliori
-          etichette del settore.
-        </p>
+        <h2 className="text-2xl font-bold text-center my-2 text-gray-800">
+          Le nostre marche
+        </h2>
       </section>
-      <div className="bg-gray-100 p-6 mb-4">
+      <div className="bg-gray-100 py-6 mb-4">
         <BrandCarousel />
       </div>
 
-      <section className="w-full max-w-6xl mx-auto px-6 pt-8 md:pt-14 sm:pb-8 ">
-        <h2 className="text-2xl font-bold text-center my-2 text-gray-800">Categorie</h2>
+      <section className="w-full max-w-6xl mx-auto py-6 pt-8 md:pt-14">
+        <h2 className="text-2xl font-bold text-center my-2 text-gray-800">
+          Categorie
+        </h2>
         <p className="text-sm text-center text-gray-400 mb-4">
           Scopri la nostra vasta gamma di prodotti per capelli, accessori e
           creme
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:mt-5">
-          {/* first div con clases diversas */}
-          <div className="relative border rounded-md bg-white h-[333px] bg-cover bg-no-repeat bg-top mt-5 m-auto md:mt-2">
-            <img
-              className="w-full object-cover h-full"
-              src="/Carrousell-image1.jpg"
-              alt="Descripción de la imagen"
-            />
-            <div className="absolute inset-x-0 bottom-0 w-5/6 m-auto bg-white p-3">
-              <h2 className="font-bold text-xl mb-2 text-black">CREMAS</h2>
-              <p className="text-lg text-gray-400 mb-2">Descubre los packs</p>
-              <p className="font-bold text-sm text-red-500 mb-2">
-                Ver Todos --
-              </p>
-            </div>
-          </div>
-          <ProductCategory />
-          <ProductCategory />
-          <ProductCategory />
-          <ProductCategory />
-          <ProductCategory />
+        <div className=" flex flex-col justify-center md:flex-wrap md:flex-row mt-6">
+
+        <ProductCategory/>
+        <ProductCategory/>
+        <ProductCategory/>
+        <ProductCategory/>
+        <ProductCategory/>
         </div>
+        
       </section>
     </div>
   );

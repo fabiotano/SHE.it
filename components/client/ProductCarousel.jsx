@@ -116,7 +116,7 @@ export default function ProductCarousel({ products }) {
                     <h3 className="text-sm md:text-md font-semibold text-gray-600 line-clamp-2 overflow-hidden">
                       {product.name}{" "}
                     </h3>
-                    <span className="text-xs">{product.format}</span>
+                    <span className="text-sm">{product.format}</span>
                   </div>
 
                   <div className="w-1/4 flex-none ml-2 text-center">

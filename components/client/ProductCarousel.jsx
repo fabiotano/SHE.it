@@ -70,7 +70,7 @@ export default function ProductCarousel({ products }) {
                         <img
                           src="/brands/3.svg"
                           alt="Eugeneperma Logo"
-                          className="w-16"
+                          className="w-20"
                         />
                       );
                     } else if (product.brand == "Chenice") {

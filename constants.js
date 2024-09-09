@@ -34,6 +34,36 @@ export const filters = [
     options: ["Eugeneperma", "Chenice", "She"],
   },
   {
+    title: "Categoria",
+    titleBackend: "category",
+    options: [
+      {
+        name: "Trattamento",
+        image: "/category/trattamento.jpg",
+      },
+      {
+        name: "Styling",
+        image: "/category/styling.jpg",
+      },
+      {
+        name: "Colorazione",
+        image: "/category/colorazione.jpg",
+      },
+      {
+        name: "Cura Quotidiana",
+        image: "/category/cura-quotidiana.jpg",
+      },
+      {
+        name: "Cuoio Capelluto",
+        image: "/category/cuoio-capelluto.jpg",
+      },
+      {
+        name: "Protezione Extra",
+        image: "/category/protezione-extra.jpg",
+      },
+    ],
+  },
+  {
     title: "Sottocategoria",
     titleBackend: "subCategory",
     options: [
@@ -74,18 +104,6 @@ export const filters = [
     ],
   },
   {
-    title: "Categoria",
-    titleBackend: "category",
-    options: [
-      "Trattamento",
-      "Colorazione",
-      "Styling",
-      "Cura Quotidiana",
-      "Cuoio Capelluto",
-      "Protezione Extra",
-    ],
-  },
-  {
     title: "Prezzo",
     titleBackend: "price",
     options: [100000],
@@ -118,8 +136,12 @@ export const colors = [
 
 export const sortOptions = [
   {
-    title: "",
-    value: "",
+    title: "Da A a Z",
+    value: "aToZ",
+  },
+  {
+    title: "Da Z a A",
+    value: "zToA",
   },
   {
     title: "Prezzo più Basso",
@@ -128,13 +150,5 @@ export const sortOptions = [
   {
     title: "Prezzo più Alto",
     value: "highToLow",
-  },
-  {
-    title: "Da A a Z",
-    value: "aToZ",
-  },
-  {
-    title: "Da Z a A",
-    value: "zToA",
-  },
+  }
 ];

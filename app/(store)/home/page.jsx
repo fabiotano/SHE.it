@@ -7,6 +7,11 @@ import ProductCategory from "@/components/client/ProductCategory";
 import { useEffect } from "react";
 import { useProducts } from "@/app/context/ProductContext";
 
+import { filters } from "@/constants.js";
+
+const categoryFilter = filters.find(filter => filter.titleBackend === "category");
+const categoryOptions = categoryFilter ? categoryFilter.options : [];
+
 function Home() {
   const { state, fetchProducts } = useProducts();
   const { products, loading } = state;
@@ -47,15 +52,11 @@ function Home() {
           creme
         </p>
 
-        <div className=" flex flex-col justify-center md:flex-wrap md:flex-row mt-6">
-
-        <ProductCategory/>
-        <ProductCategory/>
-        <ProductCategory/>
-        <ProductCategory/>
-        <ProductCategory/>
+        <div className="flex flex-col justify-center md:flex-wrap md:flex-row mt-6">
+          {categoryOptions.map((category, index) => (
+            <ProductCategory key={index} category={category} />
+          ))}
         </div>
-        
       </section>
     </div>
   );

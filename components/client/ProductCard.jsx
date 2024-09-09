@@ -24,7 +24,7 @@ function ProductCard(props) {
                 <img
                   src="/brands/3.svg"
                   alt="Eugeneperma Logo"
-                  className="w-16"
+                  className="w-20"
                 />
               );
             } else if (product.brand == "Chenice") {
@@ -69,7 +69,7 @@ function ProductCard(props) {
             </h3>
             <h5 className="text-sm">{product.format}</h5>
             <span className="font-italic text-gray-500 text-xs">
-              {product.subcategory} {product.region}
+            {product.category} • {product.subcategory}
             </span>
           </div>
 
